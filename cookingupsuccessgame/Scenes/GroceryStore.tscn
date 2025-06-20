@@ -1,3 +1,66 @@
-[gd_scene format=3 uid="uid://ytwvoc765rk3"]
+[gd_scene load_steps=3 format=3 uid="uid://ytwvoc765rk3"]
+
+[ext_resource type="Script" uid="uid://brx8kajls5irq" path="res://Scripts/ShoppingStoreButtons.gd" id="1_6pps0"]
+[ext_resource type="Texture2D" uid="uid://5mgc7ux7nk1g" path="res://Art/icon.svg" id="2_pk8ln"]
 
 [node name="ShoppingScene" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6pps0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+
+[node name="Back" type="Button" parent="Control/CanvasLayer"]
+offset_left = 18.0
+offset_top = 323.0
+offset_right = 63.0
+offset_bottom = 354.0
+text = "Back
+"
+
+[node name="Next" type="Button" parent="Control/CanvasLayer"]
+offset_left = 1036.0
+offset_top = 340.0
+offset_right = 1081.0
+offset_bottom = 371.0
+text = "Next
+"
+
+[node name="Finished" type="Button" parent="Control/CanvasLayer"]
+offset_left = 942.0
+offset_top = 566.0
+offset_right = 1092.0
+offset_bottom = 597.0
+text = "Finished Shopping
+"
+
+[node name="ShoppingList" type="Button" parent="Control/CanvasLayer"]
+offset_left = 966.0
+offset_top = 55.0
+offset_right = 1078.0
+offset_bottom = 86.0
+text = "Shopping List
+"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(332, 161)
+texture = ExtResource("2_pk8ln")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(1263, -178)
+texture = ExtResource("2_pk8ln")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(-1036, 198)
+texture = ExtResource("2_pk8ln")
+
+[connection signal="pressed" from="Control/CanvasLayer/Back" to="Control" method="_on_back_pressed"]
+[connection signal="pressed" from="Control/CanvasLayer/Next" to="Control" method="_on_next_pressed"]
+[connection signal="pressed" from="Control/CanvasLayer/Finished" to="Control" method="_on_finished_pressed"]
+[connection signal="pressed" from="Control/CanvasLayer/ShoppingList" to="Control" method="_on_shopping_list_pressed"]
