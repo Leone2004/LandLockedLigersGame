@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="CookingUpSuccessGame"
+run/main_scene="uid://b24md2q3ym4fa"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Art/icon.svg"
+
+[display]
+
+window/size/mode=3
 
 [rendering]
 
