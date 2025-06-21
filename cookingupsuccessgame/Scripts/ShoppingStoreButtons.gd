@@ -5,8 +5,19 @@ extends Control
 @onready var FinishedButton : Button = $Finished
 @onready var ShoppingButton : Button = $ShoppingList
 @onready var camera : Camera2D = $"../Camera2D"
+@onready var money : Label = $CanvasLayer/Money
 
-var aisle_index := 0  # keeps track of which aisle we're on
+var aisle_index := 2  # keeps track of which aisle we're on
+
+func _ready():
+	update_label()
+
+func _physics_process(delta: float) -> void:
+	update_label()
+
+func update_label():
+	money.text = "Money: $" + str(Global.money)
+
 
 func _on_back_pressed() -> void:
 	var screen_width := get_viewport().get_visible_rect().size.x
@@ -24,7 +35,16 @@ func _on_next_pressed() -> void:
 	camera.position.x = aisle_index * screen_width
 
 func _on_finished_pressed() -> void:
-	print("finished button was pressed")
+	get_tree().change_scene_to_file("res://Scenes/cooking.tscn")
+
 
 func _on_shopping_list_pressed() -> void:
 	print("shopping list button was pressed")
+
+
+
+func _on_pepperoni_pressed() -> void:
+	Global.pepperoni += 1 
+	Global.money -= 25
+	print(Global.pepperoni)
+	print(Global.money)

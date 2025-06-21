@@ -46,21 +46,37 @@ offset_bottom = 86.0
 text = "Shopping List
 "
 
+[node name="Money" type="Label" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="pepperoni" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = -134.0
+offset_right = 133.0
+offset_bottom = -81.0
+text = "pepperoni"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Icon" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(332, 161)
 texture = ExtResource("2_pk8ln")
 
 [node name="Icon2" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(1263, -178)
 texture = ExtResource("2_pk8ln")
 
 [node name="Icon3" type="Sprite2D" parent="."]
-position = Vector2(-1036, 198)
+texture_filter = 1
+position = Vector2(-1399, 0)
 texture = ExtResource("2_pk8ln")
 
 [connection signal="pressed" from="Control/CanvasLayer/Back" to="Control" method="_on_back_pressed"]
 [connection signal="pressed" from="Control/CanvasLayer/Next" to="Control" method="_on_next_pressed"]
 [connection signal="pressed" from="Control/CanvasLayer/Finished" to="Control" method="_on_finished_pressed"]
 [connection signal="pressed" from="Control/CanvasLayer/ShoppingList" to="Control" method="_on_shopping_list_pressed"]
+[connection signal="pressed" from="Control/pepperoni" to="Control" method="_on_pepperoni_pressed"]
