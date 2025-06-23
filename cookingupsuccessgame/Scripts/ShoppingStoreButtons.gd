@@ -7,7 +7,7 @@ extends Control
 @onready var camera : Camera2D = $"../Camera2D"
 @onready var money : Label = $CanvasLayer/Money
 
-var aisle_index := 2  # keeps track of which aisle we're on
+var aisle_index := 0  # keeps track of which aisle we're on
 
 func _ready():
 	update_label()
