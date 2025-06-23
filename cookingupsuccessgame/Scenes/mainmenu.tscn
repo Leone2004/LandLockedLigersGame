@@ -22,6 +22,7 @@ offset_left = 113.968
 offset_top = 2.97
 offset_right = 418.968
 offset_bottom = 35.97
+theme_override_colors/font_hover_color = Color(0.152, 0.644237, 1.34766e-06, 1)
 text = "Start"
 
 [node name="QuitButton" type="Button" parent="."]
@@ -30,6 +31,7 @@ offset_left = -138.0
 offset_top = 78.0
 offset_right = 168.0
 offset_bottom = 109.0
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
 text = "Quit
 "
 
