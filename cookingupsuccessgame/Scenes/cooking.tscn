@@ -8,8 +8,8 @@ script = ExtResource("1_v6t1i")
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-282, 83)
-scale = Vector2(3.34375, 3.01562)
+position = Vector2(-394.5, 174.5)
+scale = Vector2(1.58594, 1.58594)
 texture = ExtResource("1_mihmv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -52,10 +52,10 @@ offset_bottom = 23.0
 
 [node name="pepperoni" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 45.0
-offset_top = -134.0
-offset_right = 133.0
-offset_bottom = -81.0
+offset_left = 52.0
+offset_top = -94.0
+offset_right = 140.0
+offset_bottom = -41.0
 text = "pepperoni"
 
 [node name="Camera2D" type="Camera2D" parent="."]
