@@ -62,7 +62,7 @@ text = "pepperoni"
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(332, 161)
+position = Vector2(353, 4)
 texture = ExtResource("2_pk8ln")
 
 [node name="Icon2" type="Sprite2D" parent="."]
@@ -72,7 +72,7 @@ texture = ExtResource("2_pk8ln")
 
 [node name="Icon3" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-1399, 0)
+position = Vector2(-1245, -105)
 texture = ExtResource("2_pk8ln")
 
 [connection signal="pressed" from="Control/CanvasLayer/Back" to="Control" method="_on_back_pressed"]
