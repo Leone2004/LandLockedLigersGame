@@ -24,4 +24,9 @@ autowrap_mode = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(1359, 10)
+scale = Vector2(4.89062, 4.8125)
+texture = ExtResource("1_mihmv")
+
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
