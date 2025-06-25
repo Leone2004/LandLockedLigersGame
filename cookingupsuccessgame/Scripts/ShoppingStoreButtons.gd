@@ -10,6 +10,8 @@ extends Control
 var aisle_index := 0  # keeps track of which aisle we're on
 
 func _ready():
+	print("Day:", Global.day) # idicates the day you're on
+	print("--------------------------") # a line break
 	update_label()
 
 func _physics_process(delta: float) -> void:
@@ -43,8 +45,12 @@ func _on_shopping_list_pressed() -> void:
 
 
 
-func _on_pepperoni_pressed() -> void:
-	Global.pepperoni += 1 
-	Global.money -= 25
-	print(Global.pepperoni)
-	print(Global.money)
+func _on_food_pressed(item: int, price: float) -> void:
+	if (Global.money >= price): # checks to see if the player has enough money
+		Global.ingredients[item] += 1  # increments the proper item by 1
+		Global.money -= price
+		print(Global.food[item], ": ", Global.ingredients[item]) # indicates the food you bought
+		print("Money: ", Global.money)
+		print("------------------------")
+	else: # what happens if the player doesn't have enough money
+		print("Not enough money!")
