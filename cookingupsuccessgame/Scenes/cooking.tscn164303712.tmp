@@ -23,14 +23,14 @@ text = "Ovens"
 autowrap_mode = 3
 
 [node name="Button2" type="Button" parent="CanvasLayer"]
-offset_left = 1019.0
-offset_top = 586.0
-offset_right = 1099.0
-offset_bottom = 638.0
-text = "Done!"
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 22.0
+offset_bottom = 651.0
+text = "Back"
 autowrap_mode = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_nextday_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_pressed"]
