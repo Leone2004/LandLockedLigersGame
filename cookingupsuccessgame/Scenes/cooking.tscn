@@ -37,18 +37,22 @@ autowrap_mode = 3
 [node name="Label" type="Label" parent="CanvasLayer/RecipeBook"]
 offset_right = 40.0
 offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Previous" type="Button" parent="CanvasLayer/RecipeBook"]
 offset_right = 8.0
 offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Next" type="Button" parent="CanvasLayer/RecipeBook"]
 offset_right = 8.0
 offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/RecipeBook"]
+[node name="Recipe" type="RichTextLabel" parent="CanvasLayer/RecipeBook"]
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
