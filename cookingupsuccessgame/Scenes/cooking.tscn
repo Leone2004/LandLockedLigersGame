@@ -32,6 +32,24 @@ offset_bottom = 638.0
 text = "Done!"
 autowrap_mode = 3
 
+[node name="RecipeBook" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="Label" type="Label" parent="CanvasLayer/RecipeBook"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Previous" type="Button" parent="CanvasLayer/RecipeBook"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Next" type="Button" parent="CanvasLayer/RecipeBook"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/RecipeBook"]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Area2D" parent="." instance=ExtResource("3_kqqjs")]
