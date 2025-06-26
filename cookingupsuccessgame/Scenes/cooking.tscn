@@ -24,6 +24,18 @@ offset_bottom = 651.0
 text = "Ovens"
 autowrap_mode = 3
 
+[node name="RecipeButton" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = -2.571
+anchor_top = 0.07
+anchor_right = -2.571
+anchor_bottom = 0.07
+offset_left = 3986.79
+offset_top = -40.36
+offset_right = 4086.79
+offset_bottom = 37.64
+text = "Recipes"
+
 [node name="Button2" type="Button" parent="CanvasLayer"]
 offset_left = 1019.0
 offset_top = 586.0
@@ -33,6 +45,67 @@ text = "Done!"
 autowrap_mode = 3
 
 [node name="RecipeBook" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="RecipeLabel" type="Label" parent="CanvasLayer/RecipeBook"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.09
+anchor_right = 0.5
+anchor_bottom = 0.09
+offset_left = -128.0
+offset_top = -18.32
+offset_right = 123.0
+offset_bottom = 18.68
+grow_horizontal = 2
+text = "Recipe Book"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Previous" type="Button" parent="CanvasLayer/RecipeBook"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = -20.0
+offset_right = 208.0
+offset_bottom = 20.0
+grow_vertical = 2
+text = "<"
+
+[node name="Next" type="Button" parent="CanvasLayer/RecipeBook"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -20.0
+offset_right = -232.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+text = ">"
+
+[node name="Current Recipe" type="RichTextLabel" parent="CanvasLayer/RecipeBook"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -124.0
+offset_right = 186.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_recipe_pressed"]
+[connection signal="pressed" from="CanvasLayer/RecipeBook/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="CanvasLayer/RecipeBook/Next" to="." method="_on_next_pressed"]
 
 [node name="Label" type="Label" parent="CanvasLayer/RecipeBook"]
 offset_right = 40.0

@@ -16,6 +16,14 @@ func _ready() -> void:
 	recipes.append(["pepperoni", ["pepperoni", "cheese", "sauce", "dough"]])
 	recipes.append(["cheese", ["cheese", "sauce", "dough"]])
 
+func _ready() -> void:
+	current_recipe = 0
+	recipe_book_visible = false
+	recipe_book_layer.visible = recipe_book_visible
+	recipe.text = "[center][b]THE RECIPE BOOK[/b][/center]"
+	recipes.append(["pepperoni", ["pepperoni", "cheese", "sauce", "dough"]])
+	recipes.append(["cheese", ["cheese", "sauce", "dough"]])
+
 func _on_button_pressed() -> void:
 	var screen_width := get_viewport().get_visible_rect().size.x
 	print("back button was pressed")
