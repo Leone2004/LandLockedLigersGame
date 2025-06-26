@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccjtqqsxfsxdj"]
+[gd_scene load_steps=5 format=3 uid="uid://ccjtqqsxfsxdj"]
 
 [ext_resource type="Texture2D" uid="uid://5mgc7ux7nk1g" path="res://Art/icon.svg" id="1_mihmv"]
 [ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
+[ext_resource type="PackedScene" uid="uid://cbv1kvsc8lip3" path="res://Scenes/pizza.tscn" id="3_kqqjs"]
+[ext_resource type="PackedScene" uid="uid://wjye2oajgcmk" path="res://Scenes/oven_scene.tscn" id="4_jhubm"]
 
 [node name="CookingScene" type="Node2D"]
 script = ExtResource("1_v6t1i")
@@ -14,7 +16,7 @@ texture = ExtResource("1_mihmv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="Oven_Cooking_Button" type="Button" parent="CanvasLayer"]
 offset_left = 1129.0
 offset_top = -2.0
 offset_right = 1150.0
@@ -22,7 +24,7 @@ offset_bottom = 651.0
 text = "Ovens"
 autowrap_mode = 3
 
-[node name="Button2" type="Button" parent="CanvasLayer"]
+[node name="RecipeButton" type="Button" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = -2.571
 anchor_top = 0.07
@@ -34,9 +36,17 @@ offset_right = 4086.79
 offset_bottom = 37.64
 text = "Recipes"
 
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 1019.0
+offset_top = 586.0
+offset_right = 1099.0
+offset_bottom = 638.0
+text = "Done!"
+autowrap_mode = 3
+
 [node name="RecipeBook" type="CanvasLayer" parent="CanvasLayer"]
 
-[node name="Label" type="Label" parent="CanvasLayer/RecipeBook"]
+[node name="RecipeLabel" type="Label" parent="CanvasLayer/RecipeBook"]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.09
@@ -96,3 +106,38 @@ bbcode_enabled = true
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_recipe_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeBook/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeBook/Next" to="." method="_on_next_pressed"]
+
+[node name="Label" type="Label" parent="CanvasLayer/RecipeBook"]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Previous" type="Button" parent="CanvasLayer/RecipeBook"]
+offset_right = 8.0
+offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Button" parent="CanvasLayer/RecipeBook"]
+offset_right = 8.0
+offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Recipe" type="RichTextLabel" parent="CanvasLayer/RecipeBook"]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Area2D" parent="." instance=ExtResource("3_kqqjs")]
+position = Vector2(133, 156)
+
+[node name="OvenScene" parent="." instance=ExtResource("4_jhubm")]
+position = Vector2(1338, -168)
+
+[node name="OvenScene2" parent="." instance=ExtResource("4_jhubm")]
+z_index = -1
+position = Vector2(1334, 134)
+
+[connection signal="pressed" from="CanvasLayer/Oven_Cooking_Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_nextday_pressed"]

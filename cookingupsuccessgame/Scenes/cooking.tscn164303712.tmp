@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccjtqqsxfsxdj"]
+
+[ext_resource type="Texture2D" uid="uid://5mgc7ux7nk1g" path="res://Art/icon.svg" id="1_mihmv"]
+[ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
+
+[node name="CookingScene" type="Node2D"]
+script = ExtResource("1_v6t1i")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-282, 83)
+scale = Vector2(3.34375, 3.01562)
+texture = ExtResource("1_mihmv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 1129.0
+offset_top = -2.0
+offset_right = 1150.0
+offset_bottom = 651.0
+text = "Ovens"
+autowrap_mode = 3
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 22.0
+offset_bottom = 651.0
+text = "Back"
+autowrap_mode = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_pressed"]

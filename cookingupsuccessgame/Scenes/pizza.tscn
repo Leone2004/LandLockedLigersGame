@@ -17,3 +17,5 @@ texture = ExtResource("2_7s6re")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_glui1")
+
+[node name="Baker_timer" type="Timer" parent="."]

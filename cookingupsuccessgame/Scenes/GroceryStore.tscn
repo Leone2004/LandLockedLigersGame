@@ -58,25 +58,33 @@ offset_right = 140.0
 offset_bottom = -41.0
 text = "pepperoni"
 
+[node name="cheese" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1148.0
+offset_top = -105.0
+offset_right = 1236.0
+offset_bottom = -52.0
+text = "cheese"
+
+[node name="mushrooms" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = -35.0
+offset_right = 140.0
+offset_bottom = 18.0
+text = "mushrooms"
+
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Icon" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(332, 161)
-texture = ExtResource("2_pk8ln")
-
-[node name="Icon2" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(1263, -178)
-texture = ExtResource("2_pk8ln")
 
 [node name="Icon3" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-1399, 0)
+position = Vector2(-1245, -105)
 texture = ExtResource("2_pk8ln")
 
 [connection signal="pressed" from="Control/CanvasLayer/Back" to="Control" method="_on_back_pressed"]
 [connection signal="pressed" from="Control/CanvasLayer/Next" to="Control" method="_on_next_pressed"]
 [connection signal="pressed" from="Control/CanvasLayer/Finished" to="Control" method="_on_finished_pressed"]
 [connection signal="pressed" from="Control/CanvasLayer/ShoppingList" to="Control" method="_on_shopping_list_pressed"]
-[connection signal="pressed" from="Control/pepperoni" to="Control" method="_on_pepperoni_pressed"]
+[connection signal="pressed" from="Control/pepperoni" to="Control" method="_on_food_pressed" binds= [0, 25.0]]
+[connection signal="pressed" from="Control/cheese" to="Control" method="_on_food_pressed" binds= [1, 15.0]]
+[connection signal="pressed" from="Control/mushrooms" to="Control" method="_on_food_pressed" binds= [2, 15.0]]
