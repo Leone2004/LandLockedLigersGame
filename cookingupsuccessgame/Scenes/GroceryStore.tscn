@@ -66,6 +66,14 @@ offset_right = 140.0
 offset_bottom = -98.0
 text = "cheese"
 
+[node name="mushrooms" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = -35.0
+offset_right = 140.0
+offset_bottom = 18.0
+text = "mushrooms"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Icon" type="Sprite2D" parent="."]
@@ -89,3 +97,4 @@ texture = ExtResource("2_pk8ln")
 [connection signal="pressed" from="Control/CanvasLayer/ShoppingList" to="Control" method="_on_shopping_list_pressed"]
 [connection signal="pressed" from="Control/pepperoni" to="Control" method="_on_food_pressed" binds= [0, 25.0]]
 [connection signal="pressed" from="Control/cheese" to="Control" method="_on_food_pressed" binds= [1, 15.0]]
+[connection signal="pressed" from="Control/mushrooms" to="Control" method="_on_food_pressed" binds= [2, 15.0]]
