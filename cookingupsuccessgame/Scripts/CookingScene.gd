@@ -13,6 +13,7 @@ func _ready() -> void:
 	recipe_book_layer.visible = recipe_book_visible
 	recipe.text = "[center][b]THE RECIPE BOOK[/b][/center]"
 	recipes.append(["pepperoni", ["pepperoni", "cheese", "sauce", "dough"]])
+	recipes.append(["cheese", ["cheese", "sauce", "dough"]])
 
 func _on_button_pressed() -> void:
 	var screen_width := get_viewport().get_visible_rect().size.x
@@ -28,19 +29,19 @@ func _on_recipe_pressed() -> void:
 
 
 func _on_next_pressed() -> void: # go to next page
-	current_recipe += 1
-	#var recipe_number_text = "[center]Recipe Number %s[/center]"
-	#recipe_number_text = recipe_number_text % current_recipe
-	var recipe_text = get_recipe_string(recipes[0])
-	recipe.text = recipe_text
+	if current_recipe < len(recipes): #stay in bounds
+		current_recipe += 1
+		var recipe_index = current_recipe - 1
+		var recipe_text = get_recipe_string(recipes[recipe_index])
+		recipe.text = recipe_text
 
 
 func _on_previous_pressed() -> void: #go to previous page
-	var recipe_number_text = "[center]Recipe Number %s[/center]"
 	if current_recipe > 1: # don't let go to non-existent recipes
 		current_recipe -= 1
-		recipe_number_text = recipe_number_text % current_recipe
-		recipe.text = recipe_number_text
+		var recipe_index = current_recipe - 1
+		var recipe_text = get_recipe_string(recipes[recipe_index])
+		recipe.text = recipe_text
 
 func get_recipe_string(recipe) -> String:
 	var recipe_string = "[center][b]%s[/b][/center]\n"
