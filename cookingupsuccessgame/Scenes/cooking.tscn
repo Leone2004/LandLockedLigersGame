@@ -63,6 +63,7 @@ position = Vector2(133, 156)
 position = Vector2(1338, -168)
 
 [node name="OvenScene2" parent="." instance=ExtResource("4_jhubm")]
+z_index = -1
 position = Vector2(1334, 134)
 
 [connection signal="pressed" from="CanvasLayer/Oven_Cooking_Button" to="." method="_on_button_pressed"]

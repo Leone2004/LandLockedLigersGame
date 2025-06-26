@@ -16,7 +16,6 @@ func _ready() -> void:
 	recipes.append(["pepperoni", ["pepperoni", "cheese", "sauce", "dough"]])
 	recipes.append(["cheese", ["cheese", "sauce", "dough"]])
 
-
 func _on_button_pressed() -> void:
 	var screen_width := get_viewport().get_visible_rect().size.x
 	print("back button was pressed")
