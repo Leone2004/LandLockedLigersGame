@@ -23,6 +23,7 @@ offset_right = 1150.0
 offset_bottom = 651.0
 text = "Ovens"
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="CanvasLayer"]
 offset_left = 1019.0
@@ -31,6 +32,7 @@ offset_right = 1099.0
 offset_bottom = 638.0
 text = "Done!"
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="RecipeBook" type="CanvasLayer" parent="CanvasLayer"]
 
