@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccjtqqsxfsxdj"]
+[gd_scene load_steps=5 format=3 uid="uid://ccjtqqsxfsxdj"]
 
 [ext_resource type="Texture2D" uid="uid://5mgc7ux7nk1g" path="res://Art/icon.svg" id="1_mihmv"]
 [ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
 [ext_resource type="PackedScene" uid="uid://cbv1kvsc8lip3" path="res://Scenes/pizza.tscn" id="3_kqqjs"]
+[ext_resource type="PackedScene" uid="uid://wjye2oajgcmk" path="res://Scenes/oven_scene.tscn" id="4_jhubm"]
 
 [node name="CookingScene" type="Node2D"]
 script = ExtResource("1_v6t1i")
@@ -15,7 +16,7 @@ texture = ExtResource("1_mihmv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="Oven_Cooking_Button" type="Button" parent="CanvasLayer"]
 offset_left = 1129.0
 offset_top = -2.0
 offset_right = 1150.0
@@ -33,13 +34,14 @@ autowrap_mode = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(1359, 10)
-scale = Vector2(4.89062, 4.8125)
-texture = ExtResource("1_mihmv")
-
 [node name="Area2D" parent="." instance=ExtResource("3_kqqjs")]
 position = Vector2(133, 156)
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[node name="OvenScene" parent="." instance=ExtResource("4_jhubm")]
+position = Vector2(1338, -168)
+
+[node name="OvenScene2" parent="." instance=ExtResource("4_jhubm")]
+position = Vector2(1334, 134)
+
+[connection signal="pressed" from="CanvasLayer/Oven_Cooking_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_nextday_pressed"]

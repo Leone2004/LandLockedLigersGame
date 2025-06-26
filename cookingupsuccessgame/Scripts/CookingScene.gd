@@ -1,6 +1,7 @@
 extends Node2D
 var ovenswitch : bool = true
 @onready var camera : Camera2D = $Camera2D
+@onready var OvenCookingButton : Button = $CanvasLayer/Oven_Cooking_Button
 
 func _on_button_pressed() -> void:
 	var screen_width := get_viewport().get_visible_rect().size.x
@@ -9,10 +10,14 @@ func _on_button_pressed() -> void:
 	if ovenswitch == true: # acts like a toggle button for the oven
 		camera.position.x = 1 * screen_width
 		ovenswitch = false
+		position.x -= 500
+		OvenCookingButton.text = "Cooking"
+		
 	else :
 		camera.position.x = 0 # sets camera's x position back to 0
 		ovenswitch = true
-
+		position.x+= 500
+		OvenCookingButton.text = "Ovens"
 
 func _on_nextday_pressed() -> void:
 	Global.day += 1 # increments day by one, when the "done" button is pressed
