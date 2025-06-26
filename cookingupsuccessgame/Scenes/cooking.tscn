@@ -102,32 +102,7 @@ bbcode_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_recipe_pressed"]
-[connection signal="pressed" from="CanvasLayer/RecipeBook/Previous" to="." method="_on_previous_pressed"]
-[connection signal="pressed" from="CanvasLayer/RecipeBook/Next" to="." method="_on_next_pressed"]
-
-[node name="Label" type="Label" parent="CanvasLayer/RecipeBook"]
-offset_right = 40.0
-offset_bottom = 23.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Previous" type="Button" parent="CanvasLayer/RecipeBook"]
-offset_right = 8.0
-offset_bottom = 8.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Next" type="Button" parent="CanvasLayer/RecipeBook"]
-offset_right = 8.0
-offset_bottom = 8.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Recipe" type="RichTextLabel" parent="CanvasLayer/RecipeBook"]
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D2" type="Camera2D" parent="."]
 
 [node name="Area2D" parent="." instance=ExtResource("3_kqqjs")]
 position = Vector2(133, 156)
@@ -140,4 +115,7 @@ z_index = -1
 position = Vector2(1334, 134)
 
 [connection signal="pressed" from="CanvasLayer/Oven_Cooking_Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/RecipeButton" to="." method="_on_recipe_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_nextday_pressed"]
+[connection signal="pressed" from="CanvasLayer/RecipeBook/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="CanvasLayer/RecipeBook/Next" to="." method="_on_next_pressed"]
