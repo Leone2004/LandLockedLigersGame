@@ -3,7 +3,7 @@ var ovenswitch : bool = true
 var recipe_book_visible : bool
 var recipes = Array() # recipes[i][0] is name. recipes[i][1] is ingredients subarray
 var current_recipe : int
-@onready var recipe = $CanvasLayer/RecipeBook/Recipe
+@onready var recipe = $"CanvasLayer/RecipeBook/Current Recipe"
 @onready var recipe_book_layer = $CanvasLayer/RecipeBook
 @onready var camera : Camera2D = $Camera2D
 @onready var OvenCookingButton : Button = $CanvasLayer/Oven_Cooking_Button
