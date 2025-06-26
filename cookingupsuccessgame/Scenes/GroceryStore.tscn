@@ -60,23 +60,13 @@ text = "pepperoni"
 
 [node name="cheese" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 52.0
-offset_top = -151.0
-offset_right = 140.0
-offset_bottom = -98.0
+offset_left = 1148.0
+offset_top = -105.0
+offset_right = 1236.0
+offset_bottom = -52.0
 text = "cheese"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Icon" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(353, 4)
-texture = ExtResource("2_pk8ln")
-
-[node name="Icon2" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(1263, -178)
-texture = ExtResource("2_pk8ln")
 
 [node name="Icon3" type="Sprite2D" parent="."]
 texture_filter = 1
