@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://wjye2oajgcmk"]
+[gd_scene load_steps=2 format=3 uid="uid://wjye2oajgcmk"]
+
+[ext_resource type="Texture2D" uid="uid://c84m2ypquric" path="res://Art/Unknown.jpeg" id="1_2w1kf"]
 
 [node name="OvenScene" type="Node2D"]
+
+[node name="Unknown" type="Sprite2D" parent="."]
+position = Vector2(-2, 1)
+texture = ExtResource("1_2w1kf")
+
+[node name="Area2D" type="Area2D" parent="."]
