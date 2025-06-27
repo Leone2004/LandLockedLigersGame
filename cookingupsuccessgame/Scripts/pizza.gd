@@ -7,6 +7,7 @@ var bake_time: float = 0.0
 var max_bake_time: float = 10.0  # 10 seconds to fully bake
 var is_dragging: bool = false
 var drag_offset: Vector2
+var baked : bool = false
 
 # Ingredient values (you can adjust these)
 var ingredient_values = {
@@ -93,10 +94,11 @@ func _update_pizza_value():
 
 func start_baking():
 	"""Start the baking process"""
-	if not is_baking:
+	if not is_baking && baked == false:
 		is_baking = true
 		bake_time = 0.0
 		bake_timer.start(max_bake_time)
+		self.hide()
 		print("Pizza started baking!")
 
 func stop_baking():
@@ -106,9 +108,11 @@ func stop_baking():
 	if progress_bar:
 		progress_bar.visible = false
 	print("Pizza stopped baking!")
+	self.show()
 
 func _on_bake_complete():
 	"""Called when baking is complete"""
+	baked = true
 	is_baking = false
 	if progress_bar:
 		progress_bar.visible = false
@@ -116,6 +120,7 @@ func _on_bake_complete():
 	# Increase value for fully baked pizza
 	pizza_value *= 1.5
 	print("Pizza is fully baked! Final value: $", pizza_value)
+	self.show()
 
 func _check_for_oven():
 	"""Check if pizza is placed in an oven"""
