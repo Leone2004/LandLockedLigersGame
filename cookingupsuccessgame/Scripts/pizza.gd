@@ -8,6 +8,8 @@ var max_bake_time: float = 10.0  # 10 seconds to fully bake
 var is_dragging: bool = false
 var drag_offset: Vector2
 
+var items = [0,0,0,0,0]
+
 # Ingredient values (you can adjust these)
 var ingredient_values = {
 	"dough": 2.0,
