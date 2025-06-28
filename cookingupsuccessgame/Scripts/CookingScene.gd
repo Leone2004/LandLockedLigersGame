@@ -37,8 +37,10 @@ func _on_nextday_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/GroceryStore.tscn") # changes scene back to shopping scene
 
 func _on_recipe_pressed() -> void:
+	set_physics_process(false)
 	recipe_book_visible = !recipe_book_visible
 	recipe_book_layer.visible = recipe_book_visible
+	
 
 func _on_next_pressed() -> void: # go to next page
 	if current_recipe < len(recipes): #stay in bounds
