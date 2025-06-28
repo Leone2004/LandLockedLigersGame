@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=6 format=3 uid="uid://ccjtqqsxfsxdj"]
-=======
 [gd_scene load_steps=10 format=3 uid="uid://ccjtqqsxfsxdj"]
->>>>>>> 69e0df4453e4140caf83f6ed98dbb0b1e7e633cc
 
 [ext_resource type="Texture2D" uid="uid://5mgc7ux7nk1g" path="res://Art/icon.svg" id="1_mihmv"]
 [ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
