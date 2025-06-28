@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccjtqqsxfsxdj"]
+[gd_scene load_steps=6 format=3 uid="uid://ccjtqqsxfsxdj"]
 
 [ext_resource type="Texture2D" uid="uid://5mgc7ux7nk1g" path="res://Art/icon.svg" id="1_mihmv"]
 [ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
+[ext_resource type="Texture2D" uid="uid://bq8jd3vjo40lr" path="res://Art/Unknown-1.png" id="3_iv1kd"]
 [ext_resource type="PackedScene" uid="uid://cbv1kvsc8lip3" path="res://Scenes/pizza.tscn" id="3_kqqjs"]
 [ext_resource type="PackedScene" uid="uid://wjye2oajgcmk" path="res://Scenes/oven_scene.tscn" id="4_jhubm"]
 
@@ -47,6 +48,13 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="RecipeBook" type="CanvasLayer" parent="CanvasLayer"]
+
+[node name="RecipeButton2" type="Button" parent="CanvasLayer/RecipeBook"]
+offset_left = 1075.0
+offset_top = 1.0
+offset_right = 1154.0
+offset_bottom = 32.0
+text = "Recipe"
 
 [node name="RecipeLabel" type="Label" parent="CanvasLayer/RecipeBook"]
 anchors_preset = -1
@@ -101,6 +109,13 @@ offset_bottom = 124.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
+
+[node name="Unknown-1" type="Sprite2D" parent="CanvasLayer/RecipeBook"]
+z_index = -1
+position = Vector2(576, 322.5)
+scale = Vector2(5.46429, 3.04911)
+texture = ExtResource("3_iv1kd")
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
