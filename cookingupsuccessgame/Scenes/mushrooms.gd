@@ -1,0 +1,99 @@
+extends Area2D
+
+var is_dragging: bool = false
+var drag_offset: Vector2
+var is_attached_to_pizza: bool = false
+var attached_pizza: Node = null
+var original_position: Vector2
+var original_scale: Vector2
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	original_position = global_position
+	original_scale = scale
+	# Connect the area entered signal
+	area_entered.connect(_on_area_entered)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if is_dragging and not is_attached_to_pizza:
+		global_position = get_global_mouse_position() + drag_offset
+		# Add a slight scale effect while dragging
+		scale = original_scale * 1.1
+	else:
+		scale = original_scale
+
+func _input(event):
+	# Don't handle input if attached to pizza
+	if is_attached_to_pizza:
+		return
+		
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed and not is_dragging and not is_attached_to_pizza:
+				# Check if mouse is over this mushrooms
+				var mouse_pos = get_global_mouse_position()
+				var local_mouse_pos = to_local(mouse_pos)
+				if _is_mouse_over_mushrooms(local_mouse_pos):
+					is_dragging = true
+					drag_offset = global_position - mouse_pos
+					print("Started dragging mushrooms!")
+			elif not event.pressed and is_dragging:
+				# Stop dragging
+				is_dragging = false
+				_check_for_pizza()
+
+func _is_mouse_over_mushrooms(local_mouse_pos: Vector2) -> bool:
+	"""Check if mouse is over the mushrooms area"""
+	# Simple bounds check - adjust based on your mushrooms sprite size
+	var bounds = Vector2(22, 21)  # Based on the collision shape size
+	return abs(local_mouse_pos.x) <= bounds.x/2 and abs(local_mouse_pos.y) <= bounds.y/2
+
+func _check_for_pizza():
+	"""Check if mushrooms is dropped on a pizza"""
+	var overlapping_areas = get_overlapping_areas()
+	for area in overlapping_areas:
+		if area.has_method("add_ingredient"):
+			# This is a pizza! Attach the mushrooms
+			attach_to_pizza(area)
+			return
+	
+	# If not dropped on pizza, return to original position
+	if not is_attached_to_pizza:
+		global_position = original_position
+
+func _on_area_entered(area: Area2D):
+	"""Called when another area enters this mushrooms's area"""
+	if is_dragging and area.has_method("add_ingredient"):
+		# We're hovering over a pizza while dragging
+		pass
+
+func attach_to_pizza(pizza: Node):
+	"""Attach the mushrooms to the pizza"""
+	is_attached_to_pizza = true
+	attached_pizza = pizza
+	
+	# Add the mushrooms ingredient to the pizza
+	pizza.add_ingredient("mushrooms")
+	
+	# Decrease global mushrooms count
+	Global.ingredients[2] -= 1
+	print("Global mushrooms count decreased to: ", Global.ingredients[2])
+	
+	# Position the mushrooms on the pizza (you can adjust this)
+	var pizza_pos = pizza.global_position
+	var random_offset = Vector2(randf_range(-30, 30), randf_range(-30, 30))
+	global_position = pizza_pos + random_offset
+	
+	# Make the mushrooms a child of the pizza
+	reparent(pizza)
+	
+	# Disable collision detection to prevent interference
+	var collision_shape = $CollisionShape2D
+	if collision_shape:
+		collision_shape.disabled = true
+	
+	# Visual feedback - slightly darker color to show it's attached
+	modulate = Color(0.8, 0.8, 0.8, 1.0)
+	
+	print("Mushrooms attached to pizza! Pizza value: $", pizza.pizza_value) 

@@ -29,7 +29,7 @@ var ingredient_values = {
 var current_ingredients: Array = []
 
 # Nodes
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: Sprite2D = $Pizza/Icon
 @onready var bake_timer: Timer = $Baker_timer
 @onready var progress_bar: ProgressBar = $ProgressBar
 
@@ -47,11 +47,11 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and not is_dragging:
-				# Start dragging
+				# Start dragging - only if clicking directly on the pizza
 				var mouse_pos = get_global_mouse_position()
 				var local_mouse_pos = to_local(mouse_pos)
-				# Check if mouse is within the collision shape bounds
-				if has_overlapping_areas() or _is_mouse_over_pizza(local_mouse_pos):
+				# Check if mouse is directly over the pizza sprite, not its children
+				if _is_mouse_over_pizza(local_mouse_pos) and _is_clicking_on_pizza_sprite(mouse_pos):
 					is_dragging = true
 					drag_offset = global_position - mouse_pos
 			elif not event.pressed and is_dragging:
@@ -64,6 +64,24 @@ func _is_mouse_over_pizza(local_mouse_pos: Vector2) -> bool:
 	# Simple bounds check - you can adjust these values based on your sprite size
 	var bounds = Vector2(128, 128)  # Adjust to match your pizza sprite size
 	return abs(local_mouse_pos.x) <= bounds.x/2 and abs(local_mouse_pos.y) <= bounds.y/2
+
+func _is_clicking_on_pizza_sprite(mouse_pos: Vector2) -> bool:
+	"""Check if the mouse click is directly on the pizza sprite, not on attached ingredients"""
+	# Get the pizza sprite node
+	var pizza_sprite = $Pizza/Icon
+	if not pizza_sprite:
+		# Fallback to collision shape check if sprite doesn't exist
+		var local_mouse_pos = to_local(mouse_pos)
+		return _is_mouse_over_pizza(local_mouse_pos)
+	
+	# Convert mouse position to local coordinates of the pizza sprite
+	var sprite_local_pos = pizza_sprite.to_local(mouse_pos)
+	
+	# Check if the click is within the sprite's bounds
+	var sprite_size = pizza_sprite.texture.get_size() if pizza_sprite.texture else Vector2(128, 128)
+	var bounds = sprite_size * pizza_sprite.scale
+	
+	return abs(sprite_local_pos.x) <= bounds.x/2 and abs(sprite_local_pos.y) <= bounds.y/2
 
 func _process(delta):
 	if is_dragging:
@@ -82,6 +100,14 @@ func add_ingredient(ingredient_name: String):
 		current_ingredients.append(ingredient_name)
 		_update_pizza_value()
 		print("Added ", ingredient_name, " to pizza. New value: $", pizza_value)
+		
+		# Visual feedback - you can add effects here
+		_show_ingredient_added_effect(ingredient_name)
+
+func _show_ingredient_added_effect(ingredient_name: String):
+	"""Show visual feedback when ingredient is added"""
+	# You can add particle effects, sound, or other visual feedback here
+	print("Visual effect: ", ingredient_name, " added to pizza!")
 
 func _update_pizza_value():
 	"""Calculate pizza value based on current ingredients"""
@@ -96,15 +122,22 @@ func _update_pizza_value():
 
 func start_baking():
 	"""Start the baking process"""
-	if not is_baking && baked == false:
-		is_baking = true
-		bake_time = 0.0
-		bake_timer.start(max_bake_time)
-		self.hide()
-		print("Pizza started baking!")
+	if is_baking or baked:
+		print("Pizza is already baking or baked, ignoring start request")
+		return
+		
+	is_baking = true
+	bake_time = 0.0
+	bake_timer.start(max_bake_time)
+	self.hide()
+	print("Pizza started baking! Timer started for ", max_bake_time, " seconds")
 
 func stop_baking():
 	"""Stop the baking process"""
+	if not is_baking:
+		print("Pizza is not baking, ignoring stop request")
+		return
+		
 	is_baking = false
 	bake_timer.stop()
 	if progress_bar:
@@ -114,6 +147,10 @@ func stop_baking():
 
 func _on_bake_complete():
 	"""Called when baking is complete"""
+	if baked:
+		print("Pizza already baked, ignoring completion")
+		return
+		
 	baked = true
 	is_baking = false
 	if progress_bar:
@@ -124,16 +161,41 @@ func _on_bake_complete():
 	print("Pizza is fully baked! Final value: $", pizza_value)
 	self.show()
 
+func reset_pizza():
+	"""Reset the pizza to its initial state"""
+	is_baking = false
+	baked = false
+	bake_time = 0.0
+	current_ingredients.clear()
+	pizza_value = 0.0
+	
+	if bake_timer:
+		bake_timer.stop()
+	if progress_bar:
+		progress_bar.visible = false
+	
+	self.show()
+	print("Pizza reset to initial state")
+
 func _check_for_oven():
 	"""Check if pizza is placed in an oven"""
 	var overlapping_areas = get_overlapping_areas()
-	for area in overlapping_areas:
-		if area.is_in_group("oven"):
-			start_baking()
-			return
+	var oven_found = false
 	
-	# If not in oven, stop baking
-	if is_baking:
+	print("Checking for oven - overlapping areas: ", overlapping_areas.size())
+	
+	for area in overlapping_areas:
+		print("Checking area: ", area.name, " groups: ", area.get_groups())
+		if area.is_in_group("oven"):
+			oven_found = true
+			print("Oven found: ", area.name)
+			break
+	
+	if oven_found and not is_baking and not baked:
+		print("Starting baking process...")
+		start_baking()
+	elif not oven_found and is_baking:
+		print("Stopping baking process - no oven detected")
 		stop_baking()
 
 func get_pizza_info() -> Dictionary:
