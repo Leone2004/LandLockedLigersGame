@@ -1,19 +1,10 @@
-<<<<<<< HEAD
 [gd_scene load_steps=6 format=3 uid="uid://ccjtqqsxfsxdj"]
-=======
-[gd_scene load_steps=10 format=3 uid="uid://ccjtqqsxfsxdj"]
->>>>>>> 69e0df4453e4140caf83f6ed98dbb0b1e7e633cc
 
 [ext_resource type="Texture2D" uid="uid://5mgc7ux7nk1g" path="res://Art/icon.svg" id="1_mihmv"]
 [ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
 [ext_resource type="Texture2D" uid="uid://bq8jd3vjo40lr" path="res://Art/Unknown-1.png" id="3_iv1kd"]
 [ext_resource type="PackedScene" uid="uid://cbv1kvsc8lip3" path="res://Scenes/pizza.tscn" id="3_kqqjs"]
 [ext_resource type="PackedScene" uid="uid://wjye2oajgcmk" path="res://Scenes/oven_scene.tscn" id="4_jhubm"]
-[ext_resource type="Texture2D" uid="uid://om2qfnq8tr7p" path="res://Art/pepperoni.png" id="5_7w5j8"]
-[ext_resource type="Script" uid="uid://bggtwchdtuw0b" path="res://Scenes/food.gd" id="6_bhcx5"]
-[ext_resource type="Texture2D" uid="uid://bur22s12al6we" path="res://Art/cheese.png" id="7_5t8r7"]
-[ext_resource type="Texture2D" uid="uid://bqcsvm7dq6hhk" path="res://Art/mushroom.png" id="8_8l6gq"]
-[ext_resource type="Texture2D" uid="uid://bqhnndwx1due3" path="res://Art/sauce.png" id="9_jba1e"]
 
 [node name="CookingScene" type="Node2D"]
 script = ExtResource("1_v6t1i")
@@ -141,72 +132,8 @@ position = Vector2(1382, -97)
 z_index = -1
 position = Vector2(908, -97)
 
-[node name="pepperoni" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-484, -224)
-scale = Vector2(2.03125, 2.03125)
-texture = ExtResource("5_7w5j8")
-script = ExtResource("6_bhcx5")
-
-[node name="Button" type="Button" parent="pepperoni"]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -11.0
-offset_top = -10.0
-offset_right = 11.0
-offset_bottom = 11.0
-metadata/_edit_use_anchors_ = true
-
-[node name="cheese" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-484, -152)
-scale = Vector2(2.03125, 2.03125)
-texture = ExtResource("7_5t8r7")
-script = ExtResource("6_bhcx5")
-
-[node name="Button" type="Button" parent="cheese"]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -11.0
-offset_top = -10.0
-offset_right = 11.0
-offset_bottom = 11.0
-metadata/_edit_use_anchors_ = true
-
-[node name="mushrooms" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-484, -80)
-scale = Vector2(2.03125, 2.03125)
-texture = ExtResource("8_8l6gq")
-script = ExtResource("6_bhcx5")
-
-[node name="Button" type="Button" parent="mushrooms"]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -11.0
-offset_top = -10.0
-offset_right = 11.0
-offset_bottom = 11.0
-metadata/_edit_use_anchors_ = true
-
-[node name="sauce" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-484, -2)
-scale = Vector2(2.03125, 2.03125)
-texture = ExtResource("9_jba1e")
-script = ExtResource("6_bhcx5")
-
-[node name="Button" type="Button" parent="sauce"]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -11.0
-offset_top = -10.0
-offset_right = 11.0
-offset_bottom = 11.0
-metadata/_edit_use_anchors_ = true
-
 [connection signal="pressed" from="CanvasLayer/Oven_Cooking_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeButton" to="." method="_on_recipe_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_nextday_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeBook/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeBook/Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="pepperoni/Button" to="pepperoni" method="_on_button_pressed" binds= [0]]
-[connection signal="pressed" from="cheese/Button" to="cheese" method="_on_button_pressed" binds= [1]]
-[connection signal="pressed" from="mushrooms/Button" to="mushrooms" method="_on_button_pressed" binds= [2]]
-[connection signal="pressed" from="sauce/Button" to="sauce" method="_on_button_pressed" binds= [3]]

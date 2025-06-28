@@ -9,8 +9,6 @@ var is_dragging: bool = false
 var drag_offset: Vector2
 var baked : bool = false
 
-var items = [0,0,0,0,0]
-
 # Ingredient values (you can adjust these)
 var ingredient_values = {
 	"dough": 2.0,
