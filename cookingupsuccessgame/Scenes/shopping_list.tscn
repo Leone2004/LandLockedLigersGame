@@ -57,5 +57,6 @@ offset_right = 204.0
 offset_bottom = 237.0
 grow_horizontal = 2
 grow_vertical = 2
+bbcode_enabled = true
 
 [connection signal="pressed" from="ShoppingList/List Editor/UpdateButton" to="." method="_on_update_button_pressed"]
