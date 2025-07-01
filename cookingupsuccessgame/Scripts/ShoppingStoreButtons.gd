@@ -54,5 +54,6 @@ func _on_food_pressed(item: int, price: float) -> void:
 		print(Global.food[item], ": ", Global.ingredients[item]) # indicates the food you bought
 		print("Money: ", Global.money)
 		print("------------------------")
+		$"../ShoppingListScene".remove_one(Global.food[item])
 	else: # what happens if the player doesn't have enough money
 		print("Not enough money!")

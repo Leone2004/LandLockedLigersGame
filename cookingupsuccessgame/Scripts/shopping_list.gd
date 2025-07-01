@@ -1,6 +1,6 @@
 extends Node2D
 
-var ingredients = ["pepperoni", "sausage", "cheese", "olives", "pineapple chunks"] # demo ingredients
+var ingredients = Global.food
 @onready var item_picker = $"ShoppingList/List Editor/ItemPicker"
 @onready var item_counter = $"ShoppingList/List Editor/ItemCount"
 @onready var shopping_list = $ShoppingList/ShoppingListText
@@ -29,3 +29,8 @@ func update_shopping_list() -> void:
 		shopping_list_string += "[left]%s[/left]" %item[0]
 		shopping_list_string += "[right]%s[/right]\n" %item[1]
 	shopping_list.text = shopping_list_string
+
+func remove_one(item: String) -> void:
+	for list_item in Global.shopping_list:
+		if list_item[0] == item:
+			update_shopping_list_item(item, list_item[1] - 1)
