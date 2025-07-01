@@ -1,3 +1,62 @@
-[gd_scene format=3 uid="uid://dvhspowe5pn6t"]
+[gd_scene load_steps=2 format=3 uid="uid://dvhspowe5pn6t"]
+
+[ext_resource type="Script" uid="uid://oyvyl1cs1j22" path="res://Scripts/shopping_list.gd" id="1_h0bq7"]
 
 [node name="ShoppingListScene" type="Node2D"]
+script = ExtResource("1_h0bq7")
+
+[node name="ShoppingList" type="CanvasLayer" parent="."]
+
+[node name="ShoppingListLabel" type="Label" parent="ShoppingList"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.0
+offset_top = 35.0
+offset_right = 52.0
+offset_bottom = 58.0
+grow_horizontal = 2
+size_flags_vertical = 0
+text = "Shopping List"
+
+[node name="List Editor" type="GridContainer" parent="ShoppingList"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 100.0
+offset_right = 37.5
+offset_bottom = 131.0
+grow_horizontal = 2
+columns = 4
+
+[node name="ItemPicker" type="OptionButton" parent="ShoppingList/List Editor"]
+layout_mode = 2
+fit_to_longest_item = false
+
+[node name="VSeparator" type="VSeparator" parent="ShoppingList/List Editor"]
+layout_mode = 2
+
+[node name="ItemCount" type="SpinBox" parent="ShoppingList/List Editor"]
+layout_mode = 2
+alignment = 1
+
+[node name="UpdateButton" type="Button" parent="ShoppingList/List Editor"]
+layout_mode = 2
+text = "Update"
+
+[node name="ShoppingListText" type="RichTextLabel" parent="ShoppingList"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -171.0
+offset_right = 204.0
+offset_bottom = 237.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+
+[connection signal="pressed" from="ShoppingList/List Editor/UpdateButton" to="." method="_on_update_button_pressed"]
