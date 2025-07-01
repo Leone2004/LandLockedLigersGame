@@ -1,6 +1,6 @@
 extends Node2D
 
-var ingredients = ["pepperoni", "sausage", "cheese", "olives", "pineapple chunks"] # demo ingredients
+var ingredients = Global.food
 @onready var item_picker = $"ShoppingList/List Editor/ItemPicker"
 @onready var item_counter = $"ShoppingList/List Editor/ItemCount"
 @onready var shopping_list = $ShoppingList/ShoppingListText
