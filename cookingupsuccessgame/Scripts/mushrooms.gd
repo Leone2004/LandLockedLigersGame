@@ -80,11 +80,6 @@ func attach_to_pizza(pizza: Node):
 	Global.ingredients[2] -= 1
 	print("Global mushrooms count decreased to: ", Global.ingredients[2])
 	
-	# Position the mushrooms on the pizza (you can adjust this)
-	var pizza_pos = pizza.global_position
-	var random_offset = Vector2(randf_range(-30, 30), randf_range(-30, 30))
-	global_position = pizza_pos + random_offset
-	
 	# Make the mushrooms a child of the pizza
 	reparent(pizza)
 	

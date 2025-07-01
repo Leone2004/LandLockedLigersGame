@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	else:
 		scale = original_scale
 
-func _input(event):
+func _input(event: InputEvent) -> void:
 	# Don't handle input if attached to pizza
 	if is_attached_to_pizza:
 		return
@@ -32,8 +32,8 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and not is_dragging and not is_attached_to_pizza:
 				# Check if mouse is over this pepperoni
-				var mouse_pos = get_global_mouse_position()
-				var local_mouse_pos = to_local(mouse_pos)
+				var mouse_pos: Vector2 = get_global_mouse_position()
+				var local_mouse_pos: Vector2 = to_local(mouse_pos)
 				if _is_mouse_over_pepperoni(local_mouse_pos):
 					is_dragging = true
 					drag_offset = global_position - mouse_pos
@@ -46,12 +46,12 @@ func _input(event):
 func _is_mouse_over_pepperoni(local_mouse_pos: Vector2) -> bool:
 	"""Check if mouse is over the pepperoni area"""
 	# Simple bounds check - adjust based on your pepperoni sprite size
-	var bounds = Vector2(22, 21)  # Based on the collision shape size
+	var bounds: Vector2 = Vector2(22, 21)  # Based on the collision shape size
 	return abs(local_mouse_pos.x) <= bounds.x/2 and abs(local_mouse_pos.y) <= bounds.y/2
 
-func _check_for_pizza():
+func _check_for_pizza() -> void:
 	"""Check if pepperoni is dropped on a pizza"""
-	var overlapping_areas = get_overlapping_areas()
+	var overlapping_areas: Array[Area2D] = get_overlapping_areas()
 	for area in overlapping_areas:
 		if area.has_method("add_ingredient"):
 			# This is a pizza! Attach the pepperoni
@@ -62,13 +62,13 @@ func _check_for_pizza():
 	if not is_attached_to_pizza:
 		global_position = original_position
 
-func _on_area_entered(area: Area2D):
+func _on_area_entered(area: Area2D) -> void:
 	"""Called when another area enters this pepperoni's area"""
 	if is_dragging and area.has_method("add_ingredient"):
 		# We're hovering over a pizza while dragging
 		pass
 
-func attach_to_pizza(pizza: Node):
+func attach_to_pizza(pizza: Node) -> void:
 	"""Attach the pepperoni to the pizza"""
 	is_attached_to_pizza = true
 	attached_pizza = pizza
@@ -80,16 +80,11 @@ func attach_to_pizza(pizza: Node):
 	Global.ingredients[0] -= 1
 	print("Global pepperoni count decreased to: ", Global.ingredients[0])
 	
-	# Position the pepperoni on the pizza (you can adjust this)
-	var pizza_pos = pizza.global_position
-	var random_offset = Vector2(randf_range(-30, 30), randf_range(-30, 30))
-	global_position = pizza_pos + random_offset
-	
 	# Make the pepperoni a child of the pizza
 	reparent(pizza)
 	
 	# Disable collision detection to prevent interference
-	var collision_shape = $CollisionShape2D
+	var collision_shape: CollisionShape2D = $CollisionShape2D
 	if collision_shape:
 		collision_shape.disabled = true
 	
