@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ytwvoc765rk3"]
+[gd_scene load_steps=4 format=3 uid="uid://ytwvoc765rk3"]
 
 [ext_resource type="Script" uid="uid://brx8kajls5irq" path="res://Scripts/ShoppingStoreButtons.gd" id="1_6pps0"]
 [ext_resource type="Texture2D" uid="uid://5mgc7ux7nk1g" path="res://Art/icon.svg" id="2_pk8ln"]
+[ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="3_d07kg"]
 
 [node name="ShoppingScene" type="Node2D"]
 
@@ -80,6 +81,8 @@ text = "mushrooms"
 texture_filter = 1
 position = Vector2(-1245, -105)
 texture = ExtResource("2_pk8ln")
+
+[node name="ShoppingListScene" parent="." instance=ExtResource("3_d07kg")]
 
 [connection signal="pressed" from="Control/CanvasLayer/Back" to="Control" method="_on_back_pressed"]
 [connection signal="pressed" from="Control/CanvasLayer/Next" to="Control" method="_on_next_pressed"]
