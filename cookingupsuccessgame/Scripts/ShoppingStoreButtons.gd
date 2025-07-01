@@ -44,6 +44,8 @@ func _on_finished_pressed() -> void:
 func _on_shopping_list_pressed() -> void:
 	print("shopping list button was pressed")
 	shopping_list.visible = !shopping_list.visible
+	$"../ShoppingListScene".update_shopping_list()
+
 
 func _on_food_pressed(item: int, price: float) -> void:
 	if Global.money >= price: # checks to see if the player has enough money
