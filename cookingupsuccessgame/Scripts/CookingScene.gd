@@ -9,6 +9,8 @@ var current_recipe: int = 0
 @onready var recipe_book_layer: CanvasLayer = $CanvasLayer/RecipeBook
 @onready var camera: Camera2D = $Camera2D
 @onready var OvenCookingButton: Button = $CanvasLayer/Oven_Cooking_Button
+@onready var shopping_list = $ShoppingListScene.get_node("ShoppingList")
+
 
 # Ingredient spawning
 var pepperoni_scene: PackedScene = preload("res://Scenes/pepperoni.tscn")
@@ -26,6 +28,7 @@ var ingredient_spacing: Vector2 = Vector2(50, 0)  # Space between ingredients
 func _ready() -> void:
 	current_recipe = 0
 	recipe_book_visible = false
+	shopping_list.hide()
 	recipe_book_layer.visible = recipe_book_visible
 	recipe.text = "[center][b]THE RECIPE BOOK[/b][/center]"
 	recipes.append(["pepperoni", ["pepperoni", "cheese", "sauce", "dough"]])
@@ -220,3 +223,9 @@ func get_recipe_string(recipe: Array) -> String:
 		recipe_string += "%s\n" % ingredient
 	recipe_string += "[/ul]"
 	return recipe_string
+
+
+func _on_shopping_list_pressed() -> void:
+	print("shopping list button was pressed")
+	shopping_list.visible = !shopping_list.visible
+	$ShoppingListScene.update_shopping_list() # keep up to date
