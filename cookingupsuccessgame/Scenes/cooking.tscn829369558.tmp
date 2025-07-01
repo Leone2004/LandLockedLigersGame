@@ -1,13 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccjtqqsxfsxdj"]
+[gd_scene load_steps=7 format=3 uid="uid://ccjtqqsxfsxdj"]
 
+[ext_resource type="Texture2D" uid="uid://5mgc7ux7nk1g" path="res://Art/icon.svg" id="1_mihmv"]
 [ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
-[ext_resource type="Texture2D" uid="uid://bq8jd3vjo40lr" path="res://Art/Unknown-1.png" id="3_iv1kd"]
 [ext_resource type="PackedScene" uid="uid://cbv1kvsc8lip3" path="res://Scenes/pizza.tscn" id="3_kqqjs"]
 [ext_resource type="PackedScene" uid="uid://wjye2oajgcmk" path="res://Scenes/oven_scene.tscn" id="4_jhubm"]
-[ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="5_iv1kd"]
+[ext_resource type="Texture2D" uid="uid://om2qfnq8tr7p" path="res://Art/pepperoni.png" id="5_7w5j8"]
+[ext_resource type="Script" uid="uid://bggtwchdtuw0b" path="res://Scenes/food.gd" id="6_bhcx5"]
 
 [node name="CookingScene" type="Node2D"]
 script = ExtResource("1_v6t1i")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-394.5, 174.5)
+scale = Vector2(1.58594, 1.58594)
+texture = ExtResource("1_mihmv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -32,17 +39,6 @@ offset_right = 4086.79
 offset_bottom = 37.64
 text = "Recipes"
 
-[node name="ShoppingList" type="Button" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -256.0
-offset_top = 16.0
-offset_right = -144.0
-offset_bottom = 47.0
-grow_horizontal = 0
-text = "Shopping List"
-
 [node name="Button2" type="Button" parent="CanvasLayer"]
 offset_left = 1019.0
 offset_top = 586.0
@@ -53,13 +49,6 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="RecipeBook" type="CanvasLayer" parent="CanvasLayer"]
-
-[node name="RecipeButton2" type="Button" parent="CanvasLayer/RecipeBook"]
-offset_left = 1075.0
-offset_top = 1.0
-offset_right = 1154.0
-offset_bottom = 32.0
-text = "Recipe"
 
 [node name="RecipeLabel" type="Label" parent="CanvasLayer/RecipeBook"]
 anchors_preset = -1
@@ -115,41 +104,37 @@ grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 
-[node name="Unknown-1" type="Sprite2D" parent="CanvasLayer/RecipeBook"]
-z_index = -1
-position = Vector2(576, 322.5)
-scale = Vector2(5.46429, 3.04911)
-texture = ExtResource("3_iv1kd")
-metadata/_edit_lock_ = true
-
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(10, -331)
+
+[node name="Camera2D2" type="Camera2D" parent="."]
 
 [node name="Area2D" parent="." instance=ExtResource("3_kqqjs")]
 position = Vector2(133, 156)
 
 [node name="OvenScene" parent="." instance=ExtResource("4_jhubm")]
-z_index = -1
-position = Vector2(1421, -406)
+position = Vector2(1338, -168)
 
 [node name="OvenScene2" parent="." instance=ExtResource("4_jhubm")]
 z_index = -1
-position = Vector2(947, -406)
+position = Vector2(1334, 134)
 
-[node name="Area2D2" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(-423, -142)
+[node name="pepperoni" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-16.5, -16.5)
+scale = Vector2(2.03125, 2.03125)
+texture = ExtResource("5_7w5j8")
+script = ExtResource("6_bhcx5")
 
-[node name="Area2D3" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(-228, -142)
-
-[node name="Area2D4" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(-35, -142)
-
-[node name="ShoppingListScene" parent="." instance=ExtResource("5_iv1kd")]
+[node name="Button" type="Button" parent="pepperoni"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 11.0
+offset_bottom = 11.0
 
 [connection signal="pressed" from="CanvasLayer/Oven_Cooking_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeButton" to="." method="_on_recipe_pressed"]
-[connection signal="pressed" from="CanvasLayer/ShoppingList" to="." method="_on_shopping_list_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_nextday_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeBook/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeBook/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="pepperoni/Button" to="pepperoni" method="_on_button_pressed"]
