@@ -53,115 +53,115 @@ offset_bottom = 23.0
 
 [node name="pepperoni" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 52.0
-offset_top = -94.0
-offset_right = 140.0
-offset_bottom = -41.0
+offset_left = -235.0
+offset_top = -44.0
+offset_right = -147.0
+offset_bottom = 9.0
 text = "pepperoni"
 
 [node name="cheese" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 1148.0
-offset_top = -105.0
-offset_right = 1236.0
-offset_bottom = -52.0
+offset_left = -232.0
+offset_top = -175.0
+offset_right = -144.0
+offset_bottom = -122.0
 text = "cheese"
 
 [node name="mushrooms" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 52.0
-offset_top = -35.0
-offset_right = 140.0
-offset_bottom = 18.0
+offset_left = 1051.0
+offset_top = -212.0
+offset_right = 1152.0
+offset_bottom = -159.0
 text = "mushrooms"
 
 [node name="pineapple" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 51.0
+offset_left = -236.0
 offset_top = 26.0
-offset_right = 152.0
+offset_right = -135.0
 offset_bottom = 79.0
 text = "pineapple"
 
 [node name="sauce" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 87.0
-offset_right = 152.0
-offset_bottom = 140.0
+offset_left = -238.0
+offset_top = -110.0
+offset_right = -137.0
+offset_bottom = -57.0
 text = "sauce"
 
 [node name="olives" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 148.0
-offset_right = 152.0
-offset_bottom = 201.0
+offset_left = 1020.0
+offset_top = -12.0
+offset_right = 1121.0
+offset_bottom = 41.0
 text = "olives"
 
 [node name="peppers" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 210.0
-offset_right = 152.0
-offset_bottom = 263.0
+offset_left = 1152.0
+offset_top = -17.0
+offset_right = 1253.0
+offset_bottom = 36.0
 text = "peppers"
 
 [node name="bacon" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 164.0
-offset_top = -143.0
-offset_right = 262.0
-offset_bottom = -105.0
+offset_left = 1034.0
+offset_top = -129.0
+offset_right = 1132.0
+offset_bottom = -91.0
 text = "bacon
 "
 
 [node name="ham" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 164.0
-offset_top = -89.0
-offset_right = 262.0
-offset_bottom = -51.0
+offset_left = 1039.0
+offset_top = -73.0
+offset_right = 1137.0
+offset_bottom = -35.0
 text = "ham"
 
 [node name="anchovies" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 164.0
-offset_top = -30.0
-offset_right = 262.0
-offset_bottom = 8.0
+offset_left = 1994.0
+offset_top = -152.0
+offset_right = 2092.0
+offset_bottom = -114.0
 text = "anchovies"
 
 [node name="garlic" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 35.0
-offset_right = 258.0
-offset_bottom = 73.0
+offset_left = 1813.0
+offset_top = -65.0
+offset_right = 1911.0
+offset_bottom = -27.0
 text = "garlic"
 
 [node name="tomato" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 94.0
-offset_right = 258.0
-offset_bottom = 132.0
+offset_left = 1996.0
+offset_top = -62.0
+offset_right = 2094.0
+offset_bottom = -24.0
 text = "tomato"
 
 [node name="onion" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 153.0
-offset_right = 258.0
-offset_bottom = 191.0
+offset_left = 1817.0
+offset_top = -154.0
+offset_right = 1915.0
+offset_bottom = -116.0
 text = "onion"
 
 [node name="sausage" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 219.0
-offset_right = 258.0
-offset_bottom = 257.0
+offset_left = 1910.0
+offset_top = -238.0
+offset_right = 2008.0
+offset_bottom = -200.0
 text = "sausage"
 
 [node name="Camera2D" type="Camera2D" parent="."]
