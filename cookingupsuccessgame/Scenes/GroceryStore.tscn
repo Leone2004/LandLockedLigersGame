@@ -60,132 +60,370 @@ metadata/_edit_use_anchors_ = true
 
 [node name="pepperoni" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 52.0
-offset_top = -94.0
-offset_right = 140.0
-offset_bottom = -41.0
+offset_left = -235.0
+offset_top = -44.0
+offset_right = -147.0
+offset_bottom = 9.0
+text = "pepperoni"
+
+[node name="pepperoni2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -44.0
+offset_right = -29.0
+offset_bottom = 9.0
+text = "pepperoni"
+
+[node name="pepperoni3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = -44.0
+offset_right = 114.0
+offset_bottom = 9.0
+text = "pepperoni"
+
+[node name="pepperoni4" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = -44.0
+offset_right = 231.0
+offset_bottom = 9.0
 text = "pepperoni"
 metadata/_edit_use_anchors_ = true
 
 [node name="cheese" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 1148.0
-offset_top = -105.0
-offset_right = 1236.0
-offset_bottom = -52.0
+offset_left = -232.0
+offset_top = -175.0
+offset_right = -144.0
+offset_bottom = -122.0
+text = "cheese"
+
+[node name="cheese2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -115.0
+offset_top = -175.0
+offset_right = -27.0
+offset_bottom = -122.0
+text = "cheese"
+
+[node name="cheese3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = -174.0
+offset_right = 117.0
+offset_bottom = -121.0
+text = "cheese"
+
+[node name="cheese4" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = -174.0
+offset_right = 228.0
+offset_bottom = -121.0
 text = "cheese"
 
 [node name="mushrooms" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 52.0
-offset_top = -35.0
-offset_right = 140.0
-offset_bottom = 18.0
+offset_left = 931.0
+offset_top = -175.0
+offset_right = 1032.0
+offset_bottom = -122.0
+text = "mushrooms"
+
+[node name="mushrooms2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1057.0
+offset_top = -175.0
+offset_right = 1158.0
+offset_bottom = -122.0
+text = "mushrooms"
+
+[node name="mushrooms3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1187.0
+offset_top = -175.0
+offset_right = 1288.0
+offset_bottom = -122.0
+text = "mushrooms"
+
+[node name="mushrooms4" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1300.0
+offset_top = -176.0
+offset_right = 1401.0
+offset_bottom = -123.0
 text = "mushrooms"
 metadata/_edit_use_anchors_ = true
 
 [node name="pineapple" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 51.0
+offset_left = -236.0
 offset_top = 26.0
-offset_right = 152.0
+offset_right = -135.0
+offset_bottom = 79.0
+text = "pineapple"
+
+[node name="pineapple2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -124.0
+offset_top = 26.0
+offset_right = -23.0
+offset_bottom = 79.0
+text = "pineapple"
+
+[node name="pineapple3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 26.0
+offset_right = 121.0
+offset_bottom = 79.0
+text = "pineapple"
+
+[node name="pineapple4" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 26.0
+offset_right = 240.0
 offset_bottom = 79.0
 text = "pineapple"
 metadata/_edit_use_anchors_ = true
 
 [node name="sauce" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 87.0
-offset_right = 152.0
-offset_bottom = 140.0
+offset_left = -238.0
+offset_top = -110.0
+offset_right = -137.0
+offset_bottom = -57.0
+text = "sauce"
+
+[node name="sauce2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -122.0
+offset_top = -108.0
+offset_right = -21.0
+offset_bottom = -55.0
+text = "sauce"
+
+[node name="sauce3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = -108.0
+offset_right = 121.0
+offset_bottom = -55.0
+text = "sauce"
+
+[node name="sauce4" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = -108.0
+offset_right = 238.0
+offset_bottom = -55.0
 text = "sauce"
 metadata/_edit_use_anchors_ = true
 
 [node name="olives" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 148.0
-offset_right = 152.0
-offset_bottom = 201.0
+offset_left = 932.0
+offset_top = 11.0
+offset_right = 1033.0
+offset_bottom = 64.0
+text = "olives"
+
+[node name="olives2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1058.0
+offset_top = 11.0
+offset_right = 1159.0
+offset_bottom = 64.0
 text = "olives"
 metadata/_edit_use_anchors_ = true
 
 [node name="peppers" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 210.0
-offset_right = 152.0
-offset_bottom = 263.0
+offset_left = 1177.0
+offset_top = 13.0
+offset_right = 1278.0
+offset_bottom = 66.0
+text = "peppers"
+
+[node name="peppers2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1298.0
+offset_top = 14.0
+offset_right = 1399.0
+offset_bottom = 67.0
 text = "peppers"
 metadata/_edit_use_anchors_ = true
 
 [node name="bacon" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 39.825
-anchor_top = 0.225
-anchor_right = 39.825
-anchor_bottom = 0.225
-offset_left = 164.0
-offset_top = -143.0
-offset_right = 262.0
-offset_bottom = -105.0
+layout_mode = 0
+offset_left = 935.0
+offset_top = -92.0
+offset_right = 1033.0
+offset_bottom = -54.0
+text = "bacon
+"
+
+[node name="bacon2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1057.0
+offset_top = -92.0
+offset_right = 1155.0
+offset_bottom = -54.0
+text = "bacon
+"
+
+[node name="bacon3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1187.0
+offset_top = -92.0
+offset_right = 1285.0
+offset_bottom = -54.0
+text = "bacon
+"
+
+[node name="bacon4" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1302.0
+offset_top = -92.0
+offset_right = 1400.0
+offset_bottom = -54.0
 text = "bacon
 "
 metadata/_edit_use_anchors_ = true
 
 [node name="ham" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 164.0
-offset_top = -89.0
-offset_right = 262.0
-offset_bottom = -51.0
+offset_left = 934.0
+offset_top = -34.0
+offset_right = 1032.0
+offset_bottom = 4.0
+text = "ham"
+
+[node name="ham2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1057.0
+offset_top = -34.0
+offset_right = 1155.0
+offset_bottom = 4.0
+text = "ham"
+
+[node name="ham3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1184.0
+offset_top = -37.0
+offset_right = 1282.0
+offset_bottom = 1.0
+text = "ham"
+
+[node name="ham4" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1299.0
+offset_top = -34.0
+offset_right = 1397.0
+offset_bottom = 4.0
 text = "ham"
 metadata/_edit_use_anchors_ = true
 
 [node name="anchovies" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 164.0
-offset_top = -30.0
-offset_right = 262.0
-offset_bottom = 8.0
+offset_left = 2337.0
+offset_top = -52.0
+offset_right = 2435.0
+offset_bottom = -14.0
+text = "anchovies"
+
+[node name="anchovies2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 2453.0
+offset_top = -52.0
+offset_right = 2551.0
+offset_bottom = -14.0
 text = "anchovies"
 metadata/_edit_use_anchors_ = true
 
 [node name="garlic" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 35.0
-offset_right = 258.0
-offset_bottom = 73.0
+offset_left = 2095.0
+offset_top = 22.0
+offset_right = 2193.0
+offset_bottom = 60.0
+text = "garlic"
+
+[node name="garlic2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 2219.0
+offset_top = 22.0
+offset_right = 2317.0
+offset_bottom = 60.0
 text = "garlic"
 metadata/_edit_use_anchors_ = true
 
 [node name="tomato" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 94.0
-offset_right = 258.0
-offset_bottom = 132.0
+offset_left = 2339.0
+offset_top = 21.0
+offset_right = 2437.0
+offset_bottom = 59.0
+text = "tomato"
+
+[node name="tomato2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 2452.0
+offset_top = 21.0
+offset_right = 2550.0
+offset_bottom = 59.0
 text = "tomato"
 metadata/_edit_use_anchors_ = true
 
 [node name="onion" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 153.0
-offset_right = 258.0
-offset_bottom = 191.0
+offset_left = 2098.0
+offset_top = -51.0
+offset_right = 2196.0
+offset_bottom = -13.0
+text = "onion"
+
+[node name="onion2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 2221.0
+offset_top = -51.0
+offset_right = 2319.0
+offset_bottom = -13.0
 text = "onion"
 metadata/_edit_use_anchors_ = true
 
 [node name="sausage" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 219.0
-offset_right = 258.0
-offset_bottom = 257.0
+offset_left = 2100.0
+offset_top = -114.0
+offset_right = 2198.0
+offset_bottom = -76.0
+text = "sausage"
+
+[node name="sausage2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 2222.0
+offset_top = -114.0
+offset_right = 2320.0
+offset_bottom = -76.0
+text = "sausage"
+
+[node name="sausage3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 2337.0
+offset_top = -114.0
+offset_right = 2435.0
+offset_bottom = -76.0
+text = "sausage"
+
+[node name="sausage4" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 2453.0
+offset_top = -114.0
+offset_right = 2551.0
+offset_bottom = -76.0
 text = "sausage"
 metadata/_edit_use_anchors_ = true
 
@@ -198,16 +436,46 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Control/CanvasLayer/Finished" to="Control" method="_on_finished_pressed"]
 [connection signal="pressed" from="Control/CanvasLayer/ShoppingList" to="Control" method="_on_shopping_list_pressed"]
 [connection signal="pressed" from="Control/pepperoni" to="Control" method="_on_food_pressed" binds= [0, 25.0]]
+[connection signal="pressed" from="Control/pepperoni2" to="Control" method="_on_food_pressed" binds= [0, 25.0]]
+[connection signal="pressed" from="Control/pepperoni3" to="Control" method="_on_food_pressed" binds= [0, 25.0]]
+[connection signal="pressed" from="Control/pepperoni4" to="Control" method="_on_food_pressed" binds= [0, 25.0]]
 [connection signal="pressed" from="Control/cheese" to="Control" method="_on_food_pressed" binds= [1, 15.0]]
+[connection signal="pressed" from="Control/cheese2" to="Control" method="_on_food_pressed" binds= [1, 15.0]]
+[connection signal="pressed" from="Control/cheese3" to="Control" method="_on_food_pressed" binds= [1, 15.0]]
+[connection signal="pressed" from="Control/cheese4" to="Control" method="_on_food_pressed" binds= [1, 15.0]]
 [connection signal="pressed" from="Control/mushrooms" to="Control" method="_on_food_pressed" binds= [2, 15.0]]
+[connection signal="pressed" from="Control/mushrooms2" to="Control" method="_on_food_pressed" binds= [2, 15.0]]
+[connection signal="pressed" from="Control/mushrooms3" to="Control" method="_on_food_pressed" binds= [2, 15.0]]
+[connection signal="pressed" from="Control/mushrooms4" to="Control" method="_on_food_pressed" binds= [2, 15.0]]
 [connection signal="pressed" from="Control/pineapple" to="Control" method="_on_food_pressed" binds= [3, 15.0]]
+[connection signal="pressed" from="Control/pineapple2" to="Control" method="_on_food_pressed" binds= [3, 15.0]]
+[connection signal="pressed" from="Control/pineapple3" to="Control" method="_on_food_pressed" binds= [3, 15.0]]
+[connection signal="pressed" from="Control/pineapple4" to="Control" method="_on_food_pressed" binds= [3, 15.0]]
 [connection signal="pressed" from="Control/sauce" to="Control" method="_on_food_pressed" binds= [4, 15.0]]
+[connection signal="pressed" from="Control/sauce2" to="Control" method="_on_food_pressed" binds= [4, 15.0]]
+[connection signal="pressed" from="Control/sauce3" to="Control" method="_on_food_pressed" binds= [4, 15.0]]
+[connection signal="pressed" from="Control/sauce4" to="Control" method="_on_food_pressed" binds= [4, 15.0]]
 [connection signal="pressed" from="Control/olives" to="Control" method="_on_food_pressed" binds= [5, 15.0]]
+[connection signal="pressed" from="Control/olives2" to="Control" method="_on_food_pressed" binds= [5, 15.0]]
 [connection signal="pressed" from="Control/peppers" to="Control" method="_on_food_pressed" binds= [6, 15.0]]
+[connection signal="pressed" from="Control/peppers2" to="Control" method="_on_food_pressed" binds= [6, 15.0]]
 [connection signal="pressed" from="Control/bacon" to="Control" method="_on_food_pressed" binds= [7, 15.0]]
+[connection signal="pressed" from="Control/bacon2" to="Control" method="_on_food_pressed" binds= [7, 15.0]]
+[connection signal="pressed" from="Control/bacon3" to="Control" method="_on_food_pressed" binds= [7, 15.0]]
+[connection signal="pressed" from="Control/bacon4" to="Control" method="_on_food_pressed" binds= [7, 15.0]]
 [connection signal="pressed" from="Control/ham" to="Control" method="_on_food_pressed" binds= [8, 10.0]]
+[connection signal="pressed" from="Control/ham2" to="Control" method="_on_food_pressed" binds= [8, 10.0]]
+[connection signal="pressed" from="Control/ham3" to="Control" method="_on_food_pressed" binds= [8, 10.0]]
+[connection signal="pressed" from="Control/ham4" to="Control" method="_on_food_pressed" binds= [8, 10.0]]
 [connection signal="pressed" from="Control/anchovies" to="Control" method="_on_food_pressed" binds= [9, 5.0]]
+[connection signal="pressed" from="Control/anchovies2" to="Control" method="_on_food_pressed" binds= [9, 5.0]]
 [connection signal="pressed" from="Control/garlic" to="Control" method="_on_food_pressed" binds= [10, 7.0]]
+[connection signal="pressed" from="Control/garlic2" to="Control" method="_on_food_pressed" binds= [10, 7.0]]
 [connection signal="pressed" from="Control/tomato" to="Control" method="_on_food_pressed" binds= [11, 13.0]]
+[connection signal="pressed" from="Control/tomato2" to="Control" method="_on_food_pressed" binds= [11, 13.0]]
 [connection signal="pressed" from="Control/onion" to="Control" method="_on_food_pressed" binds= [11, 10.0]]
+[connection signal="pressed" from="Control/onion2" to="Control" method="_on_food_pressed" binds= [11, 10.0]]
 [connection signal="pressed" from="Control/sausage" to="Control" method="_on_food_pressed" binds= [12, 12.0]]
+[connection signal="pressed" from="Control/sausage2" to="Control" method="_on_food_pressed" binds= [12, 12.0]]
+[connection signal="pressed" from="Control/sausage3" to="Control" method="_on_food_pressed" binds= [12, 12.0]]
+[connection signal="pressed" from="Control/sausage4" to="Control" method="_on_food_pressed" binds= [12, 12.0]]
