@@ -29,18 +29,12 @@ var current_ingredients: Array[String] = []
 # Nodes
 @onready var sprite: Sprite2D = $Pizza/Icon
 @onready var bake_timer: Timer = $Baker_timer
-@onready var progress_bar: ProgressBar = $ProgressBar
 @onready var clock_timer: Node2D = $ClockTimer
 
 func _ready() -> void:
 	# Connect signals using modern syntax
 	input_event.connect(_on_input_event)
 	bake_timer.timeout.connect(_on_bake_complete)
-	
-	# Initialize progress bar
-	if progress_bar:
-		progress_bar.max_value = max_bake_time
-		progress_bar.visible = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -89,9 +83,6 @@ func _process(delta: float) -> void:
 	# Update baking progress
 	if is_baking:
 		bake_time += delta
-		if progress_bar:
-			progress_bar.value = bake_time
-			progress_bar.visible = true
 		if clock_timer:
 			clock_timer.visible = true
 			clock_timer.set("progress", bake_time / max_bake_time)
@@ -147,8 +138,6 @@ func stop_baking() -> void:
 		
 	is_baking = false
 	bake_timer.stop()
-	if progress_bar:
-		progress_bar.visible = false
 	if clock_timer:
 		clock_timer.visible = false
 	print("Pizza stopped baking!")
@@ -162,10 +151,6 @@ func _on_bake_complete() -> void:
 		
 	baked = true
 	is_baking = false
-	if progress_bar:
-		progress_bar.visible = false
-	if clock_timer:
-		clock_timer.visible = false
 	# Increase value for fully baked pizza
 	pizza_value *= 1.5
 	print("Pizza is fully baked! Final value: $", pizza_value)
@@ -181,8 +166,6 @@ func reset_pizza() -> void:
 	
 	if bake_timer:
 		bake_timer.stop()
-	if progress_bar:
-		progress_bar.visible = false
 	if clock_timer:
 		clock_timer.visible = false
 	self.show()
