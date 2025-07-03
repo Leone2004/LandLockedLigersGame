@@ -1,13 +1,12 @@
 extends Control
 
-@onready var BackButton : Button = $Back
-@onready var NextButton : Button = $Next
-@onready var FinishedButton : Button = $Finished
-@onready var ShoppingButton : Button = $ShoppingList
+@onready var BackButton : Button = $CanvasLayer/Back
+@onready var NextButton : Button = $CanvasLayer/Next
+@onready var FinishedButton : Button = $CanvasLayer/Finished
+@onready var ShoppingButton : Button = $CanvasLayer/ShoppingList
 @onready var camera : Camera2D = $"../Camera2D"
 @onready var money : Label = $CanvasLayer/Money
 @onready var shopping_list = $"../ShoppingListScene".get_node("ShoppingList")
-
 
 var aisle_index: int = 0  # keeps track of which aisle we're on
 
@@ -46,7 +45,6 @@ func _on_shopping_list_pressed() -> void:
 	shopping_list.visible = !shopping_list.visible
 	$"../ShoppingListScene".update_shopping_list() # keep up to date
 
-
 func _on_food_pressed(item: int, price: float) -> void:
 	if Global.money >= price: # checks to see if the player has enough money
 		Global.ingredients[item] += 1  # increments the proper item by 1
@@ -54,5 +52,6 @@ func _on_food_pressed(item: int, price: float) -> void:
 		print(Global.food[item], ": ", Global.ingredients[item]) # indicates the food you bought
 		print("Money: ", Global.money)
 		print("------------------------")
+		$"../ShoppingListScene".remove_one(Global.food[item])
 	else: # what happens if the player doesn't have enough money
 		print("Not enough money!")
