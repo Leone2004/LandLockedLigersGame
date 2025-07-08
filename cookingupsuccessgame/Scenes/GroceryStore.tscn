@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ytwvoc765rk3"]
+[gd_scene load_steps=4 format=3 uid="uid://ytwvoc765rk3"]
 
 [ext_resource type="Script" uid="uid://brx8kajls5irq" path="res://Scripts/ShoppingStoreButtons.gd" id="1_6pps0"]
+[ext_resource type="Texture2D" uid="uid://bgetao2if1rhi" path="res://Art/Final Cooking up Success Image folder/Equipment/Shopping shelf.png" id="3_45mn4"]
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="3_d07kg"]
 
 [node name="ShoppingScene" type="Node2D"]
@@ -59,7 +60,12 @@ offset_bottom = 29.0
 metadata/_edit_use_anchors_ = true
 
 [node name="pepperoni" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.15
+anchor_top = -0.8
+anchor_right = -0.15
+anchor_bottom = -0.8
 offset_left = -235.0
 offset_top = -44.0
 offset_right = -147.0
@@ -68,7 +74,12 @@ text = "pepperoni"
 metadata/_edit_use_anchors_ = true
 
 [node name="pepperoni2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = -0.75
+anchor_right = 0.15
+anchor_bottom = -0.75
 offset_left = -117.0
 offset_top = -44.0
 offset_right = -29.0
@@ -77,7 +88,12 @@ text = "pepperoni"
 metadata/_edit_use_anchors_ = true
 
 [node name="pepperoni3" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.05
+anchor_top = -0.775
+anchor_right = -0.05
+anchor_bottom = -0.775
 offset_left = 26.0
 offset_top = -44.0
 offset_right = 114.0
@@ -86,7 +102,12 @@ text = "pepperoni"
 metadata/_edit_use_anchors_ = true
 
 [node name="pepperoni4" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = -0.775
+anchor_right = 0.2
+anchor_bottom = -0.775
 offset_left = 143.0
 offset_top = -44.0
 offset_right = 231.0
@@ -95,7 +116,12 @@ text = "pepperoni"
 metadata/_edit_use_anchors_ = true
 
 [node name="cheese" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.075
+anchor_top = -1.3
+anchor_right = -0.075
+anchor_bottom = -1.3
 offset_left = -232.0
 offset_top = -175.0
 offset_right = -144.0
@@ -104,7 +130,12 @@ text = "cheese"
 metadata/_edit_use_anchors_ = true
 
 [node name="cheese2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = -1.275
+anchor_right = 0.15
+anchor_bottom = -1.275
 offset_left = -115.0
 offset_top = -175.0
 offset_right = -27.0
@@ -113,7 +144,12 @@ text = "cheese"
 metadata/_edit_use_anchors_ = true
 
 [node name="cheese3" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.05
+anchor_top = -1.275
+anchor_right = -0.05
+anchor_bottom = -1.275
 offset_left = 29.0
 offset_top = -174.0
 offset_right = 117.0
@@ -122,7 +158,12 @@ text = "cheese"
 metadata/_edit_use_anchors_ = true
 
 [node name="cheese4" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = -1.275
+anchor_right = 0.35
+anchor_bottom = -1.275
 offset_left = 140.0
 offset_top = -174.0
 offset_right = 228.0
@@ -131,7 +172,10 @@ text = "cheese"
 metadata/_edit_use_anchors_ = true
 
 [node name="mushrooms" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -1.025
+anchor_bottom = -1.025
 offset_left = 931.0
 offset_top = -175.0
 offset_right = 1032.0
@@ -140,7 +184,12 @@ text = "mushrooms"
 metadata/_edit_use_anchors_ = true
 
 [node name="mushrooms2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = -0.975
+anchor_right = 0.025
+anchor_bottom = -0.975
 offset_left = 1057.0
 offset_top = -175.0
 offset_right = 1158.0
@@ -149,7 +198,10 @@ text = "mushrooms"
 metadata/_edit_use_anchors_ = true
 
 [node name="mushrooms3" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -1.0
+anchor_bottom = -1.0
 offset_left = 1187.0
 offset_top = -175.0
 offset_right = 1288.0
@@ -158,7 +210,12 @@ text = "mushrooms"
 metadata/_edit_use_anchors_ = true
 
 [node name="mushrooms4" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.225
+anchor_top = -0.95
+anchor_right = 0.225
+anchor_bottom = -0.95
 offset_left = 1300.0
 offset_top = -176.0
 offset_right = 1401.0
@@ -167,7 +224,12 @@ text = "mushrooms"
 metadata/_edit_use_anchors_ = true
 
 [node name="pineapple" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2
+anchor_top = -0.4
+anchor_right = -0.2
+anchor_bottom = -0.4
 offset_left = -236.0
 offset_top = 26.0
 offset_right = -135.0
@@ -176,7 +238,12 @@ text = "pineapple"
 metadata/_edit_use_anchors_ = true
 
 [node name="pineapple2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = -0.35
+anchor_right = 0.05
+anchor_bottom = -0.35
 offset_left = -124.0
 offset_top = 26.0
 offset_right = -23.0
@@ -185,7 +252,10 @@ text = "pineapple"
 metadata/_edit_use_anchors_ = true
 
 [node name="pineapple3" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.3
+anchor_bottom = -0.3
 offset_left = 20.0
 offset_top = 26.0
 offset_right = 121.0
@@ -194,7 +264,12 @@ text = "pineapple"
 metadata/_edit_use_anchors_ = true
 
 [node name="pineapple4" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = -0.3
+anchor_right = 0.25
+anchor_bottom = -0.3
 offset_left = 139.0
 offset_top = 26.0
 offset_right = 240.0
@@ -203,7 +278,12 @@ text = "pineapple"
 metadata/_edit_use_anchors_ = true
 
 [node name="sauce" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.1
+anchor_top = -1.05
+anchor_right = -0.1
+anchor_bottom = -1.05
 offset_left = -238.0
 offset_top = -110.0
 offset_right = -137.0
@@ -212,7 +292,12 @@ text = "sauce"
 metadata/_edit_use_anchors_ = true
 
 [node name="sauce2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = -1.075
+anchor_right = 0.125
+anchor_bottom = -1.075
 offset_left = -122.0
 offset_top = -108.0
 offset_right = -21.0
@@ -221,7 +306,12 @@ text = "sauce"
 metadata/_edit_use_anchors_ = true
 
 [node name="sauce3" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.075
+anchor_top = -1.0
+anchor_right = -0.075
+anchor_bottom = -1.0
 offset_left = 20.0
 offset_top = -108.0
 offset_right = 121.0
@@ -230,7 +320,12 @@ text = "sauce"
 metadata/_edit_use_anchors_ = true
 
 [node name="sauce4" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = -1.025
+anchor_right = 0.2
+anchor_bottom = -1.025
 offset_left = 137.0
 offset_top = -108.0
 offset_right = 238.0
@@ -248,7 +343,12 @@ text = "olives"
 metadata/_edit_use_anchors_ = true
 
 [node name="olives2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.1
+anchor_top = 0.05
+anchor_right = -0.1
+anchor_bottom = 0.05
 offset_left = 1058.0
 offset_top = 11.0
 offset_right = 1159.0
@@ -257,7 +357,12 @@ text = "olives"
 metadata/_edit_use_anchors_ = true
 
 [node name="peppers" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.05
+anchor_right = 0.4
+anchor_bottom = 0.05
 offset_left = 1177.0
 offset_top = 13.0
 offset_right = 1278.0
@@ -266,7 +371,12 @@ text = "peppers"
 metadata/_edit_use_anchors_ = true
 
 [node name="peppers2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.225
+anchor_top = 0.05
+anchor_right = 0.225
+anchor_bottom = 0.05
 offset_left = 1298.0
 offset_top = 14.0
 offset_right = 1399.0
@@ -275,7 +385,12 @@ text = "peppers"
 metadata/_edit_use_anchors_ = true
 
 [node name="bacon" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.1
+anchor_top = -0.925
+anchor_right = -0.1
+anchor_bottom = -0.925
 offset_left = 935.0
 offset_top = -92.0
 offset_right = 1033.0
@@ -285,7 +400,12 @@ text = "bacon
 metadata/_edit_use_anchors_ = true
 
 [node name="bacon2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = -1.0
+anchor_right = 0.05
+anchor_bottom = -1.0
 offset_left = 1057.0
 offset_top = -92.0
 offset_right = 1155.0
@@ -295,7 +415,12 @@ text = "bacon
 metadata/_edit_use_anchors_ = true
 
 [node name="bacon3" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.025
+anchor_top = -0.9
+anchor_right = -0.025
+anchor_bottom = -0.9
 offset_left = 1187.0
 offset_top = -92.0
 offset_right = 1285.0
@@ -305,7 +430,12 @@ text = "bacon
 metadata/_edit_use_anchors_ = true
 
 [node name="bacon4" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = -0.925
+anchor_right = 0.2
+anchor_bottom = -0.925
 offset_left = 1302.0
 offset_top = -92.0
 offset_right = 1400.0
@@ -315,7 +445,12 @@ text = "bacon
 metadata/_edit_use_anchors_ = true
 
 [node name="ham" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.025
+anchor_top = -0.6
+anchor_right = -0.025
+anchor_bottom = -0.6
 offset_left = 934.0
 offset_top = -34.0
 offset_right = 1032.0
@@ -324,7 +459,12 @@ text = "ham"
 metadata/_edit_use_anchors_ = true
 
 [node name="ham2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.025
+anchor_top = -0.625
+anchor_right = -0.025
+anchor_bottom = -0.625
 offset_left = 1057.0
 offset_top = -34.0
 offset_right = 1155.0
@@ -333,7 +473,12 @@ text = "ham"
 metadata/_edit_use_anchors_ = true
 
 [node name="ham3" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = -0.5
+anchor_right = 0.1
+anchor_bottom = -0.5
 offset_left = 1184.0
 offset_top = -37.0
 offset_right = 1282.0
@@ -342,7 +487,12 @@ text = "ham"
 metadata/_edit_use_anchors_ = true
 
 [node name="ham4" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = -0.525
+anchor_right = 0.3
+anchor_bottom = -0.525
 offset_left = 1299.0
 offset_top = -34.0
 offset_right = 1397.0
@@ -351,7 +501,12 @@ text = "ham"
 metadata/_edit_use_anchors_ = true
 
 [node name="anchovies" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.025
+anchor_top = -0.1
+anchor_right = -0.025
+anchor_bottom = -0.1
 offset_left = 2337.0
 offset_top = -52.0
 offset_right = 2435.0
@@ -360,7 +515,12 @@ text = "anchovies"
 metadata/_edit_use_anchors_ = true
 
 [node name="anchovies2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = -0.1
+anchor_right = 0.025
+anchor_bottom = -0.1
 offset_left = 2453.0
 offset_top = -52.0
 offset_right = 2551.0
@@ -369,7 +529,10 @@ text = "anchovies"
 metadata/_edit_use_anchors_ = true
 
 [node name="garlic" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.1
+anchor_bottom = -0.1
 offset_left = 2095.0
 offset_top = 22.0
 offset_right = 2193.0
@@ -378,7 +541,12 @@ text = "garlic"
 metadata/_edit_use_anchors_ = true
 
 [node name="garlic2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = -0.075
+anchor_right = 0.025
+anchor_bottom = -0.075
 offset_left = 2219.0
 offset_top = 22.0
 offset_right = 2317.0
@@ -387,7 +555,12 @@ text = "garlic"
 metadata/_edit_use_anchors_ = true
 
 [node name="tomato" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.025
+anchor_top = -0.075
+anchor_right = -0.025
+anchor_bottom = -0.075
 offset_left = 2339.0
 offset_top = 21.0
 offset_right = 2437.0
@@ -396,7 +569,10 @@ text = "tomato"
 metadata/_edit_use_anchors_ = true
 
 [node name="tomato2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.1
+anchor_bottom = -0.1
 offset_left = 2452.0
 offset_top = 21.0
 offset_right = 2550.0
@@ -405,7 +581,10 @@ text = "tomato"
 metadata/_edit_use_anchors_ = true
 
 [node name="onion" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.15
+anchor_bottom = -0.15
 offset_left = 2098.0
 offset_top = -51.0
 offset_right = 2196.0
@@ -414,7 +593,10 @@ text = "onion"
 metadata/_edit_use_anchors_ = true
 
 [node name="onion2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.125
+anchor_bottom = -0.125
 offset_left = 2221.0
 offset_top = -51.0
 offset_right = 2319.0
@@ -423,7 +605,10 @@ text = "onion"
 metadata/_edit_use_anchors_ = true
 
 [node name="sausage" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.375
+anchor_bottom = -0.375
 offset_left = 2100.0
 offset_top = -114.0
 offset_right = 2198.0
@@ -432,7 +617,10 @@ text = "sausage"
 metadata/_edit_use_anchors_ = true
 
 [node name="sausage2" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.325
+anchor_bottom = -0.325
 offset_left = 2222.0
 offset_top = -114.0
 offset_right = 2320.0
@@ -441,7 +629,12 @@ text = "sausage"
 metadata/_edit_use_anchors_ = true
 
 [node name="sausage3" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = -0.275
+anchor_right = 0.05
+anchor_bottom = -0.275
 offset_left = 2337.0
 offset_top = -114.0
 offset_right = 2435.0
@@ -450,7 +643,12 @@ text = "sausage"
 metadata/_edit_use_anchors_ = true
 
 [node name="sausage4" type="Button" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = -0.35
+anchor_right = 0.025
+anchor_bottom = -0.35
 offset_left = 2453.0
 offset_top = -114.0
 offset_right = 2551.0
@@ -461,6 +659,27 @@ metadata/_edit_use_anchors_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="ShoppingListScene" parent="." instance=ExtResource("3_d07kg")]
+
+[node name="ShoppingShelf" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1, -3)
+scale = Vector2(1.494, 1.33)
+texture = ExtResource("3_45mn4")
+metadata/_edit_lock_ = true
+
+[node name="ShoppingShelf" type="Sprite2D" parent="ShoppingShelf"]
+z_index = -1
+position = Vector2(775.77, 3.00752)
+scale = Vector2(0.985612, 0.978365)
+texture = ExtResource("3_45mn4")
+metadata/_edit_lock_ = true
+
+[node name="ShoppingShelf" type="Sprite2D" parent="ShoppingShelf/ShoppingShelf"]
+z_index = -1
+position = Vector2(774.191, 1.53701)
+scale = Vector2(0.985612, 0.978365)
+texture = ExtResource("3_45mn4")
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Control/CanvasLayer/Back" to="Control" method="_on_back_pressed"]
 [connection signal="pressed" from="Control/CanvasLayer/Next" to="Control" method="_on_next_pressed"]
