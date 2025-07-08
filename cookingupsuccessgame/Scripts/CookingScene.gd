@@ -1,9 +1,12 @@
 extends Node2D
 
+const conveyer_speed = 100 # pixels per second
+
 var ovenswitch: bool = true
 var recipe_book_visible: bool = false
 var recipes: Array[Array] = [] # recipes[i][0] is name. recipes[i][1] is ingredients subarray
 var current_recipe: int = 0
+var nodes_on_conveyer: Array[Node2D] = []
 
 @onready var recipe: RichTextLabel = $"CanvasLayer/RecipeBook/Current Recipe"
 @onready var recipe_book_layer: CanvasLayer = $CanvasLayer/RecipeBook
@@ -67,6 +70,9 @@ func _ready() -> void:
 	spawn_anchovies()
 	spawn_tomato()
 	spawn_onion()
+
+func _process(delta: float) -> void:
+	update_conveyer(delta)
 
 func spawn_pepperoni() -> void:
 	"""Spawn pepperoni instances based on global pepperoni count"""
@@ -437,3 +443,13 @@ func _on_shopping_list_pressed() -> void:
 	print("shopping list button was pressed")
 	shopping_list.visible = !shopping_list.visible
 	$ShoppingListScene.update_shopping_list() # keep up to date
+
+func _on_conveyer_belt_area_entered(area: Area2D) -> void:
+	nodes_on_conveyer.append(area)
+	
+func _on_conveyer_belt_area_exited(area: Area2D) -> void:
+	nodes_on_conveyer.remove_at(nodes_on_conveyer.find(area))
+
+func update_conveyer(time_delta: float) -> void: # called from _process(delta)
+	for node in nodes_on_conveyer:
+		node.position += Vector2(1,0) * conveyer_speed * time_delta
