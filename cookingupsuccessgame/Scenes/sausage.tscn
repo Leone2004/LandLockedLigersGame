@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://byucla6efu8et"]
 
-[ext_resource type="Texture2D" path="res://Art/sausage.jpeg" id="1_tex"]
-[ext_resource type="Script" path="res://Scripts/sausage.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://ctud2ori2ous3" path="res://Art/sausage.jpeg" id="1_tex"]
+[ext_resource type="Script" uid="uid://c3ceqladm43vb" path="res://Scripts/sausage.gd" id="2_script"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shape"]
 size = Vector2(22, 21)
@@ -10,9 +10,10 @@ size = Vector2(22, 21)
 script = ExtResource("2_script")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_shape")
 
 [node name="Sausage" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_tex") 
+position = Vector2(2.38419e-07, 2.38419e-07)
+scale = Vector2(0.0977778, 0.0977778)
+texture = ExtResource("1_tex")

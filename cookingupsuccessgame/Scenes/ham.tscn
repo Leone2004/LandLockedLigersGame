@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://h1b22tvrgix0"]
 
-[ext_resource type="Texture2D" path="res://Art/ham.jpeg" id="1_tex"]
-[ext_resource type="Script" path="res://Scripts/ham.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://d1rpwuhdtwwxi" path="res://Art/ham.jpeg" id="1_tex"]
+[ext_resource type="Script" uid="uid://c73pc165px6xs" path="res://Scripts/ham.gd" id="2_script"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shape"]
 size = Vector2(22, 21)
@@ -10,9 +10,10 @@ size = Vector2(22, 21)
 script = ExtResource("2_script")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_shape")
 
 [node name="Ham" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_tex") 
+position = Vector2(9.23872e-07, 0)
+scale = Vector2(0.0973451, 0.0919283)
+texture = ExtResource("1_tex")

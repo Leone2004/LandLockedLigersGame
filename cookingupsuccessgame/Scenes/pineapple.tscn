@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://dhnsybqx2l7mr"]
 
-[ext_resource type="Texture2D" path="res://Art/pinapple.jpeg" id="1_tex"]
-[ext_resource type="Script" path="res://Scripts/pineapple.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://cf5512w1xq4hi" path="res://Art/pinapple.jpeg" id="1_tex"]
+[ext_resource type="Script" uid="uid://ywhx8ljvo5al" path="res://Scripts/pineapple.gd" id="2_script"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shape"]
 size = Vector2(22, 21)
@@ -10,9 +10,10 @@ size = Vector2(22, 21)
 script = ExtResource("2_script")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_shape")
 
 [node name="Pineapple" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_tex") 
+position = Vector2(5.96046e-08, 2.68221e-07)
+scale = Vector2(0.0955556, 0.0888889)
+texture = ExtResource("1_tex")
