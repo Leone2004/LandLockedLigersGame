@@ -17,12 +17,30 @@ var pepperoni_scene: PackedScene = preload("res://Scenes/pepperoni.tscn")
 var cheese_scene: PackedScene = preload("res://Scenes/cheese.tscn")
 var mushrooms_scene: PackedScene = preload("res://Scenes/mushrooms.tscn")
 var sauce_scene: PackedScene = preload("res://Scenes/sauce.tscn")
+var bacon_scene: PackedScene = preload("res://Scenes/bacon.tscn")
+var olive_scene: PackedScene = preload("res://Scenes/olive.tscn")
+var garlic_scene: PackedScene = preload("res://Scenes/garlic.tscn")
+var ham_scene: PackedScene = preload("res://Scenes/ham.tscn")
+var pepper_scene: PackedScene = preload("res://Scenes/pepper.tscn")
+var pineapple_scene: PackedScene = preload("res://Scenes/pineapple.tscn")
+var sausage_scene: PackedScene = preload("res://Scenes/sausage.tscn")
+var anchovies_scene: PackedScene = preload("res://Scenes/anchovies.tscn")
 
 # Spawn positions for each ingredient
 var pepperoni_spawn_area: Vector2 = Vector2(-475.5, -557.5)
 var cheese_spawn_area: Vector2 = Vector2(-475.5, -485.5)
 var mushrooms_spawn_area: Vector2 = Vector2(-475.5, -413.5)
 var sauce_spawn_area: Vector2 = Vector2(-475.5, -335.5)
+var bacon_spawn_area: Vector2 = Vector2(-475.5, -265.5)
+var olive_spawn_area: Vector2 = Vector2(-475.5, -195.5)
+var garlic_spawn_area: Vector2 = Vector2(-475.5, -125.5)
+var ham_spawn_area: Vector2 = Vector2(-475.5, -55.5)
+var pepper_spawn_area: Vector2 = Vector2(-475.5, 14.5)
+var pineapple_spawn_area: Vector2 = Vector2(-475.5, 84.5)
+var sausage_spawn_area: Vector2 = Vector2(-475.5, 154.5)
+var anchovies_spawn_area: Vector2 = Vector2(-475.5, 224.5)
+var tomato_spawn_area: Vector2 = Vector2(-475.5, 294.5)
+var onion_spawn_area: Vector2 = Vector2(-475.5, 364.5)
 var ingredient_spacing: Vector2 = Vector2(50, 0)  # Space between ingredients
 
 func _ready() -> void:
@@ -39,6 +57,16 @@ func _ready() -> void:
 	spawn_cheese()
 	spawn_mushrooms()
 	spawn_sauce()
+	spawn_bacon()
+	spawn_olive()
+	spawn_garlic()
+	spawn_ham()
+	spawn_pepper()
+	spawn_pineapple()
+	spawn_sausage()
+	spawn_anchovies()
+	spawn_tomato()
+	spawn_onion()
 
 func spawn_pepperoni() -> void:
 	"""Spawn pepperoni instances based on global pepperoni count"""
@@ -168,12 +196,192 @@ func spawn_sauce() -> void:
 		add_child(new_sauce)
 		print("Spawned sauce ", i + 1, " of ", sauce_count, " at position ", spawn_pos)
 
+func spawn_bacon() -> void:
+	var bacon_count: int = Global.ingredients[6]
+	for child in get_children():
+		if child.name.begins_with("bacon") and child.name != "bacon":
+			child.queue_free()
+	if bacon_count <= 0:
+		return
+	for i in range(bacon_count):
+		var new_bacon: Area2D = bacon_scene.instantiate()
+		new_bacon.name = "bacon_" + str(i)
+		var row: int = i / 5
+		var col: int = i % 5
+		var spawn_pos: Vector2 = bacon_spawn_area + Vector2(col * ingredient_spacing.x, row * ingredient_spacing.y)
+		new_bacon.position = spawn_pos
+		new_bacon.scale = Vector2(2.03125, 2.03125)
+		add_child(new_bacon)
+
+func spawn_olive() -> void:
+	var olive_count: int = Global.ingredients[4]
+	for child in get_children():
+		if child.name.begins_with("olive") and child.name != "olive":
+			child.queue_free()
+	if olive_count <= 0:
+		return
+	for i in range(olive_count):
+		var new_olive: Area2D = olive_scene.instantiate()
+		new_olive.name = "olive_" + str(i)
+		var row: int = i / 5
+		var col: int = i % 5
+		var spawn_pos: Vector2 = olive_spawn_area + Vector2(col * ingredient_spacing.x, row * ingredient_spacing.y)
+		new_olive.position = spawn_pos
+		new_olive.scale = Vector2(2.03125, 2.03125)
+		add_child(new_olive)
+
+func spawn_pepper() -> void:
+	var pepper_count: int = Global.ingredients[5]
+	for child in get_children():
+		if child.name.begins_with("pepper") and child.name != "pepper":
+			child.queue_free()
+	if pepper_count <= 0:
+		return
+	for i in range(pepper_count):
+		var new_pepper: Area2D = pepper_scene.instantiate()
+		new_pepper.name = "pepper_" + str(i)
+		var row: int = i / 5
+		var col: int = i % 5
+		var spawn_pos: Vector2 = pepper_spawn_area + Vector2(col * ingredient_spacing.x, row * ingredient_spacing.y)
+		new_pepper.position = spawn_pos
+		new_pepper.scale = Vector2(2.03125, 2.03125)
+		add_child(new_pepper)
+
+func spawn_pineapple() -> void:
+	var pineapple_count: int = Global.ingredients[10]
+	for child in get_children():
+		if child.name.begins_with("pineapple") and child.name != "pineapple":
+			child.queue_free()
+	if pineapple_count <= 0:
+		return
+	for i in range(pineapple_count):
+		var new_pineapple: Area2D = pineapple_scene.instantiate()
+		new_pineapple.name = "pineapple_" + str(i)
+		var row: int = i / 5
+		var col: int = i % 5
+		var spawn_pos: Vector2 = pineapple_spawn_area + Vector2(col * ingredient_spacing.x, row * ingredient_spacing.y)
+		new_pineapple.position = spawn_pos
+		new_pineapple.scale = Vector2(2.03125, 2.03125)
+		add_child(new_pineapple)
+
+func spawn_ham() -> void:
+	var ham_count: int = Global.ingredients[7]
+	for child in get_children():
+		if child.name.begins_with("ham") and child.name != "ham":
+			child.queue_free()
+	if ham_count <= 0:
+		return
+	for i in range(ham_count):
+		var new_ham: Area2D = ham_scene.instantiate()
+		new_ham.name = "ham_" + str(i)
+		var row: int = i / 5
+		var col: int = i % 5
+		var spawn_pos: Vector2 = ham_spawn_area + Vector2(col * ingredient_spacing.x, row * ingredient_spacing.y)
+		new_ham.position = spawn_pos
+		new_ham.scale = Vector2(2.03125, 2.03125)
+		add_child(new_ham)
+
+func spawn_anchovies() -> void:
+	var anchovies_count: int = Global.ingredients[8]
+	for child in get_children():
+		if child.name.begins_with("anchovies") and child.name != "anchovies":
+			child.queue_free()
+	if anchovies_count <= 0:
+		return
+	for i in range(anchovies_count):
+		var new_anchovies: Area2D = anchovies_scene.instantiate()
+		new_anchovies.name = "anchovies_" + str(i)
+		var row: int = i / 5
+		var col: int = i % 5
+		var spawn_pos: Vector2 = anchovies_spawn_area + Vector2(col * ingredient_spacing.x, row * ingredient_spacing.y)
+		new_anchovies.position = spawn_pos
+		new_anchovies.scale = Vector2(2.03125, 2.03125)
+		add_child(new_anchovies)
+
+func spawn_garlic() -> void:
+	var garlic_count: int = Global.ingredients[9]
+	for child in get_children():
+		if child.name.begins_with("garlic") and child.name != "garlic":
+			child.queue_free()
+	if garlic_count <= 0:
+		return
+	for i in range(garlic_count):
+		var new_garlic: Area2D = garlic_scene.instantiate()
+		new_garlic.name = "garlic_" + str(i)
+		var row: int = i / 5
+		var col: int = i % 5
+		var spawn_pos: Vector2 = garlic_spawn_area + Vector2(col * ingredient_spacing.x, row * ingredient_spacing.y)
+		new_garlic.position = spawn_pos
+		new_garlic.scale = Vector2(2.03125, 2.03125)
+		add_child(new_garlic)
+
+func spawn_tomato() -> void:
+	var tomato_count: int = Global.ingredients[10]
+	for child in get_children():
+		if child.name.begins_with("tomato") and child.name != "tomato":
+			child.queue_free()
+	if tomato_count <= 0:
+		return
+	for i in range(tomato_count):
+		var new_tomato: Area2D = preload("res://Scenes/tomato.tscn").instantiate()
+		new_tomato.name = "tomato_" + str(i)
+		var row: int = i / 5
+		var col: int = i % 5
+		var spawn_pos: Vector2 = tomato_spawn_area + Vector2(col * ingredient_spacing.x, row * ingredient_spacing.y)
+		new_tomato.position = spawn_pos
+		new_tomato.scale = Vector2(2.03125, 2.03125)
+		add_child(new_tomato)
+
+func spawn_onion() -> void:
+	var onion_count: int = Global.ingredients[11]
+	for child in get_children():
+		if child.name.begins_with("onion") and child.name != "onion":
+			child.queue_free()
+	if onion_count <= 0:
+		return
+	for i in range(onion_count):
+		var new_onion: Area2D = preload("res://Scenes/onion.tscn").instantiate()
+		new_onion.name = "onion_" + str(i)
+		var row: int = i / 5
+		var col: int = i % 5
+		var spawn_pos: Vector2 = onion_spawn_area + Vector2(col * ingredient_spacing.x, row * ingredient_spacing.y)
+		new_onion.position = spawn_pos
+		new_onion.scale = Vector2(2.03125, 2.03125)
+		add_child(new_onion)
+
+func spawn_sausage() -> void:
+	var sausage_count: int = Global.ingredients[12]
+	for child in get_children():
+		if child.name.begins_with("sausage") and child.name != "sausage":
+			child.queue_free()
+	if sausage_count <= 0:
+		return
+	for i in range(sausage_count):
+		var new_sausage: Area2D = sausage_scene.instantiate()
+		new_sausage.name = "sausage_" + str(i)
+		var row: int = i / 5
+		var col: int = i % 5
+		var spawn_pos: Vector2 = sausage_spawn_area + Vector2(col * ingredient_spacing.x, row * ingredient_spacing.y)
+		new_sausage.position = spawn_pos
+		new_sausage.scale = Vector2(2.03125, 2.03125)
+		add_child(new_sausage)
+
+
 func refresh_all_ingredients() -> void:
-	"""Refresh all ingredient counts - useful if player buys more at store"""
 	spawn_pepperoni()
 	spawn_cheese()
 	spawn_mushrooms()
 	spawn_sauce()
+	spawn_olive()
+	spawn_pepper()
+	spawn_bacon()
+	spawn_ham()
+	spawn_anchovies()
+	spawn_garlic()
+	spawn_pineapple()
+	spawn_tomato()
+	spawn_onion()
+	spawn_sausage()
 
 func _on_button_pressed() -> void:
 	var screen_width: float = get_viewport().get_visible_rect().size.x

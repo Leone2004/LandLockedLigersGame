@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" path="res://Art/pinapple.jpeg" id="1_tex"]
+[ext_resource type="Script" path="res://Scripts/pineapple.gd" id="2_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shape"]
+size = Vector2(22, 21)
+
+[node name="Pineapple" type="Area2D" groups=["Pineapple"]]
+script = ExtResource("2_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_shape")
+
+[node name="Pineapple" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_tex") 
