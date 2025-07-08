@@ -7,6 +7,7 @@ var recipe_book_visible: bool = false
 var recipes: Array[Array] = [] # recipes[i][0] is name. recipes[i][1] is ingredients subarray
 var current_recipe: int = 0
 var nodes_on_conveyer: Array[Node2D] = []
+var conveyer_direction: int = 1
 
 @onready var recipe: RichTextLabel = $"CanvasLayer/RecipeBook/Current Recipe"
 @onready var recipe_book_layer: CanvasLayer = $CanvasLayer/RecipeBook
@@ -452,4 +453,7 @@ func _on_conveyer_belt_area_exited(area: Area2D) -> void:
 
 func update_conveyer(time_delta: float) -> void: # called from _process(delta)
 	for node in nodes_on_conveyer:
-		node.position += Vector2(1,0) * conveyer_speed * time_delta
+		node.position += Vector2(1,0) * conveyer_speed * time_delta * conveyer_direction
+
+func _on_conveyer_direction_switch_pressed() -> void:
+	conveyer_direction *= -1
