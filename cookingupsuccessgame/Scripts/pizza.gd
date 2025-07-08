@@ -204,3 +204,7 @@ func get_pizza_info() -> Dictionary:
 func _on_input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	"""Handle input events for dragging"""
 	pass  # Handled in _input for better control
+	
+func sell_pizza():
+	if !is_dragging:
+		queue_free()

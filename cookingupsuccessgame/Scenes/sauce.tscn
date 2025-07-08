@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://sauce_scene"]
+[gd_scene load_steps=4 format=3 uid="uid://bd4g8sq44jf3e"]
 
 [ext_resource type="Texture2D" uid="uid://bqhnndwx1due3" path="res://Art/sauce.png" id="1_sauce"]
-[ext_resource type="Script" uid="uid://cl0y3ngq3nrjb" path="res://Scripts/sauce.gd" id="2_script"]
+[ext_resource type="Script" uid="uid://cl0y3ngq3nrjb" path="res://Scripts/pepperoni.gd" id="2_script"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sauce"]
 size = Vector2(22, 21)
@@ -15,4 +15,4 @@ shape = SubResource("RectangleShape2D_sauce")
 
 [node name="Sauce" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_sauce") 
+texture = ExtResource("1_sauce")
