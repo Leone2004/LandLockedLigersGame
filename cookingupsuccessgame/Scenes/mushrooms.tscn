@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://mushrooms_scene"]
+[gd_scene load_steps=4 format=3 uid="uid://cg7lcfhumlkvs"]
 
 [ext_resource type="Texture2D" uid="uid://bqcsvm7dq6hhk" path="res://Art/mushroom.png" id="1_mushrooms"]
-[ext_resource type="Script" uid="uid://cl0y3ngq3nrjb" path="res://Scripts/mushrooms.gd" id="2_script"]
+[ext_resource type="Script" uid="uid://bsd73aej8y04u" path="res://Scripts/mushrooms.gd" id="1_qghi3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mushrooms"]
 size = Vector2(22, 21)
 
 [node name="Mushrooms" type="Area2D" groups=["Mushrooms"]]
-script = ExtResource("2_script")
+script = ExtResource("1_qghi3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -15,4 +15,4 @@ shape = SubResource("RectangleShape2D_mushrooms")
 
 [node name="Mushrooms" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_mushrooms") 
+texture = ExtResource("1_mushrooms")

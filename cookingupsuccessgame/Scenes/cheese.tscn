@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cheese_scene"]
+[gd_scene load_steps=4 format=3 uid="uid://co13x7ieswx4k"]
 
+[ext_resource type="Script" uid="uid://jbe77lfpe2xp" path="res://Scripts/cheese.gd" id="1_46kgj"]
 [ext_resource type="Texture2D" uid="uid://bur22s12al6we" path="res://Art/cheese.png" id="1_cheese"]
-[ext_resource type="Script" uid="uid://cl0y3ngq3nrjb" path="res://Scripts/cheese.gd" id="2_script"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cheese"]
 size = Vector2(22, 21)
 
 [node name="Cheese" type="Area2D" groups=["Cheese"]]
-script = ExtResource("2_script")
+script = ExtResource("1_46kgj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -15,4 +15,4 @@ shape = SubResource("RectangleShape2D_cheese")
 
 [node name="Cheese" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_cheese") 
+texture = ExtResource("1_cheese")

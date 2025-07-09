@@ -23,6 +23,8 @@ var ingredient_values: Dictionary = {
 	"pineapple": 2.0
 }
 
+var used_ingredients = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
 # Current ingredients on the pizza
 var current_ingredients: Array[String] = []
 
@@ -94,6 +96,8 @@ func add_ingredient(ingredient_name: String) -> void:
 	"""Add an ingredient to the pizza and update its value"""
 	if ingredient_name in ingredient_values:
 		current_ingredients.append(ingredient_name)
+		used_ingredients[Global.food.find(ingredient_name)] += 1
+		print(used_ingredients)
 		_update_pizza_value()
 		print("Added ", ingredient_name, " to pizza. New value: $", pizza_value)
 		
@@ -206,5 +210,11 @@ func _on_input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> v
 	pass  # Handled in _input for better control
 	
 func sell_pizza():
-	if !is_dragging:
+	if !is_dragging && baked:
+		var x = 0
+		for i in Global.ingredients:
+			i -= used_ingredients[x]
+			print(Global.food[x], ": ", Global.ingredients[x])
+			x += 1
+		Global.money += pizza_value
 		queue_free()
