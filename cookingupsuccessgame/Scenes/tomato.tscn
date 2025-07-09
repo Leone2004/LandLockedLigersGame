@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://duf6kaweccqk6"]
+
+[ext_resource type="Texture2D" uid="uid://beyyjm06gb8uv" path="res://Art/tomato.jpeg" id="1_tex"]
+[ext_resource type="Script" uid="uid://tjgsnu8ocxec" path="res://Scripts/tomato.gd" id="2_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shape"]
+size = Vector2(22, 21)
+
+[node name="Tomato" type="Area2D" groups=["Tomato"]]
+script = ExtResource("2_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_shape")
+
+[node name="Tomato" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-4.76837e-07, 3.57628e-07)
+scale = Vector2(0.0990991, 0.0969163)
+texture = ExtResource("1_tex")

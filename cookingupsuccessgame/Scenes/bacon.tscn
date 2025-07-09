@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://mw1tkfo8ipen"]
+
+[ext_resource type="Texture2D" uid="uid://ct71ry5hre418" path="res://Art/Bacon.png" id="1_tex"]
+[ext_resource type="Script" uid="uid://bfp7e4twvq362" path="res://Scripts/bacon.gd" id="2_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shape"]
+size = Vector2(22, 21)
+
+[node name="Bacon" type="Area2D" groups=["Bacon"]]
+script = ExtResource("2_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_shape")
+
+[node name="Bacon" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-7.15256e-07, 2.38419e-07)
+scale = Vector2(0.0977778, 0.0977778)
+texture = ExtResource("1_tex")

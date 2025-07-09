@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="5_iv1kd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv1kd"]
-size = Vector2(305, 106)
+size = Vector2(240, 106)
 
 [node name="CookingScene" type="Node2D"]
 script = ExtResource("1_v6t1i")
@@ -55,6 +55,11 @@ offset_bottom = 638.0
 text = "Done!"
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
+
+[node name="Conveyer Direction Switch" type="Button" parent="CanvasLayer"]
+offset_right = 152.0
+offset_bottom = 54.0
+text = "Switch Conveyer Direction"
 
 [node name="RecipeBook" type="CanvasLayer" parent="CanvasLayer"]
 
@@ -156,7 +161,7 @@ script = ExtResource("5_7w5j8")
 [node name="ShoppingListScene" parent="." instance=ExtResource("5_iv1kd")]
 
 [node name="Conveyer Belt" type="Area2D" parent="."]
-position = Vector2(584, -88)
+position = Vector2(584, -104)
 
 [node name="Conveyer Collision" type="CollisionShape2D" parent="Conveyer Belt"]
 shape = SubResource("RectangleShape2D_iv1kd")
@@ -166,6 +171,7 @@ debug_color = Color(0.943782, 9.2411e-06, 0.600066, 0.42)
 [connection signal="pressed" from="CanvasLayer/RecipeButton" to="." method="_on_recipe_pressed"]
 [connection signal="pressed" from="CanvasLayer/ShoppingList" to="." method="_on_shopping_list_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_nextday_pressed"]
+[connection signal="pressed" from="CanvasLayer/Conveyer Direction Switch" to="." method="_on_conveyer_direction_switch_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeBook/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeBook/Next" to="." method="_on_next_pressed"]
 [connection signal="area_entered" from="Conveyer Belt" to="." method="_on_conveyer_belt_area_entered"]
