@@ -5,7 +5,7 @@ const conveyer_speed = 100 # pixels per second
 var ovenswitch: bool = true
 var recipe_book_visible: bool = false
 var recipes: Array[Array] = [] # recipes[i][0] is name. recipes[i][1] is ingredients subarray
-var current_recipe: int = 0
+var current_recipe: int = 1
 var nodes_on_conveyer: Array[Node2D] = []
 var conveyer_direction: int = 1
 
@@ -48,13 +48,13 @@ var onion_spawn_area: Vector2 = Vector2(-475.5, 364.5)
 var ingredient_spacing: Vector2 = Vector2(50, 0)  # Space between ingredients
 
 func _ready() -> void:
-	current_recipe = 0
+	recipes.append(["pepperoni", ["pepperoni", "cheese", "sauce", "dough"]])
+	recipes.append(["cheese", ["cheese", "sauce", "dough"]])
+	current_recipe = 1
 	recipe_book_visible = false
 	shopping_list.hide()
 	recipe_book_layer.visible = recipe_book_visible
-	recipe.text = "[center][b]THE RECIPE BOOK[/b][/center]"
-	recipes.append(["pepperoni", ["pepperoni", "cheese", "sauce", "dough"]])
-	recipes.append(["cheese", ["cheese", "sauce", "dough"]])
+	recipe.text = get_recipe_string(recipes[current_recipe - 1])
 	
 	# Spawn all ingredients based on global counts
 	spawn_pepperoni()
