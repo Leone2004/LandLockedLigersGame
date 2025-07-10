@@ -16,11 +16,16 @@ var ingredient_values: Dictionary = {
 	"cheese": 3.0,
 	"pepperoni": 4.0,
 	"mushrooms": 2.5,
-	"peppers": 2.0,
 	"olives": 3.5,
+	"peppers": 2.0,
 	"bacon": 5.0,
 	"ham": 4.5,
-	"pineapple": 2.0
+	"anchovies": 3.0,
+	"garlic": 2.5,
+	"pineapple": 2.0,
+	"tomato": 2.0,
+	"onion": 2.5,
+	"sausage": 4.0
 }
 
 var used_ingredients = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -80,7 +85,34 @@ func _is_clicking_on_pizza_sprite(mouse_pos: Vector2) -> bool:
 
 func _process(delta: float) -> void:
 	if is_dragging:
-		global_position = get_global_mouse_position() + drag_offset
+		var new_position = get_global_mouse_position() + drag_offset
+		
+		# Get camera and world boundaries
+		var camera = get_viewport().get_camera_2d()
+		if camera:
+			var viewport_size = get_viewport().get_visible_rect().size
+			var camera_pos = camera.global_position
+			var pizza_size = Vector2(128, 128)  # Approximate pizza size
+			
+			# Calculate world boundaries based on camera position
+			var world_left = camera_pos.x - viewport_size.x/2
+			var world_right = camera_pos.x + viewport_size.x/2
+			var world_top = camera_pos.y - viewport_size.y/2
+			var world_bottom = camera_pos.y + viewport_size.y/2
+			
+			# Constrain pizza position to world boundaries
+			new_position.x = clamp(new_position.x, world_left + pizza_size.x/2, world_right - pizza_size.x/2)
+			new_position.y = clamp(new_position.y, world_top + pizza_size.y/2, world_bottom - pizza_size.y/2)
+		else:
+			# Fallback if no camera found
+			var viewport_size = get_viewport().get_visible_rect().size
+			var pizza_size = Vector2(128, 128)
+			
+			# Use viewport boundaries as fallback
+			new_position.x = clamp(new_position.x, pizza_size.x/2, viewport_size.x - pizza_size.x/2)
+			new_position.y = clamp(new_position.y, pizza_size.y/2, viewport_size.y - pizza_size.y/2)
+		
+		global_position = new_position
 	
 	# Update baking progress
 	if is_baking:

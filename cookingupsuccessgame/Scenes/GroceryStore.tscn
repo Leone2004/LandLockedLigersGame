@@ -68,7 +68,7 @@ anchor_right = -0.15
 anchor_bottom = -0.8
 offset_left = -235.0
 offset_top = -44.0
-offset_right = -147.0
+offset_right = -134.0
 offset_bottom = 9.0
 text = "pepperoni"
 metadata/_edit_use_anchors_ = true
@@ -82,7 +82,7 @@ anchor_right = 0.15
 anchor_bottom = -0.75
 offset_left = -117.0
 offset_top = -44.0
-offset_right = -29.0
+offset_right = -16.0
 offset_bottom = 9.0
 text = "pepperoni"
 metadata/_edit_use_anchors_ = true
@@ -96,7 +96,7 @@ anchor_right = -0.05
 anchor_bottom = -0.775
 offset_left = 26.0
 offset_top = -44.0
-offset_right = 114.0
+offset_right = 127.0
 offset_bottom = 9.0
 text = "pepperoni"
 metadata/_edit_use_anchors_ = true
@@ -110,7 +110,7 @@ anchor_right = 0.2
 anchor_bottom = -0.775
 offset_left = 143.0
 offset_top = -44.0
-offset_right = 231.0
+offset_right = 244.0
 offset_bottom = 9.0
 text = "pepperoni"
 metadata/_edit_use_anchors_ = true
@@ -124,7 +124,7 @@ anchor_right = -0.075
 anchor_bottom = -1.3
 offset_left = -232.0
 offset_top = -175.0
-offset_right = -144.0
+offset_right = -131.0
 offset_bottom = -122.0
 text = "cheese"
 metadata/_edit_use_anchors_ = true
@@ -138,7 +138,7 @@ anchor_right = 0.15
 anchor_bottom = -1.275
 offset_left = -115.0
 offset_top = -175.0
-offset_right = -27.0
+offset_right = -14.0
 offset_bottom = -122.0
 text = "cheese"
 metadata/_edit_use_anchors_ = true
@@ -152,7 +152,7 @@ anchor_right = -0.05
 anchor_bottom = -1.275
 offset_left = 29.0
 offset_top = -174.0
-offset_right = 117.0
+offset_right = 130.0
 offset_bottom = -121.0
 text = "cheese"
 metadata/_edit_use_anchors_ = true
@@ -166,7 +166,7 @@ anchor_right = 0.35
 anchor_bottom = -1.275
 offset_left = 140.0
 offset_top = -174.0
-offset_right = 228.0
+offset_right = 241.0
 offset_bottom = -121.0
 text = "cheese"
 metadata/_edit_use_anchors_ = true
@@ -697,35 +697,35 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="Control/mushrooms2" to="Control" method="_on_food_pressed" binds= [2, 3.0]]
 [connection signal="pressed" from="Control/mushrooms3" to="Control" method="_on_food_pressed" binds= [2, 3.0]]
 [connection signal="pressed" from="Control/mushrooms4" to="Control" method="_on_food_pressed" binds= [2, 3.0]]
-[connection signal="pressed" from="Control/pineapple" to="Control" method="_on_food_pressed" binds= [3, 3.0]]
-[connection signal="pressed" from="Control/pineapple2" to="Control" method="_on_food_pressed" binds= [3, 3.0]]
-[connection signal="pressed" from="Control/pineapple3" to="Control" method="_on_food_pressed" binds= [3, 3.0]]
-[connection signal="pressed" from="Control/pineapple4" to="Control" method="_on_food_pressed" binds= [3, 3.0]]
-[connection signal="pressed" from="Control/sauce" to="Control" method="_on_food_pressed" binds= [4, 5.0]]
-[connection signal="pressed" from="Control/sauce2" to="Control" method="_on_food_pressed" binds= [4, 5.0]]
-[connection signal="pressed" from="Control/sauce3" to="Control" method="_on_food_pressed" binds= [4, 5.0]]
-[connection signal="pressed" from="Control/sauce4" to="Control" method="_on_food_pressed" binds= [4, 5.0]]
-[connection signal="pressed" from="Control/olives" to="Control" method="_on_food_pressed" binds= [5, 3.0]]
-[connection signal="pressed" from="Control/olives2" to="Control" method="_on_food_pressed" binds= [5, 3.0]]
-[connection signal="pressed" from="Control/peppers" to="Control" method="_on_food_pressed" binds= [6, 1.0]]
-[connection signal="pressed" from="Control/peppers2" to="Control" method="_on_food_pressed" binds= [6, 1.0]]
-[connection signal="pressed" from="Control/bacon" to="Control" method="_on_food_pressed" binds= [7, 6.0]]
-[connection signal="pressed" from="Control/bacon2" to="Control" method="_on_food_pressed" binds= [7, 6.0]]
-[connection signal="pressed" from="Control/bacon3" to="Control" method="_on_food_pressed" binds= [7, 6.0]]
-[connection signal="pressed" from="Control/bacon4" to="Control" method="_on_food_pressed" binds= [7, 6.0]]
-[connection signal="pressed" from="Control/ham" to="Control" method="_on_food_pressed" binds= [8, 5.0]]
-[connection signal="pressed" from="Control/ham2" to="Control" method="_on_food_pressed" binds= [8, 5.0]]
-[connection signal="pressed" from="Control/ham3" to="Control" method="_on_food_pressed" binds= [8, 5.0]]
-[connection signal="pressed" from="Control/ham4" to="Control" method="_on_food_pressed" binds= [8, 5.0]]
-[connection signal="pressed" from="Control/anchovies" to="Control" method="_on_food_pressed" binds= [9, 2.0]]
-[connection signal="pressed" from="Control/anchovies2" to="Control" method="_on_food_pressed" binds= [9, 2.0]]
-[connection signal="pressed" from="Control/garlic" to="Control" method="_on_food_pressed" binds= [10, 4.0]]
-[connection signal="pressed" from="Control/garlic2" to="Control" method="_on_food_pressed" binds= [10, 4.0]]
+[connection signal="pressed" from="Control/pineapple" to="Control" method="_on_food_pressed" binds= [10, 3.0]]
+[connection signal="pressed" from="Control/pineapple2" to="Control" method="_on_food_pressed" binds= [10, 3.0]]
+[connection signal="pressed" from="Control/pineapple3" to="Control" method="_on_food_pressed" binds= [10, 3.0]]
+[connection signal="pressed" from="Control/pineapple4" to="Control" method="_on_food_pressed" binds= [10, 3.0]]
+[connection signal="pressed" from="Control/sauce" to="Control" method="_on_food_pressed" binds= [3, 5.0]]
+[connection signal="pressed" from="Control/sauce2" to="Control" method="_on_food_pressed" binds= [3, 5.0]]
+[connection signal="pressed" from="Control/sauce3" to="Control" method="_on_food_pressed" binds= [3, 5.0]]
+[connection signal="pressed" from="Control/sauce4" to="Control" method="_on_food_pressed" binds= [3, 5.0]]
+[connection signal="pressed" from="Control/olives" to="Control" method="_on_food_pressed" binds= [4, 3.0]]
+[connection signal="pressed" from="Control/olives2" to="Control" method="_on_food_pressed" binds= [4, 3.0]]
+[connection signal="pressed" from="Control/peppers" to="Control" method="_on_food_pressed" binds= [5, 1.0]]
+[connection signal="pressed" from="Control/peppers2" to="Control" method="_on_food_pressed" binds= [5, 1.0]]
+[connection signal="pressed" from="Control/bacon" to="Control" method="_on_food_pressed" binds= [6, 6.0]]
+[connection signal="pressed" from="Control/bacon2" to="Control" method="_on_food_pressed" binds= [6, 6.0]]
+[connection signal="pressed" from="Control/bacon3" to="Control" method="_on_food_pressed" binds= [6, 6.0]]
+[connection signal="pressed" from="Control/bacon4" to="Control" method="_on_food_pressed" binds= [6, 6.0]]
+[connection signal="pressed" from="Control/ham" to="Control" method="_on_food_pressed" binds= [7, 5.0]]
+[connection signal="pressed" from="Control/ham2" to="Control" method="_on_food_pressed" binds= [7, 5.0]]
+[connection signal="pressed" from="Control/ham3" to="Control" method="_on_food_pressed" binds= [7, 5.0]]
+[connection signal="pressed" from="Control/ham4" to="Control" method="_on_food_pressed" binds= [7, 5.0]]
+[connection signal="pressed" from="Control/anchovies" to="Control" method="_on_food_pressed" binds= [8, 2.0]]
+[connection signal="pressed" from="Control/anchovies2" to="Control" method="_on_food_pressed" binds= [8, 2.0]]
+[connection signal="pressed" from="Control/garlic" to="Control" method="_on_food_pressed" binds= [9, 4.0]]
+[connection signal="pressed" from="Control/garlic2" to="Control" method="_on_food_pressed" binds= [9, 4.0]]
 [connection signal="pressed" from="Control/tomato" to="Control" method="_on_food_pressed" binds= [11, 4.0]]
 [connection signal="pressed" from="Control/tomato2" to="Control" method="_on_food_pressed" binds= [11, 4.0]]
-[connection signal="pressed" from="Control/onion" to="Control" method="_on_food_pressed" binds= [11, 1.0]]
-[connection signal="pressed" from="Control/onion2" to="Control" method="_on_food_pressed" binds= [11, 1.0]]
-[connection signal="pressed" from="Control/sausage" to="Control" method="_on_food_pressed" binds= [12, 4.0]]
-[connection signal="pressed" from="Control/sausage2" to="Control" method="_on_food_pressed" binds= [12, 4.0]]
-[connection signal="pressed" from="Control/sausage3" to="Control" method="_on_food_pressed" binds= [12, 4.0]]
-[connection signal="pressed" from="Control/sausage4" to="Control" method="_on_food_pressed" binds= [12, 4.0]]
+[connection signal="pressed" from="Control/onion" to="Control" method="_on_food_pressed" binds= [12, 1.0]]
+[connection signal="pressed" from="Control/onion2" to="Control" method="_on_food_pressed" binds= [12, 1.0]]
+[connection signal="pressed" from="Control/sausage" to="Control" method="_on_food_pressed" binds= [13, 4.0]]
+[connection signal="pressed" from="Control/sausage2" to="Control" method="_on_food_pressed" binds= [13, 4.0]]
+[connection signal="pressed" from="Control/sausage3" to="Control" method="_on_food_pressed" binds= [13, 4.0]]
+[connection signal="pressed" from="Control/sausage4" to="Control" method="_on_food_pressed" binds= [13, 4.0]]

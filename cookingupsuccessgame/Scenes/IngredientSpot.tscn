@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvn8x7y2k3m4n"]
+
+[ext_resource type="Script" uid="uid://dllmu140pl1ac" path="res://Scripts/IngredientSpot.gd" id="1_spot"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_spot"]
+radius = 30.0
+
+[node name="IngredientSpot" type="Area2D" groups=["ingredient_spots"]]
+script = ExtResource("1_spot")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_spot")
