@@ -9,6 +9,12 @@ var is_dragging: bool = false
 var drag_offset: Vector2
 var baked: bool = false
 
+# current screen boundaries (refreshed when you click on a pizza)
+var left_boundary: int
+var top_boundary: int
+var right_boundary: int
+var bottom_boundary: int
+
 # Ingredient values (you can adjust these)
 var ingredient_values: Dictionary = {
 	"dough": 2.0,
@@ -40,6 +46,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
+		get_screen_boundaries()
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and not is_dragging:
 				# Start dragging - only if clicking directly on the pizza
@@ -79,8 +86,9 @@ func _is_clicking_on_pizza_sprite(mouse_pos: Vector2) -> bool:
 	return abs(sprite_local_pos.x) <= bounds.x/2 and abs(sprite_local_pos.y) <= bounds.y/2
 
 func _process(delta: float) -> void:
-	if is_dragging:
-		global_position = get_global_mouse_position() + drag_offset
+	var test_position = get_global_mouse_position() + drag_offset
+	if is_dragging and is_in_bounds(test_position):
+		global_position = test_position
 	
 	# Update baking progress
 	if is_baking:
@@ -218,3 +226,32 @@ func sell_pizza():
 			x += 1
 		Global.money += pizza_value
 		queue_free()
+
+func get_screen_boundaries() -> void: # largely copied from generated code
+	var camera = $"../Camera2D"
+	var viewport_size = get_viewport_rect().size
+	var camera_zoom = camera.zoom
+	var camera_position = camera.get_screen_center_position()
+
+	# Calculate the boundaries
+	var half_width = viewport_size.x * camera_zoom.x / 2
+	var half_height = viewport_size.y * camera_zoom.y / 2
+	left_boundary = camera_position.x - half_width
+	top_boundary = camera_position.y - half_height
+	right_boundary = camera_position.x + half_width
+	bottom_boundary = camera_position.y + half_height
+
+func is_in_bounds(test_position: Vector2) -> bool:
+	var collision_shape = $CollisionShape2D.shape
+	var collision_shape_size = collision_shape.get_rect().size
+	
+	if test_position.x > right_boundary - (collision_shape_size.x / 2):
+		return false
+	if test_position.x < left_boundary + (collision_shape_size.x / 2):
+		return false
+	if test_position.y > bottom_boundary - (collision_shape_size.y / 2):
+		return false
+	if test_position.y < top_boundary + (collision_shape_size.y / 2):
+		return false
+	
+	return true
