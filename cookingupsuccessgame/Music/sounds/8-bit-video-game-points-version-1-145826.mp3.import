@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://fif1bn6wkmm0"
-path="res://.godot/imported/8-bit-video-game-points-version-1-145826.mp3-6dbd263cd58fe10554958b275cda7067.mp3str"
+path="res://.godot/imported/8-bit-video-game-points-version-1-145826.mp3-c78a7749dceb2f6063bb611593852044.mp3str"
 
 [deps]
 
-source_file="res://sounds/sfx/8-bit-video-game-points-version-1-145826.mp3"
-dest_files=["res://.godot/imported/8-bit-video-game-points-version-1-145826.mp3-6dbd263cd58fe10554958b275cda7067.mp3str"]
+source_file="res://Music/sounds/8-bit-video-game-points-version-1-145826.mp3"
+dest_files=["res://.godot/imported/8-bit-video-game-points-version-1-145826.mp3-c78a7749dceb2f6063bb611593852044.mp3str"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ds7t1xiyso6s"
-path="res://.godot/imported/microwave-oven-63538.mp3-df3576d3b31b415227c148a0db34b8c4.mp3str"
+path="res://.godot/imported/microwave-oven-63538.mp3-48ed59ed9f15403dfb504888528c6be4.mp3str"
 
 [deps]
 
-source_file="res://sounds/sfx/microwave-oven-63538.mp3"
-dest_files=["res://.godot/imported/microwave-oven-63538.mp3-df3576d3b31b415227c148a0db34b8c4.mp3str"]
+source_file="res://Music/sounds/microwave-oven-63538.mp3"
+dest_files=["res://.godot/imported/microwave-oven-63538.mp3-48ed59ed9f15403dfb504888528c6be4.mp3str"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://c8jeut2peufte"
-path="res://.godot/imported/overn-timer-ding-78204.mp3-76a2c9578e4f6010b1a49377979617a8.mp3str"
+path="res://.godot/imported/overn-timer-ding-78204.mp3-0d97ed8fb3867cfa00fb3210c31cbc69.mp3str"
 
 [deps]
 
-source_file="res://sounds/sfx/overn-timer-ding-78204.mp3"
-dest_files=["res://.godot/imported/overn-timer-ding-78204.mp3-76a2c9578e4f6010b1a49377979617a8.mp3str"]
+source_file="res://Music/sounds/overn-timer-ding-78204.mp3"
+dest_files=["res://.godot/imported/overn-timer-ding-78204.mp3-0d97ed8fb3867cfa00fb3210c31cbc69.mp3str"]
 
 [params]
 

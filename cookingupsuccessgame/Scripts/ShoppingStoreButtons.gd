@@ -41,17 +41,16 @@ func update_label() -> void:
 func _on_back_pressed() -> void:
 	var screen_width: float = get_viewport().get_visible_rect().size.x
 	print("back button was pressed")
-
-	if aisle_index >= 0 && aisle_index <= 2:
-		aisle_index -= 1
-		camera.position.x = aisle_index * screen_width
+	aisle_index -= 1
+	aisle_index = aisle_index % 3
+	camera.position.x = aisle_index * screen_width
 
 func _on_next_pressed() -> void:
 	var screen_width: float = get_viewport().get_visible_rect().size.x
 	print("next button was pressed")
-	if aisle_index >= 0 && aisle_index <= 2:
-		aisle_index += 1  # increase aisle
-		camera.position.x = aisle_index * screen_width
+	aisle_index += 1  # increase aisle
+	aisle_index = aisle_index % 3
+	camera.position.x = aisle_index * screen_width
 
 func _on_finished_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/cooking.tscn")
