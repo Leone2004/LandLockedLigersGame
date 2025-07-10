@@ -164,7 +164,8 @@ position = Vector2(-228, -142)
 position = Vector2(-35, -142)
 
 [node name="sell_area" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(300, -96)
+position = Vector2(12, -435)
+scale = Vector2(2, 2)
 script = ExtResource("5_7w5j8")
 
 [node name="ShoppingListScene" parent="." instance=ExtResource("5_iv1kd")]
