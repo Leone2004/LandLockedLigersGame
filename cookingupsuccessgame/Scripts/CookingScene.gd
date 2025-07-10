@@ -5,7 +5,7 @@ const conveyer_speed = 100 # pixels per second
 var ovenswitch: bool = true
 var recipe_book_visible: bool = false
 var recipes: Array[Array] = [] # recipes[i][0] is name. recipes[i][1] is ingredients subarray
-var current_recipe: int = 0
+var current_recipe: int = 1
 var nodes_on_conveyer: Array[Node2D] = []
 var conveyer_direction: int = 1
 
@@ -25,14 +25,13 @@ var spot_spacing: Vector2 = Vector2(60, 60)  # Slightly smaller spacing for bett
 var spots_per_row: int = 4  # Number of spots per row
 
 func _ready() -> void:
-	print("=== COOKING SCENE _ready() STARTED ===")
-	current_recipe = 0
+	recipes.append(["pepperoni", ["pepperoni", "cheese", "sauce", "dough"]])
+	recipes.append(["cheese", ["cheese", "sauce", "dough"]])
+	current_recipe = 1
 	recipe_book_visible = false
 	shopping_list.hide()
 	recipe_book_layer.visible = recipe_book_visible
-	recipe.text = "[center][b]THE RECIPE BOOK[/b][/center]"
-	recipes.append(["pepperoni", ["pepperoni", "cheese", "sauce", "dough"]])
-	recipes.append(["cheese", ["cheese", "sauce", "dough"]])
+	recipe.text = get_recipe_string(recipes[current_recipe - 1])
 	
 	# Show current ingredient counts from grocery store
 	print("Current ingredient counts from grocery store:")
