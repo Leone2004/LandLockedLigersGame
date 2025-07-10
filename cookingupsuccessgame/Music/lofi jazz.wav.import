@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://daodb0nx6gs3w"
-path="res://.godot/imported/upbeat jazz.wav-3ed6a4ee66528442c15c33dca10e8cdf.sample"
+uid="uid://bliklaqdnmvsu"
+path="res://.godot/imported/lofi jazz.wav-83c67389eca3820e91627b383c2a1a5f.sample"
 
 [deps]
 
-source_file="res://sounds/upbeat jazz.wav"
-dest_files=["res://.godot/imported/upbeat jazz.wav-3ed6a4ee66528442c15c33dca10e8cdf.sample"]
+source_file="res://Music/lofi jazz.wav"
+dest_files=["res://.godot/imported/lofi jazz.wav-83c67389eca3820e91627b383c2a1a5f.sample"]
 
 [params]
 
