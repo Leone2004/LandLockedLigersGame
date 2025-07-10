@@ -16,11 +16,16 @@ var ingredient_values: Dictionary = {
 	"cheese": 3.0,
 	"pepperoni": 4.0,
 	"mushrooms": 2.5,
-	"peppers": 2.0,
 	"olives": 3.5,
+	"peppers": 2.0,
 	"bacon": 5.0,
 	"ham": 4.5,
-	"pineapple": 2.0
+	"anchovies": 3.0,
+	"garlic": 2.5,
+	"pineapple": 2.0,
+	"tomato": 2.0,
+	"onion": 2.5,
+	"sausage": 4.0
 }
 
 var used_ingredients = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
