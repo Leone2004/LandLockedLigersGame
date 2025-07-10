@@ -23,14 +23,14 @@ func _ready() -> void:
 	print("--------------------------") # a line break
 	update_label()
 	shopping_list.hide()
-	BaconButton.pressed.connect(func(): _on_food_pressed(6, 2.0))
-	OliveButton.pressed.connect(func(): _on_food_pressed(4, 1.5))
+	BaconButton.pressed.connect(func(): _on_food_pressed(6, 1.0))
+	OliveButton.pressed.connect(func(): _on_food_pressed(4, 1.0))
 	GarlicButton.pressed.connect(func(): _on_food_pressed(9, 1.0))
-	HamButton.pressed.connect(func(): _on_food_pressed(7, 2.5))
-	PepperButton.pressed.connect(func(): _on_food_pressed(5, 1.5))
-	PineappleButton.pressed.connect(func(): _on_food_pressed(10, 2.0))
-	SausageButton.pressed.connect(func(): _on_food_pressed(12, 2.5))
-	AnchoviesButton.pressed.connect(func(): _on_food_pressed(8, 2.0))
+	HamButton.pressed.connect(func(): _on_food_pressed(7, 1.0))
+	PepperButton.pressed.connect(func(): _on_food_pressed(5, 1.0))
+	PineappleButton.pressed.connect(func(): _on_food_pressed(10, 1.0))
+	SausageButton.pressed.connect(func(): _on_food_pressed(12, 1.0))
+	AnchoviesButton.pressed.connect(func(): _on_food_pressed(8, 1.0))
 
 func _physics_process(delta: float) -> void:
 	update_label()

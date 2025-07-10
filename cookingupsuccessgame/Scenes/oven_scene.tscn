@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://wjye2oajgcmk"]
 
-[ext_resource type="Texture2D" uid="uid://c84m2ypquric" path="res://Art/Unknown.jpeg" id="1_2w1kf"]
+[ext_resource type="Texture2D" uid="uid://bj3o3hv506nc7" path="res://Art/Final Cooking up Success Image folder/Equipment/Pizza Oven Option 1.png" id="1_2w1kf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w1kf"]
 size = Vector2(474, 454)
@@ -8,7 +8,8 @@ size = Vector2(474, 454)
 [node name="OvenScene" type="Node2D"]
 
 [node name="Unknown" type="Sprite2D" parent="."]
-scale = Vector2(3.18919, 3.08108)
+position = Vector2(1.96286, -1.71627)
+scale = Vector2(1.23215, 1.10913)
 texture = ExtResource("1_2w1kf")
 
 [node name="Area2D" type="Area2D" parent="." groups=["oven"]]

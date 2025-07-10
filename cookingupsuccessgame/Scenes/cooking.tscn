@@ -36,6 +36,7 @@ offset_top = -40.36
 offset_right = 4086.79
 offset_bottom = 37.64
 text = "Recipes"
+metadata/_edit_use_anchors_ = true
 
 [node name="ShoppingList" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
@@ -47,6 +48,7 @@ offset_right = -144.0
 offset_bottom = 47.0
 grow_horizontal = 0
 text = "Shopping List"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="CanvasLayer"]
 offset_left = 1019.0
@@ -61,6 +63,7 @@ metadata/_edit_use_anchors_ = true
 offset_right = 152.0
 offset_bottom = 54.0
 text = "Switch Conveyer Direction"
+metadata/_edit_use_anchors_ = true
 
 [node name="RecipeBook" type="CanvasLayer" parent="CanvasLayer"]
 
@@ -70,6 +73,7 @@ offset_top = 1.0
 offset_right = 1154.0
 offset_bottom = 32.0
 text = "Recipe"
+metadata/_edit_use_anchors_ = true
 
 [node name="RecipeLabel" type="Label" parent="CanvasLayer/RecipeBook"]
 anchors_preset = -1
@@ -85,6 +89,7 @@ grow_horizontal = 2
 text = "Recipe Book"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Previous" type="Button" parent="CanvasLayer/RecipeBook"]
 anchors_preset = 4
@@ -96,6 +101,7 @@ offset_right = 208.0
 offset_bottom = 20.0
 grow_vertical = 2
 text = "<"
+metadata/_edit_use_anchors_ = true
 
 [node name="Next" type="Button" parent="CanvasLayer/RecipeBook"]
 anchors_preset = 6
@@ -110,6 +116,7 @@ offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
 text = ">"
+metadata/_edit_use_anchors_ = true
 
 [node name="Current Recipe" type="RichTextLabel" parent="CanvasLayer/RecipeBook"]
 anchors_preset = 8
@@ -124,6 +131,7 @@ offset_bottom = 124.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Unknown-1" type="Sprite2D" parent="CanvasLayer/RecipeBook"]
 z_index = -1
