@@ -41,3 +41,16 @@ func load_game():
 
 func _ready():
 	load_game()
+	# Start the main music
+	start_main_music()
+
+# Music management functions
+func start_main_music():
+	if MainMusic and not MainMusic.playing:
+		MainMusic.play()
+		print("Main music started")
+
+func set_music_volume(volume_db: float):
+	if MainMusic:
+		MainMusic.volume_db = volume_db
+		print("Music volume set to: ", volume_db)
