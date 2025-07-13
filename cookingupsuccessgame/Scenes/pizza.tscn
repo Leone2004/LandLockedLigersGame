@@ -24,7 +24,8 @@ shape = SubResource("RectangleShape2D_glui1")
 [node name="BakeTimeLabel" type="Label" parent="."]
 visible = false
 offset_top = -80.0
-offset_bottom = -80.0
+offset_right = 1.0
+offset_bottom = -57.0
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -6,6 +6,7 @@ var is_attached_to_pizza: bool = false
 var attached_pizza: Node = null
 var original_position: Vector2
 var original_scale: Vector2
+var food: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

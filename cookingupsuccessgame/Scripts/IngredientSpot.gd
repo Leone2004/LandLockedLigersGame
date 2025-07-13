@@ -144,6 +144,7 @@ func _input(event: InputEvent) -> void:
 				_check_for_pizza()
 
 func _process(delta: float) -> void:
+	update_visual_state()
 	if is_dragging:
 		global_position = get_global_mouse_position() + drag_offset
 

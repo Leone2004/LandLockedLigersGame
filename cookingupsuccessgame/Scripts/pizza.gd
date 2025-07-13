@@ -8,6 +8,11 @@ var max_bake_time: float = 10.0  # 10 seconds to fully bake
 var is_dragging: bool = false
 var drag_offset: Vector2
 var baked: bool = false
+var timer = 0.0
+var current_click = 0.0
+var last_click_time = 0.0
+var click_threshold = 0.2
+var mouse_on_me: bool = false
 
 # Ingredient values (you can adjust these)
 var ingredient_values: Dictionary = {
@@ -47,6 +52,22 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed and not is_dragging:
+				current_click = timer
+				if current_click - last_click_time < click_threshold && mouse_on_me && !is_baking && !baked :
+					var x = 0
+					for i in Global.ingredients:
+						Global.ingredients[x] += used_ingredients[x]
+						used_ingredients[x] = 0
+						print(Global.food[x], ": ", Global.ingredients[x])
+						x += 1
+					var y = 0
+					for child in get_children():
+						if y > 4:
+							child.queue_free()
+						y += 1
+					current_ingredients = []
+				else:
+					last_click_time = current_click
 				# Start dragging - only if clicking directly on the pizza
 				var mouse_pos: Vector2 = get_global_mouse_position()
 				var local_mouse_pos: Vector2 = to_local(mouse_pos)
@@ -63,6 +84,7 @@ func _is_mouse_over_pizza(local_mouse_pos: Vector2) -> bool:
 	"""Check if mouse is over the pizza area"""
 	# Simple bounds check - you can adjust these values based on your sprite size
 	var bounds: Vector2 = Vector2(128, 128)  # Adjust to match your pizza sprite size
+	mouse_on_me = abs(local_mouse_pos.x) <= bounds.x/2 and abs(local_mouse_pos.y) <= bounds.y/2
 	return abs(local_mouse_pos.x) <= bounds.x/2 and abs(local_mouse_pos.y) <= bounds.y/2
 
 func _is_clicking_on_pizza_sprite(mouse_pos: Vector2) -> bool:
@@ -84,6 +106,7 @@ func _is_clicking_on_pizza_sprite(mouse_pos: Vector2) -> bool:
 	return abs(sprite_local_pos.x) <= bounds.x/2 and abs(sprite_local_pos.y) <= bounds.y/2
 
 func _process(delta: float) -> void:
+	timer = Time.get_ticks_msec() / 1000.0
 	if is_dragging:
 		var new_position = get_global_mouse_position() + drag_offset
 		
@@ -243,10 +266,5 @@ func _on_input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> v
 	
 func sell_pizza():
 	if !is_dragging && baked:
-		var x = 0
-		for i in Global.ingredients:
-			i -= used_ingredients[x]
-			print(Global.food[x], ": ", Global.ingredients[x])
-			x += 1
 		Global.money += pizza_value
 		queue_free()
