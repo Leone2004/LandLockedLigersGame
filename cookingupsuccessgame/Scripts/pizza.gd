@@ -58,7 +58,6 @@ func _input(event: InputEvent) -> void:
 					for i in Global.ingredients:
 						Global.ingredients[x] += used_ingredients[x]
 						used_ingredients[x] = 0
-						print(Global.food[x], ": ", Global.ingredients[x])
 						x += 1
 					var y = 0
 					for child in get_children():
@@ -155,7 +154,6 @@ func add_ingredient(ingredient_name: String) -> void:
 		used_ingredients[Global.food.find(ingredient_name)] += 1
 		print(used_ingredients)
 		_update_pizza_value()
-		print("Added ", ingredient_name, " to pizza. New value: $", pizza_value)
 		
 		# Visual feedback - you can add effects here
 		_show_ingredient_added_effect(ingredient_name)
@@ -163,7 +161,6 @@ func add_ingredient(ingredient_name: String) -> void:
 func _show_ingredient_added_effect(ingredient_name: String) -> void:
 	"""Show visual feedback when ingredient is added"""
 	# You can add particle effects, sound, or other visual feedback here
-	print("Visual effect: ", ingredient_name, " added to pizza!")
 
 func _update_pizza_value() -> void:
 	"""Calculate pizza value based on current ingredients"""
@@ -179,7 +176,6 @@ func _update_pizza_value() -> void:
 func start_baking() -> void:
 	"""Start the baking process"""
 	if is_baking or baked:
-		print("Pizza is already baking or baked, ignoring start request")
 		return
 		
 	is_baking = true
@@ -188,32 +184,27 @@ func start_baking() -> void:
 	# self.hide()  # Do not hide the pizza so the timer label is visible
 	if clock_timer:
 		clock_timer.visible = true
-	print("Pizza started baking! Timer started for ", max_bake_time, " seconds")
 
 func stop_baking() -> void:
 	"""Stop the baking process"""
 	if not is_baking:
-		print("Pizza is not baking, ignoring stop request")
 		return
 		
 	is_baking = false
 	bake_timer.stop()
 	if clock_timer:
 		clock_timer.visible = false
-	print("Pizza stopped baking!")
 	self.show()
 
 func _on_bake_complete() -> void:
 	"""Called when baking is complete"""
 	if baked:
-		print("Pizza already baked, ignoring completion")
 		return
 		
 	baked = true
 	is_baking = false
 	# Increase value for fully baked pizza
 	pizza_value *= 1.5
-	print("Pizza is fully baked! Final value: $", pizza_value)
 	self.show()
 
 func reset_pizza() -> void:
@@ -229,27 +220,21 @@ func reset_pizza() -> void:
 	if clock_timer:
 		clock_timer.visible = false
 	self.show()
-	print("Pizza reset to initial state")
 
 func _check_for_oven() -> void:
 	"""Check if pizza is placed in an oven"""
 	var overlapping_areas: Array[Area2D] = get_overlapping_areas()
 	var oven_found: bool = false
 	
-	print("Checking for oven - overlapping areas: ", overlapping_areas.size())
-	
 	for area in overlapping_areas:
-		print("Checking area: ", area.name, " groups: ", area.get_groups())
 		if area.is_in_group("oven"):
 			oven_found = true
 			print("Oven found: ", area.name)
 			break
 	
 	if oven_found and not is_baking and not baked:
-		print("Starting baking process...")
 		start_baking()
 	elif not oven_found and is_baking:
-		print("Stopping baking process - no oven detected")
 		stop_baking()
 
 func get_pizza_info() -> Dictionary:
