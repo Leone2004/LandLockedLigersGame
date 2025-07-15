@@ -203,17 +203,9 @@ ingredient_index = 13
 position = Vector2(-342, -416)
 ingredient_index = 4
 
-[node name="IngredientSpot7" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-402, -416)
-ingredient_index = 3
-
 [node name="IngredientSpot8" parent="." instance=ExtResource("7_bhcx5")]
 position = Vector2(-463, -416)
 ingredient_index = 2
-
-[node name="IngredientSpot9" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-524, -418)
-ingredient_index = 1
 
 [node name="IngredientSpot10" parent="." instance=ExtResource("7_bhcx5")]
 position = Vector2(-344, -293)
