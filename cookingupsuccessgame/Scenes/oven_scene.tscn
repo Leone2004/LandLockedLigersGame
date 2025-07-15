@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://wjye2oajgcmk"]
 
-[ext_resource type="Texture2D" uid="uid://bj3o3hv506nc7" path="res://Art/Final Cooking up Success Image folder/Equipment/Pizza Oven Option 1.png" id="1_2w1kf"]
+[ext_resource type="Texture2D" uid="uid://eokxplwjsapr" path="res://Art/Final Cooking up Success Image folder 2/Equipment/Pizza Oven Option 2.png" id="1_2w1kf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w1kf"]
 size = Vector2(474, 454)
@@ -10,9 +10,13 @@ size = Vector2(474, 454)
 [node name="Unknown" type="Sprite2D" parent="."]
 position = Vector2(1.96286, -1.71627)
 scale = Vector2(1.23215, 1.10913)
-texture = ExtResource("1_2w1kf")
 
 [node name="Area2D" type="Area2D" parent="." groups=["oven"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_2w1kf")
+
+[node name="PizzaOvenOption2" type="Sprite2D" parent="."]
+position = Vector2(71, -122)
+scale = Vector2(1.794, 2.053)
+texture = ExtResource("1_2w1kf")
