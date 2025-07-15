@@ -155,13 +155,13 @@ z_index = -1
 position = Vector2(947, -406)
 
 [node name="Area2D2" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(-423, -142)
+position = Vector2(-205, -143)
 
 [node name="Area2D3" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(-228, -142)
+position = Vector2(-68, -143)
 
 [node name="Area2D4" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(-35, -142)
+position = Vector2(71, -144)
 
 [node name="sell_area" parent="." instance=ExtResource("3_kqqjs")]
 position = Vector2(12, -435)

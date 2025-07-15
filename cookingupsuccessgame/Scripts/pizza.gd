@@ -66,6 +66,7 @@ func _input(event: InputEvent) -> void:
 							child.queue_free()
 						y += 1
 					current_ingredients = []
+					queue_free()
 				else:
 					last_click_time = current_click
 				# Start dragging - only if clicking directly on the pizza
