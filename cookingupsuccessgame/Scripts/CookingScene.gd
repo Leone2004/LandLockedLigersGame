@@ -33,15 +33,12 @@ func _ready() -> void:
 	recipe_book_layer.visible = recipe_book_visible
 	recipe.text = get_recipe_string(recipes[current_recipe - 1])
 	
-	# Show current ingredient counts from grocery store
-	print("Current ingredient counts from grocery store:")
 	for i in range(Global.ingredients.size()):
 		print("  ", Global.food[i], ": ", Global.ingredients[i])
 	
 	# Refresh all ingredient spots based on actual inventory
-	print("Refreshing ingredient spots based on actual inventory...")
 	refresh_all_ingredient_spots()
-	print("=== COOKING SCENE _ready() COMPLETED ===")
+
 
 func _enter_tree() -> void:
 	# Refresh ingredient spots when entering the scene (e.g., returning from store)

@@ -20,7 +20,6 @@ func save_game():
 	var file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	file.store_string(JSON.stringify(save_data))
 	file.close()
-	print("Game saved!")
 
 func load_game():
 	if FileAccess.file_exists("user://savegame.save"):
@@ -33,7 +32,6 @@ func load_game():
 			money = save_data.get("money", 100.0)
 			ingredients = save_data.get("ingredients", [0,0,0,0,0,0,0,0,0,0,0,0,0,0])
 			shopping_list = save_data.get("shopping_list", [])
-			print("Game loaded!")
 		else:
 			print("Save file corrupted or invalid.")
 	else:
@@ -48,9 +46,7 @@ func _ready():
 func start_main_music():
 	if MainMusic and not MainMusic.playing:
 		MainMusic.play()
-		print("Main music started")
 
 func set_music_volume(volume_db: float):
 	if MainMusic:
 		MainMusic.volume_db = volume_db
-		print("Music volume set to: ", volume_db)

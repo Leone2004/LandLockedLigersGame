@@ -30,10 +30,8 @@ func _ready() -> void:
 	
 	# Double-check nodes are available
 	if not sprite:
-		print("Error: Sprite2D node not found in IngredientSpot")
 		return
 	if not collision_shape:
-		print("Error: CollisionShape2D node not found in IngredientSpot")
 		return
 	
 	# Set ingredient type based on the exported index
@@ -41,16 +39,13 @@ func _ready() -> void:
 	
 	original_position = global_position
 	original_scale = scale
-	print("IngredientSpot ready - ", ingredient_type, " at position: ", global_position)
 	update_visual_state()
 
 func _set_ingredient_type_from_index() -> void:
 	"""Set ingredient type based on the exported ingredient_index"""
 	if ingredient_index >= 0 and ingredient_index < Global.food.size():
 		ingredient_type = Global.food[ingredient_index]
-		print("Set ingredient type to: ", ingredient_type, " (index: ", ingredient_index, ")")
 	else:
-		print("Error: Invalid ingredient_index: ", ingredient_index, " (max: ", Global.food.size() - 1, ")")
 		ingredient_type = ""
 		return
 	
@@ -60,7 +55,6 @@ func _set_ingredient_type_from_index() -> void:
 func _set_texture_for_ingredient() -> void:
 	"""Set the texture based on the ingredient type"""
 	if not sprite:
-		print("Error: Cannot set texture - sprite is null")
 		return
 	
 	match ingredient_type:
@@ -111,16 +105,12 @@ func update_visual_state() -> void:
 	
 	has_ingredients = current_count > 0
 	
-	print("Updating ", ingredient_type, " spot - index: ", ingredient_index, ", count: ", current_count, ", has_ingredients: ", has_ingredients)
-	
 	if has_ingredients:
 		sprite.modulate = available_color
 		collision_shape.disabled = false
-		print(ingredient_type, " spot is colored and enabled (", current_count, " available)")
 	else:
 		sprite.modulate = unavailable_color
 		collision_shape.disabled = true
-		print(ingredient_type, " spot is gray and disabled (0 available)")
 
 func _input(event: InputEvent) -> void:
 	if not has_ingredients or not collision_shape:
@@ -136,7 +126,6 @@ func _input(event: InputEvent) -> void:
 					is_dragging = true
 					drag_offset = global_position - mouse_pos
 					scale = original_scale * 1.1  # Slight scale effect
-					print("Started dragging ", ingredient_type, "!")
 			elif not event.pressed and is_dragging:
 				# Stop dragging
 				is_dragging = false
@@ -172,7 +161,6 @@ func _check_for_pizza() -> void:
 			
 			# Consume one ingredient
 			Global.ingredients[ingredient_index] -= 1
-			print("Added ", ingredient_type, " to pizza! Remaining: ", Global.ingredients[ingredient_index])
 			
 			# Update visual state
 			update_visual_state()
@@ -232,7 +220,6 @@ func _create_visual_ingredient_on_pizza(pizza_area: Area2D) -> void:
 	
 	# Add the visual ingredient to the pizza
 	pizza_area.add_child(visual_ingredient)
-	print("Created visual ", ingredient_type, " on pizza at position ", drop_position)
 
 func refresh_state() -> void:
 	"""Refresh the visual state - call this when ingredients change"""
