@@ -42,7 +42,8 @@ func _on_back_pressed() -> void:
 	var screen_width: float = get_viewport().get_visible_rect().size.x
 	print("back button was pressed")
 	aisle_index -= 1
-	aisle_index = aisle_index % 3
+	if aisle_index < 0:
+		aisle_index = 2
 	camera.position.x = aisle_index * screen_width
 
 func _on_next_pressed() -> void:
