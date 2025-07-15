@@ -2,6 +2,7 @@ extends Node
 
 var day: int = 1
 var money: float = 100.00
+var customers = 3
 
 # Suggested New Variable System
 var ingredients = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]

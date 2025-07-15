@@ -95,6 +95,7 @@ func _on_button_pressed() -> void:
 func _on_nextday_pressed() -> void:
 	Global.day += 1 # increments day by one, when the "done" button is pressed
 	get_tree().change_scene_to_file("res://Scenes/GroceryStore.tscn") # changes scene back to shopping scene
+	Global.customers = 3
 
 func _on_recipe_pressed() -> void:
 	set_physics_process(false)

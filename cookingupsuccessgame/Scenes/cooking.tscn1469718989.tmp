@@ -1,0 +1,246 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccjtqqsxfsxdj"]
+
+[ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
+[ext_resource type="Texture2D" uid="uid://bq8jd3vjo40lr" path="res://Art/Unknown-1.png" id="3_iv1kd"]
+[ext_resource type="PackedScene" uid="uid://cbv1kvsc8lip3" path="res://Scenes/pizza.tscn" id="3_kqqjs"]
+[ext_resource type="PackedScene" uid="uid://wjye2oajgcmk" path="res://Scenes/oven_scene.tscn" id="4_jhubm"]
+[ext_resource type="Script" uid="uid://dgrt25h7og77y" path="res://Scripts/sell.gd" id="5_7w5j8"]
+[ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="5_iv1kd"]
+[ext_resource type="PackedScene" uid="uid://bvn8x7y2k3m4n" path="res://Scenes/IngredientSpot.tscn" id="7_bhcx5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv1kd"]
+size = Vector2(240, 106)
+
+[node name="CookingScene" type="Node2D"]
+script = ExtResource("1_v6t1i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Oven_Cooking_Button" type="Button" parent="CanvasLayer"]
+offset_left = 1129.0
+offset_top = -2.0
+offset_right = 1150.0
+offset_bottom = 651.0
+text = "Ovens"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="RecipeButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
+offset_top = 16.0
+offset_right = -32.0
+offset_bottom = 56.0
+grow_horizontal = 0
+text = "Recipes"
+
+[node name="ShoppingList" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -256.0
+offset_top = 16.0
+offset_right = -144.0
+offset_bottom = 47.0
+grow_horizontal = 0
+text = "Shopping List"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 1019.0
+offset_top = 586.0
+offset_right = 1099.0
+offset_bottom = 638.0
+text = "Done!"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Conveyer Direction Switch" type="Button" parent="CanvasLayer"]
+offset_right = 152.0
+offset_bottom = 54.0
+text = "Switch Conveyer Direction"
+metadata/_edit_use_anchors_ = true
+
+[node name="RecipeBook" type="CanvasLayer" parent="CanvasLayer"]
+visible = false
+
+[node name="RecipeButton2" type="Button" parent="CanvasLayer/RecipeBook"]
+anchors_preset = -1
+anchor_left = -0.0651042
+anchor_bottom = 0.0123457
+offset_left = 1067.0
+offset_top = 16.0
+offset_right = 1146.0
+offset_bottom = 47.0
+text = "Recipes"
+metadata/_edit_use_anchors_ = true
+
+[node name="RecipeLabel" type="Label" parent="CanvasLayer/RecipeBook"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.09
+anchor_right = 0.5
+anchor_bottom = 0.09
+offset_left = -128.0
+offset_top = -18.32
+offset_right = 123.0
+offset_bottom = 18.68
+grow_horizontal = 2
+text = "Recipe Book"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Previous" type="Button" parent="CanvasLayer/RecipeBook"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = -20.0
+offset_right = 208.0
+offset_bottom = 20.0
+grow_vertical = 2
+text = "<"
+metadata/_edit_use_anchors_ = true
+
+[node name="Next" type="Button" parent="CanvasLayer/RecipeBook"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -20.0
+offset_right = -232.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+text = ">"
+metadata/_edit_use_anchors_ = true
+
+[node name="Current Recipe" type="RichTextLabel" parent="CanvasLayer/RecipeBook"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -124.0
+offset_right = 186.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Unknown-1" type="Sprite2D" parent="CanvasLayer/RecipeBook"]
+z_index = -1
+position = Vector2(576, 322.5)
+scale = Vector2(5.46429, 3.04911)
+texture = ExtResource("3_iv1kd")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(10, -331)
+
+[node name="Area2D" parent="." instance=ExtResource("3_kqqjs")]
+position = Vector2(133, 156)
+
+[node name="OvenScene" parent="." instance=ExtResource("4_jhubm")]
+z_index = -1
+position = Vector2(1421, -406)
+
+[node name="OvenScene2" parent="." instance=ExtResource("4_jhubm")]
+z_index = -1
+position = Vector2(947, -406)
+
+[node name="Area2D2" parent="." instance=ExtResource("3_kqqjs")]
+position = Vector2(-205, -143)
+
+[node name="Area2D3" parent="." instance=ExtResource("3_kqqjs")]
+position = Vector2(-68, -143)
+
+[node name="Area2D4" parent="." instance=ExtResource("3_kqqjs")]
+position = Vector2(71, -144)
+
+[node name="sell_area" parent="." instance=ExtResource("3_kqqjs")]
+position = Vector2(12, -435)
+scale = Vector2(2, 2)
+script = ExtResource("5_7w5j8")
+
+[node name="ShoppingListScene" parent="." instance=ExtResource("5_iv1kd")]
+
+[node name="Conveyer Belt" type="Area2D" parent="."]
+position = Vector2(584, -104)
+
+[node name="Conveyer Collision" type="CollisionShape2D" parent="Conveyer Belt"]
+shape = SubResource("RectangleShape2D_iv1kd")
+debug_color = Color(0.943782, 9.2411e-06, 0.600066, 0.42)
+
+[node name="IngredientSpot4" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-526, -296)
+ingredient_index = 9
+
+[node name="IngredientSpot" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-525, -357)
+ingredient_index = 5
+
+[node name="IngredientSpot2" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-403, -355)
+ingredient_index = 7
+
+[node name="IngredientSpot3" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-343, -356)
+ingredient_index = 8
+
+[node name="IngredientSpot5" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-284, -293)
+ingredient_index = 13
+
+[node name="IngredientSpot6" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-342, -416)
+ingredient_index = 4
+
+[node name="IngredientSpot7" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-402, -416)
+ingredient_index = 3
+
+[node name="IngredientSpot8" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-463, -416)
+ingredient_index = 2
+
+[node name="IngredientSpot9" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-524, -418)
+ingredient_index = 1
+
+[node name="IngredientSpot10" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-344, -293)
+ingredient_index = 12
+
+[node name="IngredientSpot11" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-404, -293)
+ingredient_index = 11
+
+[node name="IngredientSpot12" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-465, -295)
+ingredient_index = 10
+
+[node name="IngredientSpot13" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-464, -356)
+ingredient_index = 6
+
+[node name="IngredientSpot14" parent="." instance=ExtResource("7_bhcx5")]
+position = Vector2(-281, -357)
+
+[connection signal="pressed" from="CanvasLayer/Oven_Cooking_Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/RecipeButton" to="." method="_on_recipe_pressed"]
+[connection signal="pressed" from="CanvasLayer/ShoppingList" to="." method="_on_shopping_list_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_nextday_pressed"]
+[connection signal="pressed" from="CanvasLayer/Conveyer Direction Switch" to="." method="_on_conveyer_direction_switch_pressed"]
+[connection signal="pressed" from="CanvasLayer/RecipeBook/RecipeButton2" to="." method="_on_recipe_pressed"]
+[connection signal="pressed" from="CanvasLayer/RecipeBook/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="CanvasLayer/RecipeBook/Next" to="." method="_on_next_pressed"]
+[connection signal="area_entered" from="Conveyer Belt" to="." method="_on_conveyer_belt_area_entered"]
+[connection signal="area_exited" from="Conveyer Belt" to="." method="_on_conveyer_belt_area_exited"]
