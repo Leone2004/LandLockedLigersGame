@@ -74,7 +74,7 @@ offset_left = 1067.0
 offset_top = 16.0
 offset_right = 1146.0
 offset_bottom = 47.0
-text = "Recipes"
+text = "Close Recipes"
 metadata/_edit_use_anchors_ = true
 
 [node name="RecipeLabel" type="Label" parent="CanvasLayer/RecipeBook"]

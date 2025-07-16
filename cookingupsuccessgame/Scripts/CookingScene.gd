@@ -4,7 +4,7 @@ const conveyer_speed = 100 # pixels per second
 
 var ovenswitch: bool = true
 var recipe_book_visible: bool = false
-var recipes: Array[Array] = [] # recipes[i][0] is name. recipes[i][1] is ingredients subarray
+var recipes: Array = [] # recipes[i][0] is name. recipes[i][1] is ingredients subarray
 var current_recipe: int = 1
 var nodes_on_conveyer: Array[Node2D] = []
 var conveyer_direction: int = 1
@@ -25,8 +25,7 @@ var spot_spacing: Vector2 = Vector2(60, 60)  # Slightly smaller spacing for bett
 var spots_per_row: int = 4  # Number of spots per row
 
 func _ready() -> void:
-	recipes.append(["pepperoni", ["pepperoni", "cheese", "sauce", "dough"]])
-	recipes.append(["cheese", ["cheese", "sauce", "dough"]])
+	recipes = Global.recipes
 	current_recipe = 1
 	recipe_book_visible = false
 	shopping_list.hide()

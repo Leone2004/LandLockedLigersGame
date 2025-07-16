@@ -51,3 +51,16 @@ func start_main_music():
 func set_music_volume(volume_db: float):
 	if MainMusic:
 		MainMusic.volume_db = volume_db
+
+# recipes to be used accross the game
+var recipes = [
+	["Pepperoni", ["pepperoni"]],
+	["Cheesy Garlic", ["garlic"]],
+	["Mushroom", ["mushrooms"]],
+	["Garlic Pepperoni", ["garlic", "pepperoni"]],
+	["Hawaiian", ["ham", "pineapple"]],
+	["Three Meat", ["pepperoni", "sausage", "ham"]],
+	["Meat Lovers", ["sausage", "bacon", "ham", "pepperoni"]],
+	["Veggie", ["peppers", "onion", "mushrooms", "olives", "tomato", "anchovies"]],
+	["I Want Everything", ["sausage", "onion", "anchovies", "garlic", "tomato", "mushrooms", "bacon", "ham", "olives", "peppers", "pepperoni", "pineapple"]],
+]
