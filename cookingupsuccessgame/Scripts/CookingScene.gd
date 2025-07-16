@@ -4,7 +4,7 @@ const conveyer_speed = 100 # pixels per second
 
 var ovenswitch: bool = true
 var recipe_book_visible: bool = false
-var recipes: Array[Array] = [] # recipes[i][0] is name. recipes[i][1] is ingredients subarray
+var recipes: Array = [] # recipes[i][0] is name. recipes[i][1] is ingredients subarray
 var current_recipe: int = 1
 var nodes_on_conveyer: Array[Node2D] = []
 var conveyer_direction: int = 1
@@ -38,8 +38,8 @@ func _ready() -> void:
 	# Load the pizza scene
 	pizza_scene = preload("res://Scenes/pizza.tscn")
 	
-	recipes.append(["pepperoni", ["pepperoni", "cheese", "sauce", "dough"]])
-	recipes.append(["cheese", ["cheese", "sauce", "dough"]])
+	# Use recipes from Global
+	recipes = Global.recipes
 	current_recipe = 1
 	recipe_book_visible = false
 	shopping_list.hide()

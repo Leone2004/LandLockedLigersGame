@@ -35,6 +35,19 @@ var ingredient_values: Dictionary = {
 	"sausage": 4.0
 }
 
+# recipe values can be changed with almost no effort
+# recipes can be found in global
+var recipe_values = {
+	"Pepperoni": 2,
+	"Cheesy Garlic": 2,
+	"Mushroom": 3,
+	"Garlic Pepperoni": 4,
+	"Hawaiian": 5,
+	"Three Meat": 6,
+	"Veggie": 8,
+	"I Want Everything": 10
+}
+
 var used_ingredients = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 # Current ingredients on the pizza
@@ -260,5 +273,18 @@ func _on_input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> v
 	
 func sell_pizza():
 	if !is_dragging && baked:
-		Global.money += pizza_value
+		Global.money += pizza_value + get_recipe_value()
 		queue_free()
+
+func get_recipe_value() -> float:
+	var sorted_ingredients = current_ingredients
+	var recipe_value = 0
+	sorted_ingredients.sort()
+	for recipe in Global.recipes:
+		var recipe_ingredients = recipe[1]
+		recipe_ingredients.sort()
+		if sorted_ingredients == recipe_ingredients:
+			recipe_value = recipe_values[recipe[0]]
+			break
+	#print("recipe bonus is " + str(recipe_value))
+	return recipe_value
