@@ -1,6 +1,7 @@
 extends Area2D
 
 signal pizza_deleted(pizza_node)
+signal pizza_sold(pizza_node)
 
 # Pizza properties
 var pizza_value: float = 0.0
@@ -62,12 +63,6 @@ func _ready() -> void:
 	# Connect signals using modern syntax
 	input_event.connect(_on_input_event)
 	bake_timer.timeout.connect(_on_bake_complete)
-	
-	# Remove from spawned_pizzas group after a delay to allow normal interaction
-	if is_in_group("spawned_pizzas"):
-		await get_tree().create_timer(1.0).timeout
-		if is_instance_valid(self):
-			remove_from_group("spawned_pizzas")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -271,10 +266,13 @@ func _on_input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> v
 	"""Handle input events for dragging"""
 	pass  # Handled in _input for better control
 	
-func sell_pizza():
+func sell_pizza() -> bool:
 	if !is_dragging && baked:
 		Global.money += pizza_value + get_recipe_value()
+		pizza_sold.emit(self)
 		queue_free()
+		return true
+	return false
 
 func get_recipe_value() -> float:
 	var sorted_ingredients = current_ingredients

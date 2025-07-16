@@ -194,21 +194,25 @@ func spawn_pizza() -> void:
 	# Add to scene tree
 	add_child(new_pizza)
 	
-	# Add to a specific group to identify spawned pizzas
-	new_pizza.add_to_group("spawned_pizzas")
-	
 	# Set position based on current pizza count
 	var spawn_position = spawn_positions[spawned_pizzas.size() - 1]
 	new_pizza.position = spawn_position
 	
 	# Connect to pizza deletion signal
 	new_pizza.pizza_deleted.connect(_on_pizza_deleted)
+	new_pizza.pizza_sold.connect(_on_pizza_sold)
 	
 	# Update button text
 	update_spawn_button_text()
 
 func _on_pizza_deleted(pizza_node: Node2D) -> void:
 	"""Called when a pizza is deleted to remove it from our tracking"""
+	if pizza_node in spawned_pizzas:
+		spawned_pizzas.erase(pizza_node)
+		update_spawn_button_text()
+
+func _on_pizza_sold(pizza_node: Node2D) -> void:
+	"""Called when a pizza is sold to remove it from our tracking"""
 	if pizza_node in spawned_pizzas:
 		spawned_pizzas.erase(pizza_node)
 		update_spawn_button_text()

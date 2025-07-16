@@ -30,9 +30,9 @@ func _process(delta: float) -> void:
 		playing = true
 		anim_ref.play("transparent_on")
 		await anim_ref.animation_finished
-		face.texture = normal_face
+		# Keep the happy face - don't change back to normal
 		cur_customer = 0
-		playing= false
+		playing = false
 	if cur_customer == 1 && Global.customers > -1:
 		check_for_selling()
 	elif Global.customers < 0:
@@ -43,12 +43,13 @@ func check_for_selling() -> void:
 	var overlapping_areas: Array[Area2D] = get_overlapping_areas()
 	for area in overlapping_areas:
 		var food_ref = area.is_dragging
-		# Only sell pizzas that are not in the spawned_pizzas group (to avoid newly spawned pizzas)
-		if area.has_method("sell_pizza") && !food_ref && !area.is_in_group("spawned_pizzas"):
-			area.sell_pizza()
-			cur_customer = 2
-			# Looks for pizza
-			return
+		# Only sell pizzas that are baked and not being dragged
+		if area.has_method("sell_pizza") && !food_ref:
+			# Try to sell the pizza and only change customer state if successful
+			if area.sell_pizza():
+				cur_customer = 2
+				# Looks for pizza
+				return
 
 func next_day():
 	if Global.customers > 0:
