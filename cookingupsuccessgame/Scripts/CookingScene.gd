@@ -9,10 +9,20 @@ var current_recipe: int = 1
 var nodes_on_conveyer: Array[Node2D] = []
 var conveyer_direction: int = 1
 
+# Pizza spawning variables
+var pizza_scene: PackedScene
+var spawned_pizzas: Array[Node2D] = []
+var max_pizzas: int = 2
+var spawn_positions: Array[Vector2] = [
+	Vector2(10, -331),   # First pizza at camera center
+	Vector2(210, -331)   # Second pizza to the right of camera
+]
+
 @onready var recipe: RichTextLabel = $"CanvasLayer/RecipeBook/Current Recipe"
 @onready var recipe_book_layer: CanvasLayer = $CanvasLayer/RecipeBook
 @onready var camera: Camera2D = $Camera2D
 @onready var OvenCookingButton: Button = $CanvasLayer/Oven_Cooking_Button
+@onready var spawn_pizza_button: Button = $CanvasLayer/SpawnPizzaButton
 @onready var shopping_list = $ShoppingListScene.get_node("ShoppingList")
 
 # Ingredient spots
@@ -25,6 +35,9 @@ var spot_spacing: Vector2 = Vector2(60, 60)  # Slightly smaller spacing for bett
 var spots_per_row: int = 4  # Number of spots per row
 
 func _ready() -> void:
+	# Load the pizza scene
+	pizza_scene = preload("res://Scenes/pizza.tscn")
+	
 	recipes.append(["pepperoni", ["pepperoni", "cheese", "sauce", "dough"]])
 	recipes.append(["cheese", ["cheese", "sauce", "dough"]])
 	current_recipe = 1
@@ -32,6 +45,13 @@ func _ready() -> void:
 	shopping_list.hide()
 	recipe_book_layer.visible = recipe_book_visible
 	recipe.text = get_recipe_string(recipes[current_recipe - 1])
+	
+	# Ensure button starts enabled
+	spawn_pizza_button.disabled = false
+	spawn_pizza_button.modulate = Color(1, 1, 1)
+	
+	# Update spawn button text
+	update_spawn_button_text()
 	
 	for i in range(Global.ingredients.size()):
 		print("  ", Global.food[i], ": ", Global.ingredients[i])
@@ -46,6 +66,7 @@ func _enter_tree() -> void:
 
 func _process(delta: float) -> void:
 	update_conveyer(delta)
+	cleanup_dead_pizzas()
 
 func refresh_all_ingredient_spots() -> void:
 	"""Refresh all ingredient spots in the scene"""
@@ -144,3 +165,63 @@ func update_conveyer(time_delta: float) -> void: # called from _process(delta)
 
 func _on_conveyer_direction_switch_pressed() -> void:
 	conveyer_direction *= -1
+
+func update_spawn_button_text() -> void:
+	spawn_pizza_button.text = "Spawn Pizza (%d/%d)" % [spawned_pizzas.size(), max_pizzas]
+	
+	# Disable button if at maximum pizzas
+	if spawned_pizzas.size() >= max_pizzas:
+		spawn_pizza_button.disabled = true
+		spawn_pizza_button.modulate = Color(0.5, 0.5, 0.5)  # Gray out the button
+	else:
+		spawn_pizza_button.disabled = false
+		spawn_pizza_button.modulate = Color(1, 1, 1)  # Normal color
+
+func _on_spawn_pizza_pressed() -> void:
+	spawn_pizza()
+
+func spawn_pizza() -> void:
+	"""Spawn a new pizza if under the maximum limit"""
+	if spawned_pizzas.size() >= max_pizzas:
+		return
+	
+	# Create a new pizza instance
+	var new_pizza = pizza_scene.instantiate()
+	
+	# Add to spawned pizzas array BEFORE adding to scene to avoid conflicts
+	spawned_pizzas.append(new_pizza)
+	
+	# Add to scene tree
+	add_child(new_pizza)
+	
+	# Add to a specific group to identify spawned pizzas
+	new_pizza.add_to_group("spawned_pizzas")
+	
+	# Set position based on current pizza count
+	var spawn_position = spawn_positions[spawned_pizzas.size() - 1]
+	new_pizza.position = spawn_position
+	
+	# Connect to pizza deletion signal
+	new_pizza.pizza_deleted.connect(_on_pizza_deleted)
+	
+	# Update button text
+	update_spawn_button_text()
+
+func _on_pizza_deleted(pizza_node: Node2D) -> void:
+	"""Called when a pizza is deleted to remove it from our tracking"""
+	if pizza_node in spawned_pizzas:
+		spawned_pizzas.erase(pizza_node)
+		update_spawn_button_text()
+
+func cleanup_dead_pizzas() -> void:
+	"""Remove any pizzas that have been freed from our tracking array"""
+	var pizzas_to_remove: Array[Node2D] = []
+	for pizza in spawned_pizzas:
+		if not is_instance_valid(pizza):
+			pizzas_to_remove.append(pizza)
+	
+	for pizza in pizzas_to_remove:
+		spawned_pizzas.erase(pizza)
+	
+	if pizzas_to_remove.size() > 0:
+		update_spawn_button_text()

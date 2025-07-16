@@ -43,13 +43,16 @@ func check_for_selling() -> void:
 	var overlapping_areas: Array[Area2D] = get_overlapping_areas()
 	for area in overlapping_areas:
 		var food_ref = area.is_dragging
-		if area.has_method("sell_pizza") && !food_ref:
+		# Only sell pizzas that are not in the spawned_pizzas group (to avoid newly spawned pizzas)
+		if area.has_method("sell_pizza") && !food_ref && !area.is_in_group("spawned_pizzas"):
 			area.sell_pizza()
 			cur_customer = 2
 			# Looks for pizza
 			return
 
 func next_day():
+	if Global.customers > 0:
+		return  # Don't switch scene if there are still customers
 	Global.day += 1 # increments day by one, when the "done" button is pressed
 	get_tree().change_scene_to_file("res://Scenes/GroceryStore.tscn") # changes scene back to shopping scene
 	Global.customers = 3

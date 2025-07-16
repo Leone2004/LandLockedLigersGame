@@ -48,6 +48,18 @@ grow_horizontal = 0
 text = "Shopping List"
 metadata/_edit_use_anchors_ = true
 
+[node name="SpawnPizzaButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -376.0
+offset_top = 16.0
+offset_right = -264.0
+offset_bottom = 47.0
+grow_horizontal = 0
+text = "Spawn Pizza"
+metadata/_edit_use_anchors_ = true
+
 [node name="Button2" type="Button" parent="CanvasLayer"]
 offset_left = 1019.0
 offset_top = 586.0
@@ -145,9 +157,6 @@ metadata/_edit_lock_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(10, -331)
 
-[node name="Area2D" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(133, 156)
-
 [node name="OvenScene" parent="." instance=ExtResource("4_jhubm")]
 z_index = -1
 position = Vector2(1421, -406)
@@ -155,15 +164,6 @@ position = Vector2(1421, -406)
 [node name="OvenScene2" parent="." instance=ExtResource("4_jhubm")]
 z_index = -1
 position = Vector2(947, -406)
-
-[node name="Area2D2" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(-205, -143)
-
-[node name="Area2D3" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(-68, -143)
-
-[node name="Area2D4" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(71, -144)
 
 [node name="sell_area" parent="." instance=ExtResource("3_kqqjs")]
 position = Vector2(12, -435)
@@ -229,6 +229,7 @@ position = Vector2(-281, -357)
 [connection signal="pressed" from="CanvasLayer/Oven_Cooking_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeButton" to="." method="_on_recipe_pressed"]
 [connection signal="pressed" from="CanvasLayer/ShoppingList" to="." method="_on_shopping_list_pressed"]
+[connection signal="pressed" from="CanvasLayer/SpawnPizzaButton" to="." method="_on_spawn_pizza_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_nextday_pressed"]
 [connection signal="pressed" from="CanvasLayer/Conveyer Direction Switch" to="." method="_on_conveyer_direction_switch_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeBook/RecipeButton2" to="." method="_on_recipe_pressed"]

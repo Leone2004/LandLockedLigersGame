@@ -1,5 +1,7 @@
 extends Area2D
 
+signal pizza_deleted(pizza_node)
+
 # Pizza properties
 var pizza_value: float = 0.0
 var is_baking: bool = false
@@ -47,6 +49,12 @@ func _ready() -> void:
 	# Connect signals using modern syntax
 	input_event.connect(_on_input_event)
 	bake_timer.timeout.connect(_on_bake_complete)
+	
+	# Remove from spawned_pizzas group after a delay to allow normal interaction
+	if is_in_group("spawned_pizzas"):
+		await get_tree().create_timer(1.0).timeout
+		if is_instance_valid(self):
+			remove_from_group("spawned_pizzas")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -65,6 +73,7 @@ func _input(event: InputEvent) -> void:
 							child.queue_free()
 						y += 1
 					current_ingredients = []
+					pizza_deleted.emit(self)
 					queue_free()
 				else:
 					last_click_time = current_click
@@ -152,7 +161,6 @@ func add_ingredient(ingredient_name: String) -> void:
 	if ingredient_name in ingredient_values:
 		current_ingredients.append(ingredient_name)
 		used_ingredients[Global.food.find(ingredient_name)] += 1
-		print(used_ingredients)
 		_update_pizza_value()
 		
 		# Visual feedback - you can add effects here
