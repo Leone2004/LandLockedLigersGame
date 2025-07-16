@@ -252,5 +252,16 @@ func _on_input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> v
 	
 func sell_pizza():
 	if !is_dragging && baked:
-		Global.money += pizza_value
+		Global.money += pizza_value + get_recipe_value()
 		queue_free()
+
+func get_recipe_value() -> float:
+	print("checking recipes")
+	var sorted_ingredients = current_ingredients
+	sorted_ingredients.sort()
+	for recipe in Global.recipes:
+		var recipe_ingredients = recipe[1]
+		recipe_ingredients.sort()
+		if sorted_ingredients == recipe_ingredients:
+			print("found recipe: " + recipe[0])
+	return 0
