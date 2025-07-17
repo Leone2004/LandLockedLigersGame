@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bq8jd3vjo40lr" path="res://Art/Unknown-1.png" id="3_iv1kd"]
 [ext_resource type="PackedScene" uid="uid://cbv1kvsc8lip3" path="res://Scenes/pizza.tscn" id="3_kqqjs"]
 [ext_resource type="PackedScene" uid="uid://wjye2oajgcmk" path="res://Scenes/oven_scene.tscn" id="4_jhubm"]
-[ext_resource type="Script" uid="uid://dgrt25h7og77y" path="res://Scripts/sell.gd" id="5_7w5j8"]
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="5_iv1kd"]
 [ext_resource type="PackedScene" uid="uid://bvn8x7y2k3m4n" path="res://Scenes/IngredientSpot.tscn" id="7_bhcx5"]
+[ext_resource type="PackedScene" uid="uid://brnrw56qbt731" path="res://Scenes/sell.tscn" id="7_smvhu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv1kd"]
 size = Vector2(240, 106)
@@ -165,11 +165,6 @@ position = Vector2(-68, -143)
 [node name="Area2D4" parent="." instance=ExtResource("3_kqqjs")]
 position = Vector2(71, -144)
 
-[node name="sell_area" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(12, -435)
-scale = Vector2(2, 2)
-script = ExtResource("5_7w5j8")
-
 [node name="ShoppingListScene" parent="." instance=ExtResource("5_iv1kd")]
 
 [node name="Conveyer Belt" type="Area2D" parent="."]
@@ -225,6 +220,10 @@ ingredient_index = 6
 
 [node name="IngredientSpot14" parent="." instance=ExtResource("7_bhcx5")]
 position = Vector2(-281, -357)
+
+[node name="Area2D5" parent="." instance=ExtResource("7_smvhu")]
+position = Vector2(64.23, -436.64)
+scale = Vector2(2.41, 2.41)
 
 [connection signal="pressed" from="CanvasLayer/Oven_Cooking_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeButton" to="." method="_on_recipe_pressed"]
