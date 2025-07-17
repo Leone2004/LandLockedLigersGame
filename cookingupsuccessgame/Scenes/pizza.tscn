@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c1b3m8280c0er" path="res://Scripts/ClockTimer.gd" id="3_clock"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_geqgq"]
-radius = 55.0
+radius = 35.0
 
 [sub_resource type="Animation" id="Animation_geqgq"]
 length = 0.001
@@ -60,6 +60,7 @@ _data = {
 }
 
 [node name="Area2D" type="Area2D"]
+z_index = -1
 script = ExtResource("1_je5pd")
 
 [node name="Pizza" type="Node2D" parent="."]

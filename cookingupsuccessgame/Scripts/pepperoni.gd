@@ -38,7 +38,6 @@ func _input(event: InputEvent) -> void:
 				if _is_mouse_over_pepperoni(local_mouse_pos):
 					is_dragging = true
 					drag_offset = global_position - mouse_pos
-					print("Started dragging pepperoni!")
 			elif not event.pressed and is_dragging:
 				# Stop dragging
 				is_dragging = false
@@ -79,7 +78,6 @@ func attach_to_pizza(pizza: Node) -> void:
 	
 	# Decrease global pepperoni count
 	Global.ingredients[0] -= 1
-	print("Global pepperoni count decreased to: ", Global.ingredients[0])
 	
 	# Make the pepperoni a child of the pizza
 	reparent(pizza)
@@ -91,5 +89,3 @@ func attach_to_pizza(pizza: Node) -> void:
 	
 	# Visual feedback - slightly darker color to show it's attached
 	modulate = Color(0.8, 0.8, 0.8, 1.0)
-	
-	print("Pepperoni attached to pizza! Pizza value: $", pizza.pizza_value)

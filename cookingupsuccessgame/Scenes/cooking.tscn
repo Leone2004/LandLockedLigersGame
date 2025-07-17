@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ccjtqqsxfsxdj"]
+[gd_scene load_steps=11 format=3 uid="uid://ccjtqqsxfsxdj"]
 
 [ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
+[ext_resource type="Texture2D" uid="uid://df36vi6tfevsy" path="res://Art/Final Cooking up Success Images and Audio/Characters/shoping_list_icon.png" id="2_5t8r7"]
 [ext_resource type="Texture2D" uid="uid://bq8jd3vjo40lr" path="res://Art/Unknown-1.png" id="3_iv1kd"]
 [ext_resource type="PackedScene" uid="uid://wjye2oajgcmk" path="res://Scenes/oven_scene.tscn" id="4_jhubm"]
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="5_iv1kd"]
@@ -38,21 +39,27 @@ grow_horizontal = 0
 text = "Recipes"
 
 [node name="ShoppingList" type="Button" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -256.0
-offset_top = 16.0
-offset_right = -144.0
-offset_bottom = 47.0
+anchors_preset = -1
+anchor_left = 0.97309
+anchor_right = 0.97309
+anchor_bottom = 0.0385802
+offset_left = -246.0
+offset_top = 7.0
+offset_right = -134.0
+offset_bottom = 38.0
 grow_horizontal = 0
-text = "Shopping List"
+size_flags_horizontal = 3
+icon = ExtResource("2_5t8r7")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="SpawnPizzaButton" type="Button" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.999132
+anchor_right = 0.999132
+anchor_bottom = 0.0123457
 offset_left = -376.0
 offset_top = 16.0
 offset_right = -264.0
@@ -225,16 +232,15 @@ position = Vector2(-154, -281)
 [node name="CookingKitchen1" type="Sprite2D" parent="."]
 z_index = -4
 texture_filter = 1
-position = Vector2(1.49996, -331)
-scale = Vector2(0.593229, 0.599074)
+position = Vector2(2.99995, -331)
+scale = Vector2(0.594792, 0.599074)
 texture = ExtResource("8_5t8r7")
 
 [node name="CookingKitchen2" type="Sprite2D" parent="."]
 z_index = -4
-position = Vector2(1164, -332)
-scale = Vector2(0.601563, 0.596759)
+position = Vector2(1162.75, -332)
+scale = Vector2(0.602865, 0.596759)
 texture = ExtResource("9_8l6gq")
-metadata/_edit_lock_ = true
 
 [node name="Area2D" parent="." instance=ExtResource("10_8l6gq")]
 position = Vector2(276, -443)

@@ -146,7 +146,7 @@ func _check_for_pizza() -> void:
 	# Check if we're over a pizza
 	var overlapping_areas = get_overlapping_areas()
 	for area in overlapping_areas:
-		if area.name.begins_with("Area2D") and area.has_method("add_ingredient"):
+		if area.has_method("add_ingredient"):
 			# Map ingredient names to match pizza's ingredient_values
 			var pizza_ingredient_name = ingredient_type
 			if ingredient_type == "sauce":

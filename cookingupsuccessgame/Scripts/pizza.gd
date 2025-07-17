@@ -100,7 +100,7 @@ func _input(event: InputEvent) -> void:
 func _is_mouse_over_pizza(local_mouse_pos: Vector2) -> bool:
 	"""Check if mouse is over the pizza area"""
 	# Simple bounds check - you can adjust these values based on your sprite size
-	var bounds: Vector2 = Vector2(128, 128)  # Adjust to match your pizza sprite size
+	var bounds: Vector2 = Vector2(70, 70)  # Adjusted to match collision shape radius
 	mouse_on_me = abs(local_mouse_pos.x) <= bounds.x/2 and abs(local_mouse_pos.y) <= bounds.y/2
 	return abs(local_mouse_pos.x) <= bounds.x/2 and abs(local_mouse_pos.y) <= bounds.y/2
 
