@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://eokxplwjsapr" path="res://Art/Final Cooking up Success Image folder 2/Equipment/Pizza Oven Option 2.png" id="1_2w1kf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w1kf"]
-size = Vector2(474, 454)
+size = Vector2(211, 123)
 
 [node name="OvenScene" type="Node2D"]
 
@@ -14,9 +14,10 @@ scale = Vector2(1.23215, 1.10913)
 [node name="Area2D" type="Area2D" parent="." groups=["oven"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -41.5)
 shape = SubResource("RectangleShape2D_2w1kf")
 
 [node name="PizzaOvenOption2" type="Sprite2D" parent="."]
-position = Vector2(71, -122)
-scale = Vector2(1.794, 2.053)
+position = Vector2(30, -81)
+scale = Vector2(0.813, 0.9845)
 texture = ExtResource("1_2w1kf")

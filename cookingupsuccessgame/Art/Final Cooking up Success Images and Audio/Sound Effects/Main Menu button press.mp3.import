@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c34lggkmnm2xr"
+path="res://.godot/imported/Main Menu button press.mp3-d820e2b8243da4449b1f115a08001e58.mp3str"
+
+[deps]
+
+source_file="res://Art/Final Cooking up Success Images and Audio/Sound Effects/Main Menu button press.mp3"
+dest_files=["res://.godot/imported/Main Menu button press.mp3-d820e2b8243da4449b1f115a08001e58.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

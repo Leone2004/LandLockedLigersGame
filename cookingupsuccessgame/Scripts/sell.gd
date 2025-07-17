@@ -6,10 +6,12 @@ var anim_ref
 var cur_customer: int = 0
 var playing: bool = false
 @onready var happy_face = preload("res://Art/Final Cooking up Success Image folder 2/Equipment/Pizza cutter.png")
-@onready var face = $Pizza/Icon
-@onready var normal_face = face.texture
+@onready var face = $Pizza/PlainPizza
+@onready var normal_face = face.texture if face != null else null
 
 func _ready() -> void:
+	if face == null:
+		print("ERROR: $Pizza/PlainPizza not found in sell.gd!")
 	area_ref = $"."
 	pizza_ref = $Pizza
 	pizza_ref.modulate.a = 0
@@ -26,7 +28,10 @@ func _process(delta: float) -> void:
 		cur_customer = 1
 		playing = false
 	elif cur_customer == 2 && !playing:
-		face.texture = happy_face
+		if face != null:
+			face.texture = happy_face
+		else:
+			print("WARNING: Tried to set happy_face, but 'face' is null!")
 		playing = true
 		anim_ref.play("transparent_on")
 		await anim_ref.animation_finished

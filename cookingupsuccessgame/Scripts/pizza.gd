@@ -55,7 +55,7 @@ var used_ingredients = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 var current_ingredients: Array[String] = []
 
 # Nodes
-@onready var sprite: Sprite2D = $Pizza/Icon
+@onready var sprite: Sprite2D = $Pizza/PlainPizza
 @onready var bake_timer: Timer = $Baker_timer
 @onready var clock_timer: Node2D = $ClockTimer
 
@@ -107,7 +107,7 @@ func _is_mouse_over_pizza(local_mouse_pos: Vector2) -> bool:
 func _is_clicking_on_pizza_sprite(mouse_pos: Vector2) -> bool:
 	"""Check if the mouse click is directly on the pizza sprite, not on attached ingredients"""
 	# Get the pizza sprite node
-	var pizza_sprite: Sprite2D = $Pizza/Icon
+	var pizza_sprite: Sprite2D = $Pizza/PlainPizza
 	if not pizza_sprite:
 		# Fallback to collision shape check if sprite doesn't exist
 		var local_mouse_pos: Vector2 = to_local(mouse_pos)
