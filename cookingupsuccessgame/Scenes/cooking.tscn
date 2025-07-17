@@ -1,20 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccjtqqsxfsxdj"]
+[gd_scene load_steps=13 format=3 uid="uid://ccjtqqsxfsxdj"]
 
 [ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
-[ext_resource type="Texture2D" uid="uid://cubul1qbw71d6" path="res://Art/Final Cooking up Success Images and Audio/Icons/Done Button.png" id="2_5t8r7"]
+[ext_resource type="AudioStream" uid="uid://fif1bn6wkmm0" path="res://Music/sounds/8-bit-video-game-points-version-1-145826.mp3" id="2_8l6gq"]
 [ext_resource type="Texture2D" uid="uid://bq8jd3vjo40lr" path="res://Art/Unknown-1.png" id="3_iv1kd"]
+[ext_resource type="AudioStream" uid="uid://88y0lqbdsqo2" path="res://Music/sounds/Sonic_Soundfx_household_kitchen_pasta_packet_plastic_scrumple_crumple.mp3" id="3_jba1e"]
 [ext_resource type="PackedScene" uid="uid://cbv1kvsc8lip3" path="res://Scenes/pizza.tscn" id="3_kqqjs"]
+[ext_resource type="AudioStream" uid="uid://1k3dll3bkfva" path="res://Music/sounds/achievement-video-game-type-1-230515.mp3" id="4_jba1e"]
 [ext_resource type="PackedScene" uid="uid://wjye2oajgcmk" path="res://Scenes/oven_scene.tscn" id="4_jhubm"]
-[ext_resource type="Script" uid="uid://dgrt25h7og77y" path="res://Scripts/sell.gd" id="5_7w5j8"]
+[ext_resource type="Script" uid="uid://d0bcqnejgari1" path="res://Scripts/sound_follower2.gd" id="5_8l6gq"]
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="5_iv1kd"]
 [ext_resource type="PackedScene" uid="uid://bvn8x7y2k3m4n" path="res://Scenes/IngredientSpot.tscn" id="7_bhcx5"]
-[ext_resource type="Texture2D" uid="uid://djcbiw86ecl30" path="res://Art/Final Cooking up Success Images and Audio/Background images/cooking kitchen1.png" id="8_smvhu"]
+[ext_resource type="PackedScene" uid="uid://brnrw56qbt731" path="res://Scenes/sell.tscn" id="7_smvhu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv1kd"]
 size = Vector2(240, 106)
 
 [node name="CookingScene" type="Node2D"]
 script = ExtResource("1_v6t1i")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8l6gq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayer2D"]
+stream = ExtResource("3_jba1e")
+
+[node name="happy_customer" type="AudioStreamPlayer2D" parent="AudioStreamPlayer2D"]
+stream = ExtResource("4_jba1e")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -159,6 +170,7 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(10, -331)
+script = ExtResource("5_8l6gq")
 
 [node name="OvenScene" parent="." instance=ExtResource("4_jhubm")]
 z_index = -1
@@ -168,10 +180,14 @@ position = Vector2(1421, -406)
 z_index = -1
 position = Vector2(947, -406)
 
-[node name="sell_area" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(293, -489)
-scale = Vector2(2, 2)
-script = ExtResource("5_7w5j8")
+[node name="Area2D2" parent="." instance=ExtResource("3_kqqjs")]
+position = Vector2(-205, -143)
+
+[node name="Area2D3" parent="." instance=ExtResource("3_kqqjs")]
+position = Vector2(-68, -143)
+
+[node name="Area2D4" parent="." instance=ExtResource("3_kqqjs")]
+position = Vector2(71, -144)
 
 [node name="ShoppingListScene" parent="." instance=ExtResource("5_iv1kd")]
 
@@ -229,12 +245,9 @@ ingredient_index = 6
 [node name="IngredientSpot14" parent="." instance=ExtResource("7_bhcx5")]
 position = Vector2(-167, -281)
 
-[node name="CookingKitchen1" type="Sprite2D" parent="."]
-z_index = -4
-position = Vector2(3, -336)
-scale = Vector2(0.604948, 0.618519)
-texture = ExtResource("8_smvhu")
-metadata/_edit_lock_ = true
+[node name="Area2D5" parent="." instance=ExtResource("7_smvhu")]
+position = Vector2(64.23, -436.64)
+scale = Vector2(2.41, 2.41)
 
 [connection signal="pressed" from="CanvasLayer/Oven_Cooking_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeButton" to="." method="_on_recipe_pressed"]
