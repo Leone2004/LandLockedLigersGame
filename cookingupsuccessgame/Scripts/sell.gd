@@ -5,7 +5,7 @@ var pizza_ref
 var anim_ref
 var cur_customer: int = 0
 var playing: bool = false
-@onready var happy_face = preload("res://Art/Final Cooking up Success Image folder 2/Equipment/Pizza cutter.png")
+@onready var happy_face = preload("res://Art/Final Cooking up Success Image folder 2/Characters/happy_face.png")
 @onready var face = $Pizza/Icon
 @onready var normal_face = face.texture
 
