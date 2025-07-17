@@ -59,10 +59,10 @@ anchors_preset = -1
 anchor_left = -0.0616319
 anchor_right = -0.0616319
 anchor_bottom = 0.0324074
-offset_left = 1033.0
-offset_top = 54.0
-offset_right = 1145.0
-offset_bottom = 85.0
+offset_left = 1039.0
+offset_top = 16.0
+offset_right = 1151.0
+offset_bottom = 47.0
 text = "
 "
 icon = ExtResource("2_bneo4")
@@ -841,6 +841,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="ShoppingListScene" parent="." instance=ExtResource("3_d07kg")]
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="ShoppingShelf" type="Sprite2D" parent="."]
 z_index = -1

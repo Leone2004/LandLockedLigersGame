@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccjtqqsxfsxdj"]
+[gd_scene load_steps=12 format=3 uid="uid://ccjtqqsxfsxdj"]
 
 [ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
 [ext_resource type="Texture2D" uid="uid://ba03mtfjtmuel" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Characters/shoping_list_icon.png" id="2_5t8r7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cg8k0ye1vq0wc" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Background images/cooking kitchen1.png" id="8_5t8r7"]
 [ext_resource type="Texture2D" uid="uid://dyhwqnf3q0y1f" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Background images/cooking kitchen2.png" id="9_8l6gq"]
 [ext_resource type="PackedScene" uid="uid://brnrw56qbt731" path="res://Scenes/sell.tscn" id="10_8l6gq"]
+[ext_resource type="Texture2D" uid="uid://b7jp03e6qlm0r" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Equipment/Conveyer Belt.png" id="10_jba1e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv1kd"]
 size = Vector2(240, 106)
@@ -247,6 +248,13 @@ position = Vector2(114, -442)
 
 [node name="Area2D3" parent="." instance=ExtResource("10_8l6gq")]
 position = Vector2(-54, -443)
+
+[node name="ConveyerBelt" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(606, -54)
+rotation = 5.88001
+scale = Vector2(0.613922, 0.60113)
+texture = ExtResource("10_jba1e")
 
 [connection signal="pressed" from="CanvasLayer/Oven_Cooking_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeButton" to="." method="_on_recipe_pressed"]

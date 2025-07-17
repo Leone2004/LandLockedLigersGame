@@ -1,32 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvhspowe5pn6t"]
+[gd_scene load_steps=4 format=3 uid="uid://dvhspowe5pn6t"]
 
 [ext_resource type="Script" uid="uid://oyvyl1cs1j22" path="res://Scripts/shopping_list.gd" id="1_h0bq7"]
+[ext_resource type="Texture2D" uid="uid://bqc2to2xmhd2v" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Background images/Shopping_List_Background.png" id="2_hrg77"]
+[ext_resource type="Texture2D" uid="uid://ba03mtfjtmuel" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Characters/shoping_list_icon.png" id="3_sds26"]
 
 [node name="ShoppingListScene" type="Node2D"]
 script = ExtResource("1_h0bq7")
 
 [node name="ShoppingList" type="CanvasLayer" parent="."]
 
-[node name="ShoppingListLabel" type="Label" parent="ShoppingList"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -52.0
-offset_top = 35.0
-offset_right = 52.0
-offset_bottom = 58.0
-grow_horizontal = 2
-size_flags_vertical = 0
-text = "Shopping List"
+[node name="ShopingListIcon" type="Sprite2D" parent="ShoppingList"]
+z_index = 1
+position = Vector2(1024, 40)
+scale = Vector2(0.176631, 0.21875)
+texture = ExtResource("3_sds26")
 
 [node name="List Editor" type="GridContainer" parent="ShoppingList"]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.057
 anchor_right = 0.5
-offset_left = -37.5
-offset_top = 100.0
-offset_right = 37.5
-offset_bottom = 131.0
+anchor_bottom = 0.057
+offset_left = -69.0
+offset_top = 80.064
+offset_right = 130.0
+offset_bottom = 111.064
 grow_horizontal = 2
 columns = 4
 
@@ -58,5 +56,12 @@ offset_bottom = 237.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
+
+[node name="ShoppingListBackground" type="Sprite2D" parent="ShoppingList"]
+z_index = -1
+position = Vector2(577, 325)
+scale = Vector2(2.3, 1.3)
+texture = ExtResource("2_hrg77")
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="ShoppingList/List Editor/UpdateButton" to="." method="_on_update_button_pressed"]
