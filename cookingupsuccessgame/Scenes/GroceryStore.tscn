@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ytwvoc765rk3"]
+[gd_scene load_steps=7 format=3 uid="uid://ytwvoc765rk3"]
 
 [ext_resource type="Script" uid="uid://brx8kajls5irq" path="res://Scripts/ShoppingStoreButtons.gd" id="1_6pps0"]
+[ext_resource type="Texture2D" uid="uid://cyga5kyxeh1g4" path="res://Art/Final Cooking up Success Images and Audio/Icons/Back Icon.png" id="2_bneo4"]
 [ext_resource type="Texture2D" uid="uid://edyokx505sba" path="res://Art/Final Cooking up Success Image folder 2/Background images/Grocery Background.jpg" id="3_45mn4"]
 [ext_resource type="Texture2D" uid="uid://5gnwamavmr6o" path="res://Art/Final Cooking up Success Image folder 2/Equipment/Shopping shelf.png" id="3_bneo4"]
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="3_d07kg"]
+[ext_resource type="Texture2D" uid="uid://r8ojfcm152ub" path="res://Art/Final Cooking up Success Images and Audio/Icons/Next Icon.png" id="3_vd5c6"]
 
 [node name="ShoppingScene" type="Node2D"]
 
@@ -18,20 +20,24 @@ metadata/_edit_use_anchors_ = true
 [node name="CanvasLayer" type="CanvasLayer" parent="Control"]
 
 [node name="Back" type="Button" parent="Control/CanvasLayer"]
-offset_left = 18.0
-offset_top = 323.0
-offset_right = 63.0
-offset_bottom = 354.0
-text = "Back
+offset_left = 17.0
+offset_top = 324.0
+offset_right = 76.0
+offset_bottom = 382.0
+text = "
 "
+icon = ExtResource("2_bneo4")
+flat = true
+expand_icon = true
 
 [node name="Next" type="Button" parent="Control/CanvasLayer"]
-offset_left = 1036.0
-offset_top = 340.0
-offset_right = 1081.0
-offset_bottom = 371.0
-text = "Next
-"
+offset_left = 1073.0
+offset_top = 330.0
+offset_right = 1142.0
+offset_bottom = 398.0
+icon = ExtResource("3_vd5c6")
+flat = true
+expand_icon = true
 
 [node name="Finished" type="Button" parent="Control/CanvasLayer"]
 offset_left = 942.0
