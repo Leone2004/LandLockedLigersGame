@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://buaniccm3yaou"]
+
+[ext_resource type="AudioStream" uid="uid://delpnw5uravdf" path="res://Music/music_orlamusic_Happy+004.mp3" id="1_6tk6g"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_6tk6g")
+volume_db = -1.0
+autoplay = true
+max_distance = 100000.0
