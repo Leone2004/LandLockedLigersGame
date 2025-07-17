@@ -1,14 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccjtqqsxfsxdj"]
+[gd_scene load_steps=9 format=3 uid="uid://ccjtqqsxfsxdj"]
 
 [ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
-[ext_resource type="Texture2D" uid="uid://cubul1qbw71d6" path="res://Art/Final Cooking up Success Images and Audio/Icons/Done Button.png" id="2_5t8r7"]
 [ext_resource type="Texture2D" uid="uid://bq8jd3vjo40lr" path="res://Art/Unknown-1.png" id="3_iv1kd"]
 [ext_resource type="PackedScene" uid="uid://cbv1kvsc8lip3" path="res://Scenes/pizza.tscn" id="3_kqqjs"]
 [ext_resource type="PackedScene" uid="uid://wjye2oajgcmk" path="res://Scenes/oven_scene.tscn" id="4_jhubm"]
 [ext_resource type="Script" uid="uid://dgrt25h7og77y" path="res://Scripts/sell.gd" id="5_7w5j8"]
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="5_iv1kd"]
 [ext_resource type="PackedScene" uid="uid://bvn8x7y2k3m4n" path="res://Scenes/IngredientSpot.tscn" id="7_bhcx5"]
-[ext_resource type="Texture2D" uid="uid://djcbiw86ecl30" path="res://Art/Final Cooking up Success Images and Audio/Background images/cooking kitchen1.png" id="8_smvhu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv1kd"]
 size = Vector2(240, 106)
@@ -63,12 +61,11 @@ text = "Spawn Pizza"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="CanvasLayer"]
-offset_left = 953.0
-offset_top = 547.0
-offset_right = 1105.0
-offset_bottom = 619.0
-icon = ExtResource("2_5t8r7")
-flat = true
+offset_left = 1019.0
+offset_top = 586.0
+offset_right = 1099.0
+offset_bottom = 638.0
+text = "Done!"
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
@@ -169,7 +166,7 @@ z_index = -1
 position = Vector2(947, -406)
 
 [node name="sell_area" parent="." instance=ExtResource("3_kqqjs")]
-position = Vector2(293, -489)
+position = Vector2(12, -435)
 scale = Vector2(2, 2)
 script = ExtResource("5_7w5j8")
 
@@ -183,58 +180,51 @@ shape = SubResource("RectangleShape2D_iv1kd")
 debug_color = Color(0.943782, 9.2411e-06, 0.600066, 0.42)
 
 [node name="IngredientSpot4" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-485, -210)
+position = Vector2(-526, -296)
 ingredient_index = 9
 
 [node name="IngredientSpot" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-453, -282)
+position = Vector2(-525, -357)
 ingredient_index = 5
 
 [node name="IngredientSpot2" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-276, -206)
+position = Vector2(-403, -355)
 ingredient_index = 7
 
 [node name="IngredientSpot3" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-263, -284)
+position = Vector2(-343, -356)
 ingredient_index = 8
 
 [node name="IngredientSpot5" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-188, -114)
+position = Vector2(-284, -293)
 ingredient_index = 13
 
 [node name="IngredientSpot6" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-173, -205)
+position = Vector2(-342, -416)
 ingredient_index = 4
 
 [node name="IngredientSpot8" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-379, -206)
+position = Vector2(-463, -416)
 ingredient_index = 2
 
 [node name="IngredientSpot10" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-295, -110)
+position = Vector2(-344, -293)
 ingredient_index = 12
 
 [node name="IngredientSpot11" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-405, -111)
+position = Vector2(-404, -293)
 ingredient_index = 11
 
 [node name="IngredientSpot12" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-513, -112)
+position = Vector2(-465, -295)
 ingredient_index = 10
 
 [node name="IngredientSpot13" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-355, -281)
+position = Vector2(-464, -356)
 ingredient_index = 6
 
 [node name="IngredientSpot14" parent="." instance=ExtResource("7_bhcx5")]
-position = Vector2(-167, -281)
-
-[node name="CookingKitchen1" type="Sprite2D" parent="."]
-z_index = -4
-position = Vector2(3, -336)
-scale = Vector2(0.604948, 0.618519)
-texture = ExtResource("8_smvhu")
-metadata/_edit_lock_ = true
+position = Vector2(-281, -357)
 
 [connection signal="pressed" from="CanvasLayer/Oven_Cooking_Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/RecipeButton" to="." method="_on_recipe_pressed"]
