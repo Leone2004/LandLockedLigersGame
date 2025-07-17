@@ -15,8 +15,6 @@ extends Control
 @onready var PineappleButton : Button = $"pineapple"
 @onready var SausageButton : Button = $"sausage"
 @onready var AnchoviesButton : Button = $"anchovies"
-@onready var sound : AudioStreamPlayer2D = $"../AudioStreamPlayer2D"
-@onready var b_sound : AudioStreamPlayer2D = $"../AudioStreamPlayer2D/AudioStreamPlayer2D2"
 
 var aisle_index: int = 0  # keeps track of which aisle we're on
 
@@ -41,7 +39,6 @@ func update_label() -> void:
 	money.text = "Money: $" + str(Global.money)
 
 func _on_back_pressed() -> void:
-	sound.play()
 	var screen_width: float = get_viewport().get_visible_rect().size.x
 	print("back button was pressed")
 	aisle_index -= 1
@@ -50,7 +47,6 @@ func _on_back_pressed() -> void:
 	camera.position.x = aisle_index * screen_width
 
 func _on_next_pressed() -> void:
-	sound.play()
 	var screen_width: float = get_viewport().get_visible_rect().size.x
 	print("next button was pressed")
 	aisle_index += 1  # increase aisle
@@ -58,18 +54,14 @@ func _on_next_pressed() -> void:
 	camera.position.x = aisle_index * screen_width
 
 func _on_finished_pressed() -> void:
-	b_sound.play()
-	await b_sound.finished
 	get_tree().change_scene_to_file("res://Scenes/cooking.tscn")
 
 func _on_shopping_list_pressed() -> void:
-	sound.play()
 	print("shopping list button was pressed")
 	shopping_list.visible = !shopping_list.visible
 	$"../ShoppingListScene".update_shopping_list() # keep up to date
 
 func _on_food_pressed(item: int, price: float) -> void:
-	b_sound.play()
 	if Global.money >= price: # checks to see if the player has enough money
 		Global.ingredients[item] += 1  # increments the proper item by 1
 		Global.money -= price

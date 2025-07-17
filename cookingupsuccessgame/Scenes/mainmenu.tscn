@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b24md2q3ym4fa"]
+[gd_scene load_steps=6 format=3 uid="uid://b24md2q3ym4fa"]
 
 [ext_resource type="Script" uid="uid://c8hiwj8hvukla" path="res://Scripts/mainmenu.gd" id="1_pposm"]
-[ext_resource type="AudioStream" uid="uid://2me0lmpdissx" path="res://Music/sounds/fantasy-game-sword-cut-sound-effect-get-more-on-my-patreon-339824.mp3" id="2_l2o7r"]
 [ext_resource type="Texture2D" uid="uid://bxanlmp5eqy7g" path="res://Art/Final Cooking up Success Image folder 2/Main Menu page/Play_Button.png" id="2_lah54"]
 [ext_resource type="Texture2D" uid="uid://dhojgsy72qx7u" path="res://Art/Final Cooking up Success Image folder 2/Main Menu page/Quit_Button.png" id="3_5326e"]
-[ext_resource type="Script" uid="uid://dg6apsmbesm25" path="res://Scripts/button.gd" id="4_juwjy"]
 [ext_resource type="Texture2D" uid="uid://c8t6otjqd67vj" path="res://Art/Final Cooking up Success Image folder 2/Main Menu page/Resume_Button.png" id="4_l2o7r"]
 [ext_resource type="Texture2D" uid="uid://bd0nb5upkqux8" path="res://Art/Final Cooking up Success Image folder 2/Main Menu page/Main_Menu_Background_Rec.png" id="5_juwjy"]
 
@@ -16,11 +14,6 @@ offset_top = 138.0
 offset_right = 280.0
 offset_bottom = 152.0
 script = ExtResource("1_pposm")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(-131, -179)
-scale = Vector2(0.5, 0.5)
-stream = ExtResource("2_l2o7r")
 
 [node name="StartButton" type="Button" parent="."]
 texture_filter = 6
@@ -42,7 +35,6 @@ icon = ExtResource("2_lah54")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("4_juwjy")
 
 [node name="QuitButton" type="Button" parent="."]
 texture_filter = 1
@@ -56,7 +48,6 @@ icon = ExtResource("3_5326e")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("4_juwjy")
 
 [node name="ResumeButton" type="Button" parent="."]
 texture_filter = 1
@@ -72,7 +63,6 @@ icon = ExtResource("4_l2o7r")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("4_juwjy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -117,7 +107,5 @@ texture = ExtResource("5_juwjy")
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed_start"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="QuitButton" method="_on_pressed_quit"]
-[connection signal="pressed" from="ResumeButton" to="ResumeButton" method="_on_pressed_resume"]
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]

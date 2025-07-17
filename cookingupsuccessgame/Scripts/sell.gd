@@ -5,10 +5,9 @@ var pizza_ref
 var anim_ref
 var cur_customer: int = 0
 var playing: bool = false
-@onready var happy_face = preload("res://Art/Final Cooking up Success Image folder 2/Characters/happy_face.png")
+@onready var happy_face = preload("res://Art/Final Cooking up Success Image folder 2/Equipment/Pizza cutter.png")
 @onready var face = $Pizza/Icon
 @onready var normal_face = face.texture
-@onready var happy_sound: AudioStreamPlayer2D = $"../AudioStreamPlayer2D/happy_customer"
 
 func _ready() -> void:
 	area_ref = $"."
@@ -31,7 +30,7 @@ func _process(delta: float) -> void:
 		playing = true
 		anim_ref.play("transparent_on")
 		await anim_ref.animation_finished
-		face.texture = normal_face
+		# Keep the happy face - don't change back to normal
 		cur_customer = 0
 		playing = false
 	if cur_customer == 1 && Global.customers > -1:
@@ -48,7 +47,6 @@ func check_for_selling() -> void:
 		if area.has_method("sell_pizza") && !food_ref:
 			# Try to sell the pizza and only change customer state if successful
 			if area.sell_pizza():
-				happy_sound.play()
 				cur_customer = 2
 				# Looks for pizza
 				return

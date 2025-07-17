@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://brnrw56qbt731"]
 
 [ext_resource type="Script" uid="uid://dgrt25h7og77y" path="res://Scripts/sell.gd" id="1_fij3u"]
-[ext_resource type="Texture2D" uid="uid://cg78yknm4106e" path="res://Art/Final Cooking up Success Image folder 2/Characters/ok_face.png" id="2_fij3u"]
+[ext_resource type="Texture2D" uid="uid://5mgc7ux7nk1g" path="res://Art/icon.svg" id="2_40oap"]
 [ext_resource type="Script" uid="uid://c1b3m8280c0er" path="res://Scripts/ClockTimer.gd" id="3_bh4vk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glui1"]
@@ -66,9 +66,7 @@ script = ExtResource("1_fij3u")
 
 [node name="Icon" type="Sprite2D" parent="Pizza"]
 texture_filter = 1
-position = Vector2(1, 26.845)
-scale = Vector2(0.316247, 0.316667)
-texture = ExtResource("2_fij3u")
+texture = ExtResource("2_40oap")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_glui1")
