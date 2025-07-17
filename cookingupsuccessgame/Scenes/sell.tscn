@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://brnrw56qbt731"]
 
 [ext_resource type="Script" uid="uid://dgrt25h7og77y" path="res://Scripts/sell.gd" id="1_fij3u"]
-[ext_resource type="Texture2D" uid="uid://do8u3ap5mfk50" path="res://Art/Final Cooking up Success Images and Audio/Characters/ok_face.png" id="2_fij3u"]
+[ext_resource type="Texture2D" uid="uid://kf3s7r8qnahu" path="res://Art/Final Cooking up Success Images and Audio 2/Characters/ok_face.png" id="2_fij3u"]
+[ext_resource type="Texture2D" uid="uid://dwmn5fnxa743s" path="res://Art/character_body.png" id="3_7k78s"]
 [ext_resource type="Script" uid="uid://c1b3m8280c0er" path="res://Scripts/ClockTimer.gd" id="3_bh4vk"]
-[ext_resource type="Texture2D" uid="uid://xftpas2inhrg" path="res://Art/Final Cooking up Success Images and Audio/Characters/happy_face.png" id="4_40oap"]
-[ext_resource type="Texture2D" uid="uid://7cn0jtmbht46" path="res://Art/Final Cooking up Success Images and Audio/Characters/character_body.png" id="5_bh4vk"]
+[ext_resource type="Texture2D" uid="uid://kfyig6kplyrq" path="res://Art/Final Cooking up Success Images and Audio 2/Characters/happy_face.png" id="4_40oap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glui1"]
 size = Vector2(128, 128)
@@ -46,36 +46,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_mu0rf"]
-resource_name = "transparent_off"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pizza:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_7s6re"]
-resource_name = "transparent_on"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pizza:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_bh4vk"]
@@ -120,6 +90,36 @@ tracks/0/keys = {
 "values": [ExtResource("2_fij3u")]
 }
 
+[sub_resource type="Animation" id="Animation_mu0rf"]
+resource_name = "transparent_off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pizza:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7s6re"]
+resource_name = "transparent_on"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pizza:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mu0rf"]
 _data = {
 &"RESET": SubResource("Animation_geqgq"),
@@ -143,7 +143,7 @@ texture = ExtResource("2_fij3u")
 z_index = -2
 position = Vector2(5.68434e-14, 88.5)
 scale = Vector2(0.300595, 0.15625)
-texture = ExtResource("5_bh4vk")
+texture = ExtResource("3_7k78s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)

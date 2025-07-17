@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://ccjtqqsxfsxdj"]
 
 [ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
-[ext_resource type="Texture2D" uid="uid://df36vi6tfevsy" path="res://Art/Final Cooking up Success Images and Audio/Characters/shoping_list_icon.png" id="2_5t8r7"]
+[ext_resource type="Texture2D" uid="uid://ba03mtfjtmuel" path="res://Art/Final Cooking up Success Images and Audio 2/Characters/shoping_list_icon.png" id="2_5t8r7"]
 [ext_resource type="Texture2D" uid="uid://bq8jd3vjo40lr" path="res://Art/Unknown-1.png" id="3_iv1kd"]
 [ext_resource type="PackedScene" uid="uid://wjye2oajgcmk" path="res://Scenes/oven_scene.tscn" id="4_jhubm"]
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="5_iv1kd"]
 [ext_resource type="PackedScene" uid="uid://bvn8x7y2k3m4n" path="res://Scenes/IngredientSpot.tscn" id="7_bhcx5"]
-[ext_resource type="Texture2D" uid="uid://c2wc3wo0ut616" path="res://Art/Final Cooking up Success Images and Audio/Background images/cooking kitchen1.png" id="8_5t8r7"]
-[ext_resource type="Texture2D" uid="uid://b7c43r66t0437" path="res://Art/Final Cooking up Success Images and Audio/Background images/cooking kitchen2.png" id="9_8l6gq"]
+[ext_resource type="Texture2D" uid="uid://cg8k0ye1vq0wc" path="res://Art/Final Cooking up Success Images and Audio 2/Background images/cooking kitchen1.png" id="8_5t8r7"]
+[ext_resource type="Texture2D" uid="uid://dyhwqnf3q0y1f" path="res://Art/Final Cooking up Success Images and Audio 2/Background images/cooking kitchen2.png" id="9_8l6gq"]
 [ext_resource type="PackedScene" uid="uid://brnrw56qbt731" path="res://Scenes/sell.tscn" id="10_8l6gq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv1kd"]

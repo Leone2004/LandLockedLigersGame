@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ytwvoc765rk3"]
 
 [ext_resource type="Script" uid="uid://brx8kajls5irq" path="res://Scripts/ShoppingStoreButtons.gd" id="1_6pps0"]
-[ext_resource type="Texture2D" uid="uid://df36vi6tfevsy" path="res://Art/Final Cooking up Success Images and Audio/Characters/shoping_list_icon.png" id="2_bneo4"]
+[ext_resource type="Texture2D" uid="uid://ba03mtfjtmuel" path="res://Art/Final Cooking up Success Images and Audio 2/Characters/shoping_list_icon.png" id="2_bneo4"]
 [ext_resource type="Texture2D" uid="uid://edyokx505sba" path="res://Art/Final Cooking up Success Image folder 2/Background images/Grocery Background.jpg" id="3_45mn4"]
 [ext_resource type="Texture2D" uid="uid://5gnwamavmr6o" path="res://Art/Final Cooking up Success Image folder 2/Equipment/Shopping shelf.png" id="3_bneo4"]
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="3_d07kg"]
@@ -45,7 +45,7 @@ text = "Finished Shopping
 [node name="ShoppingList" type="Button" parent="Control/CanvasLayer"]
 texture_filter = 1
 anchors_preset = -1
-anchor_left = -0.0217014
+anchor_left = -0.0616319
 anchor_right = -0.0616319
 anchor_bottom = 0.0324074
 offset_left = 1033.0
