@@ -3,6 +3,7 @@ extends Node
 var day: int = 1
 var money: float = 100.00
 var customers = 3
+var satisfied_customers = [false, false, false]  # Track which customers are satisfied
 
 # Suggested New Variable System
 var ingredients = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
@@ -16,7 +17,8 @@ func save_game():
 		"day": day,
 		"money": money,
 		"ingredients": ingredients,
-		"shopping_list": shopping_list
+		"shopping_list": shopping_list,
+		"satisfied_customers": satisfied_customers
 	}
 	var file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	file.store_string(JSON.stringify(save_data))
@@ -33,6 +35,7 @@ func load_game():
 			money = save_data.get("money", 100.0)
 			ingredients = save_data.get("ingredients", [0,0,0,0,0,0,0,0,0,0,0,0,0,0])
 			shopping_list = save_data.get("shopping_list", [])
+			satisfied_customers = save_data.get("satisfied_customers", [false, false, false])
 		else:
 			print("Save file corrupted or invalid.")
 	else:

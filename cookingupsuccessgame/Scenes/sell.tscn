@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://brnrw56qbt731"]
+[gd_scene load_steps=13 format=3 uid="uid://brnrw56qbt731"]
 
 [ext_resource type="Script" uid="uid://dgrt25h7og77y" path="res://Scripts/sell.gd" id="1_fij3u"]
-[ext_resource type="Texture2D" uid="uid://5mgc7ux7nk1g" path="res://Art/icon.svg" id="2_40oap"]
+[ext_resource type="Texture2D" uid="uid://do8u3ap5mfk50" path="res://Art/Final Cooking up Success Images and Audio/Characters/ok_face.png" id="2_fij3u"]
 [ext_resource type="Script" uid="uid://c1b3m8280c0er" path="res://Scripts/ClockTimer.gd" id="3_bh4vk"]
+[ext_resource type="Texture2D" uid="uid://xftpas2inhrg" path="res://Art/Final Cooking up Success Images and Audio/Characters/happy_face.png" id="4_40oap"]
+[ext_resource type="Texture2D" uid="uid://7cn0jtmbht46" path="res://Art/Final Cooking up Success Images and Audio/Characters/character_body.png" id="5_bh4vk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glui1"]
 size = Vector2(128, 128)
@@ -20,6 +22,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pizza/Icon:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_fij3u")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pizza/Icon:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_mu0rf"]
@@ -52,9 +78,53 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_bh4vk"]
+resource_name = "happy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pizza/Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_40oap")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pizza/Icon:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12, 50)]
+}
+
+[sub_resource type="Animation" id="Animation_7k78s"]
+resource_name = "neutral"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pizza/Icon:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_fij3u")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mu0rf"]
 _data = {
 &"RESET": SubResource("Animation_geqgq"),
+&"happy": SubResource("Animation_bh4vk"),
+&"neutral": SubResource("Animation_7k78s"),
 &"transparent_off": SubResource("Animation_mu0rf"),
 &"transparent_on": SubResource("Animation_7s6re")
 }
@@ -65,10 +135,18 @@ script = ExtResource("1_fij3u")
 [node name="Pizza" type="Node2D" parent="."]
 
 [node name="Icon" type="Sprite2D" parent="Pizza"]
-texture_filter = 1
-texture = ExtResource("2_40oap")
+position = Vector2(1.00006, 27)
+scale = Vector2(0.376563, 0.337963)
+texture = ExtResource("2_fij3u")
+
+[node name="CharacterBody" type="Sprite2D" parent="Pizza"]
+z_index = -2
+position = Vector2(5.68434e-14, 88.5)
+scale = Vector2(0.300595, 0.15625)
+texture = ExtResource("5_bh4vk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_glui1")
 
 [node name="Baker_timer" type="Timer" parent="."]

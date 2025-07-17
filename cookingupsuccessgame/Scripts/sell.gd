@@ -5,6 +5,8 @@ var pizza_ref
 var anim_ref
 var cur_customer: int = 0
 var playing: bool = false
+var customer_id: int = -1  # Unique ID for this customer
+var is_satisfied: bool = false  # Whether this customer has been satisfied
 @onready var happy_face = preload("res://Art/Final Cooking up Success Image folder 2/Equipment/Pizza cutter.png")
 @onready var face = $Pizza/PlainPizza
 @onready var normal_face = face.texture if face != null else null
@@ -12,35 +14,58 @@ var playing: bool = false
 func _ready() -> void:
 	if face == null:
 		print("ERROR: $Pizza/PlainPizza not found in sell.gd!")
+	
+	# Assign customer ID based on position (you can adjust this logic)
+	assign_customer_id()
+	
 	area_ref = $"."
 	pizza_ref = $Pizza
 	pizza_ref.modulate.a = 0
 	anim_ref = $AnimationPlayer
 	area_ref.hide()
 
+func assign_customer_id() -> void:
+	# Assign ID based on position - you can adjust these values
+	if global_position.x > 200:
+		customer_id = 0  # Right customer
+	elif global_position.x > 50:
+		customer_id = 1  # Middle customer
+	else:
+		customer_id = 2  # Left customer
+
 func _process(delta: float) -> void:
-	if cur_customer != 1 && cur_customer < 2 && !playing && Global.customers > -1:
-		Global.customers -= 1
+	# Check if this customer should appear (not satisfied yet and not currently active)
+	if cur_customer == 0 && !playing && !is_satisfied:
 		area_ref.show()
 		playing = true
+		# Start with fade in
 		anim_ref.play("transparent_off")
+		await anim_ref.animation_finished
+		# Then play neutral animation
+		anim_ref.play("neutral")
 		await anim_ref.animation_finished
 		cur_customer = 1
 		playing = false
 	elif cur_customer == 2 && !playing:
-		if face != null:
-			face.texture = happy_face
-		else:
-			print("WARNING: Tried to set happy_face, but 'face' is null!")
+		# Play happy animation when pizza is sold
 		playing = true
+		anim_ref.play("happy")
+		await anim_ref.animation_finished
+		# Then fade out and stay hidden
 		anim_ref.play("transparent_on")
 		await anim_ref.animation_finished
-		# Keep the happy face - don't change back to normal
 		cur_customer = 0
 		playing = false
-	if cur_customer == 1 && Global.customers > -1:
+		# Mark this customer as satisfied and hide them permanently
+		if customer_id >= 0 and customer_id < Global.satisfied_customers.size():
+			Global.satisfied_customers[customer_id] = true
+			is_satisfied = true
+		area_ref.hide()  # Keep them hidden after satisfaction
+	if cur_customer == 1 && !is_satisfied:
 		check_for_selling()
-	elif Global.customers < 0:
+	
+	# Check if all customers are satisfied for scene transition
+	if all_customers_satisfied():
 		next_day()
 	pass
 
@@ -57,8 +82,24 @@ func check_for_selling() -> void:
 				return
 
 func next_day():
-	if Global.customers > 0:
-		return  # Don't switch scene if there are still customers
+	# Check if all customers are satisfied
+	var all_satisfied = true
+	for satisfied in Global.satisfied_customers:
+		if not satisfied:
+			all_satisfied = false
+			break
+	
+	if not all_satisfied:
+		return  # Don't switch scene if not all customers are satisfied
+	
 	Global.day += 1 # increments day by one, when the "done" button is pressed
 	get_tree().change_scene_to_file("res://Scenes/GroceryStore.tscn") # changes scene back to shopping scene
 	Global.customers = 3
+	# Reset customer satisfaction for next day
+	Global.satisfied_customers = [false, false, false]
+
+func all_customers_satisfied() -> bool:
+	for satisfied in Global.satisfied_customers:
+		if not satisfied:
+			return false
+	return true

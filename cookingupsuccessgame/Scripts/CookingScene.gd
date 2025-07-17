@@ -14,8 +14,8 @@ var pizza_scene: PackedScene
 var spawned_pizzas: Array[Node2D] = []
 var max_pizzas: int = 2
 var spawn_positions: Array[Vector2] = [
-	Vector2(10, -331),   # First pizza at camera center
-	Vector2(210, -331)   # Second pizza to the right of camera
+	Vector2(10, -181),   # First pizza at camera center
+	Vector2(210, -181)   # Second pizza to the right of camera
 ]
 
 @onready var recipe: RichTextLabel = $"CanvasLayer/RecipeBook/Current Recipe"
