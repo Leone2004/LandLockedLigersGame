@@ -1,10 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://ytwvoc765rk3"]
+[gd_scene load_steps=17 format=3 uid="uid://ytwvoc765rk3"]
 
 [ext_resource type="Script" uid="uid://brx8kajls5irq" path="res://Scripts/ShoppingStoreButtons.gd" id="1_6pps0"]
 [ext_resource type="Texture2D" uid="uid://ba03mtfjtmuel" path="res://Art/Final Cooking up Success Images and Audio 2/Characters/shoping_list_icon.png" id="2_bneo4"]
 [ext_resource type="Texture2D" uid="uid://edyokx505sba" path="res://Art/Final Cooking up Success Image folder 2/Background images/Grocery Background.jpg" id="3_45mn4"]
 [ext_resource type="Texture2D" uid="uid://5gnwamavmr6o" path="res://Art/Final Cooking up Success Image folder 2/Equipment/Shopping shelf.png" id="3_bneo4"]
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="3_d07kg"]
+[ext_resource type="Texture2D" uid="uid://wxrb1ti0gh2k" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success pepperoni.png" id="3_t88la"]
+[ext_resource type="Texture2D" uid="uid://chnxoy7cab6p4" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success mushrooms.png" id="4_kulai"]
+[ext_resource type="Texture2D" uid="uid://bgb4rocpkm1lx" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success pineapple.png" id="5_7tpoo"]
+[ext_resource type="Texture2D" uid="uid://ddd7qk8ywkuos" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success olives.png" id="6_c7oxb"]
+[ext_resource type="Texture2D" uid="uid://c3cg1maqvhvn3" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success jalapeno.png" id="7_qlxn6"]
+[ext_resource type="Texture2D" uid="uid://y0viyyes7pb8" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success bacon.png" id="8_3mgp1"]
+[ext_resource type="Texture2D" uid="uid://c75tsx1o86pe3" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success ham.png" id="9_y356w"]
+[ext_resource type="Texture2D" uid="uid://b0e8vfuaqqo0b" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success garlic.png" id="10_kchnq"]
+[ext_resource type="Texture2D" uid="uid://cjf83vmvdc232" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/Single tomato.png" id="11_aq3yx"]
+[ext_resource type="Texture2D" uid="uid://cl6rxnshxaw1e" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success onion.png" id="12_qhsj4"]
+[ext_resource type="Texture2D" uid="uid://b5tnkwiuomctv" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success sausage.png" id="13_0j4bi"]
 
 [node name="ShoppingScene" type="Node2D"]
 
@@ -56,6 +67,7 @@ text = "
 "
 icon = ExtResource("2_bneo4")
 flat = true
+icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
@@ -72,523 +84,758 @@ metadata/_edit_use_anchors_ = true
 [node name="pepperoni" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.625
-anchor_top = -2.175
+anchor_left = -6.925
+anchor_top = -2.375
 anchor_right = -7.625
-anchor_bottom = -2.175
+anchor_bottom = -1.775
 offset_left = -235.0
 offset_top = -44.0
 offset_right = -134.0
 offset_bottom = 9.0
-text = "pepperoni"
+text = "
+"
+icon = ExtResource("3_t88la")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="pepperoni2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.325
-anchor_top = -2.125
-anchor_right = -7.325
-anchor_bottom = -2.125
-offset_left = -117.0
+anchor_left = -4.525
+anchor_top = -2.375
+anchor_right = -4.725
+anchor_bottom = -1.775
+offset_left = -235.0
 offset_top = -44.0
-offset_right = -16.0
+offset_right = -134.0
 offset_bottom = 9.0
-text = "pepperoni"
+text = "
+"
+icon = ExtResource("3_t88la")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="pepperoni3" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.525
-anchor_top = -2.15
-anchor_right = -7.525
-anchor_bottom = -2.15
-offset_left = 26.0
+anchor_left = -1.0
+anchor_top = -2.35
+anchor_right = -1.0
+anchor_bottom = -1.75
+offset_left = -235.0
 offset_top = -44.0
-offset_right = 127.0
+offset_right = -134.0
 offset_bottom = 9.0
-text = "pepperoni"
+text = "
+"
+icon = ExtResource("3_t88la")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="pepperoni4" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.275
-anchor_top = -2.15
-anchor_right = -7.275
-anchor_bottom = -2.15
-offset_left = 143.0
+anchor_left = 2.575
+anchor_top = -2.275
+anchor_right = 2.575
+anchor_bottom = -1.675
+offset_left = -235.0
 offset_top = -44.0
-offset_right = 244.0
+offset_right = -134.0
 offset_bottom = 9.0
-text = "pepperoni"
+text = "
+"
+icon = ExtResource("3_t88la")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="mushrooms" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.825
-anchor_top = -2.7
-anchor_right = -7.825
-anchor_bottom = -2.7
+anchor_left = -7.35
+anchor_top = -3.0
+anchor_right = -8.125
+anchor_bottom = -2.575
 offset_left = 931.0
 offset_top = -175.0
 offset_right = 1032.0
 offset_bottom = -122.0
-text = "mushrooms"
+icon = ExtResource("4_kulai")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="mushrooms2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.675
-anchor_top = -2.7
-anchor_right = -7.675
-anchor_bottom = -2.7
-offset_left = 1057.0
+anchor_left = -4.5
+anchor_top = -2.9
+anchor_right = -4.5
+anchor_bottom = -2.475
+offset_left = 931.0
 offset_top = -175.0
-offset_right = 1158.0
+offset_right = 1032.0
 offset_bottom = -122.0
-text = "mushrooms"
+icon = ExtResource("4_kulai")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="mushrooms3" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.45
-anchor_top = -2.625
-anchor_right = -7.45
-anchor_bottom = -2.625
-offset_left = 1187.0
+anchor_left = -1.125
+anchor_top = -2.9
+anchor_right = -1.125
+anchor_bottom = -2.475
+offset_left = 931.0
 offset_top = -175.0
-offset_right = 1288.0
+offset_right = 1032.0
 offset_bottom = -122.0
-text = "mushrooms"
+icon = ExtResource("4_kulai")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="mushrooms4" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -6.925
-anchor_top = -2.65
-anchor_right = -6.925
-anchor_bottom = -2.65
-offset_left = 1300.0
-offset_top = -176.0
-offset_right = 1401.0
-offset_bottom = -123.0
-text = "mushrooms"
+anchor_left = 2.175
+anchor_top = -2.925
+anchor_right = 2.175
+anchor_bottom = -2.5
+offset_left = 931.0
+offset_top = -175.0
+offset_right = 1032.0
+offset_bottom = -122.0
+icon = ExtResource("4_kulai")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="pineapple" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.675
-anchor_top = -1.775
-anchor_right = -7.675
-anchor_bottom = -1.775
+anchor_left = -7.05
+anchor_top = -2.05
+anchor_right = -7.5
+anchor_bottom = -1.25
 offset_left = -236.0
 offset_top = 26.0
 offset_right = -135.0
 offset_bottom = 79.0
-text = "pineapple"
+icon = ExtResource("5_7tpoo")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="pineapple2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.425
-anchor_top = -1.725
-anchor_right = -7.425
-anchor_bottom = -1.725
-offset_left = -124.0
+anchor_left = -4.325
+anchor_top = -2.075
+anchor_right = -4.325
+anchor_bottom = -1.275
+offset_left = -236.0
 offset_top = 26.0
-offset_right = -23.0
+offset_right = -135.0
 offset_bottom = 79.0
-text = "pineapple"
+icon = ExtResource("5_7tpoo")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="pineapple3" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.475
-anchor_top = -1.675
-anchor_right = -7.475
-anchor_bottom = -1.675
-offset_left = 20.0
+anchor_left = -0.85
+anchor_top = -1.975
+anchor_right = -0.85
+anchor_bottom = -1.175
+offset_left = -236.0
 offset_top = 26.0
-offset_right = 121.0
+offset_right = -135.0
 offset_bottom = 79.0
-text = "pineapple"
+icon = ExtResource("5_7tpoo")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="pineapple4" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.225
-anchor_top = -1.675
-anchor_right = -7.225
-anchor_bottom = -1.675
-offset_left = 139.0
+anchor_left = 2.7
+anchor_top = -1.9
+anchor_right = 2.7
+anchor_bottom = -1.1
+offset_left = -236.0
 offset_top = 26.0
-offset_right = 240.0
+offset_right = -135.0
 offset_bottom = 79.0
-text = "pineapple"
-metadata/_edit_use_anchors_ = true
-
-[node name="sauce4" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -7.275
-anchor_top = -2.4
-anchor_right = -7.275
-anchor_bottom = -2.4
-offset_left = 137.0
-offset_top = -108.0
-offset_right = 238.0
-offset_bottom = -55.0
-text = "sauce"
-metadata/_edit_use_anchors_ = true
-
-[node name="olives" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -7.775
-anchor_top = -1.6
-anchor_right = -7.775
-anchor_bottom = -1.6
-offset_left = 932.0
-offset_top = 11.0
-offset_right = 1033.0
-offset_bottom = 64.0
-text = "olives"
+icon = ExtResource("5_7tpoo")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="olives2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.6
-anchor_top = -1.55
-anchor_right = -7.6
-anchor_bottom = -1.55
+anchor_left = -10.925
+anchor_top = -1.925
+anchor_right = -11.075
+anchor_bottom = -1.05
 offset_left = 1058.0
 offset_top = 11.0
 offset_right = 1159.0
 offset_bottom = 64.0
-text = "olives"
+icon = ExtResource("6_c7oxb")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="olives3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -7.85
+anchor_top = -1.875
+anchor_right = -7.85
+anchor_bottom = -1.0
+offset_left = 1058.0
+offset_top = 11.0
+offset_right = 1159.0
+offset_bottom = 64.0
+icon = ExtResource("6_c7oxb")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="olives4" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.425
+anchor_top = -1.775
+anchor_right = -4.425
+anchor_bottom = -0.9
+offset_left = 1058.0
+offset_top = 11.0
+offset_right = 1159.0
+offset_bottom = 64.0
+icon = ExtResource("6_c7oxb")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="olives5" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.3
+anchor_top = -1.8
+anchor_right = -1.3
+anchor_bottom = -0.925
+offset_left = 1058.0
+offset_top = 11.0
+offset_right = 1159.0
+offset_bottom = 64.0
+icon = ExtResource("6_c7oxb")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="peppers" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.1
-anchor_top = -1.55
-anchor_right = -7.1
-anchor_bottom = -1.55
+anchor_left = -35.825
+anchor_top = -7.45
+anchor_right = -36.8
+anchor_bottom = -7.1
 offset_left = 1177.0
 offset_top = 13.0
 offset_right = 1278.0
 offset_bottom = 66.0
-text = "peppers"
+icon = ExtResource("7_qlxn6")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="peppers2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.275
-anchor_top = -1.55
-anchor_right = -7.275
-anchor_bottom = -1.55
-offset_left = 1298.0
-offset_top = 14.0
-offset_right = 1399.0
-offset_bottom = 67.0
-text = "peppers"
+anchor_left = -33.0
+anchor_top = -7.575
+anchor_right = -33.0
+anchor_bottom = -7.225
+offset_left = 1177.0
+offset_top = 13.0
+offset_right = 1278.0
+offset_bottom = 66.0
+icon = ExtResource("7_qlxn6")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="peppers3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -39.775
+anchor_top = -7.5
+anchor_right = -39.775
+anchor_bottom = -7.15
+offset_left = 1177.0
+offset_top = 13.0
+offset_right = 1278.0
+offset_bottom = 66.0
+icon = ExtResource("7_qlxn6")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="peppers4" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -42.225
+anchor_top = -7.425
+anchor_right = -42.225
+anchor_bottom = -7.075
+offset_left = 1177.0
+offset_top = 13.0
+offset_right = 1278.0
+offset_bottom = 66.0
+icon = ExtResource("7_qlxn6")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="bacon" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.85
-anchor_top = -2.7
-anchor_right = -7.85
-anchor_bottom = -2.7
+anchor_left = -7.5
+anchor_top = -3.175
+anchor_right = -8.175
+anchor_bottom = -2.325
 offset_left = 935.0
 offset_top = -92.0
 offset_right = 1033.0
 offset_bottom = -54.0
-text = "bacon
-"
+icon = ExtResource("8_3mgp1")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="bacon2" type="Button" parent="Control"]
+[node name="bacon5" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.45
-anchor_top = -2.6
-anchor_right = -7.45
-anchor_bottom = -2.6
-offset_left = 1057.0
+anchor_left = -4.5
+anchor_top = -3.275
+anchor_right = -4.825
+anchor_bottom = -2.125
+offset_left = 935.0
 offset_top = -92.0
-offset_right = 1155.0
+offset_right = 1033.0
 offset_bottom = -54.0
-text = "bacon
-"
+icon = ExtResource("8_3mgp1")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="bacon3" type="Button" parent="Control"]
+[node name="bacon6" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.525
-anchor_top = -2.5
-anchor_right = -7.525
-anchor_bottom = -2.5
-offset_left = 1187.0
+anchor_left = -1.25
+anchor_top = -3.2
+anchor_right = -1.25
+anchor_bottom = -2.05
+offset_left = 935.0
 offset_top = -92.0
-offset_right = 1285.0
+offset_right = 1033.0
 offset_bottom = -54.0
-text = "bacon
-"
+icon = ExtResource("8_3mgp1")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
-[node name="bacon4" type="Button" parent="Control"]
+[node name="bacon7" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.3
-anchor_top = -2.525
-anchor_right = -7.3
-anchor_bottom = -2.525
-offset_left = 1302.0
+anchor_left = 1.95
+anchor_top = -3.225
+anchor_right = 1.95
+anchor_bottom = -2.075
+offset_left = 935.0
 offset_top = -92.0
-offset_right = 1400.0
+offset_right = 1033.0
 offset_bottom = -54.0
-text = "bacon
-"
+icon = ExtResource("8_3mgp1")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="ham" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.875
-anchor_top = -2.3
-anchor_right = -7.875
-anchor_bottom = -2.3
+anchor_left = -7.575
+anchor_top = -2.65
+anchor_right = -8.2
+anchor_bottom = -1.925
 offset_left = 934.0
 offset_top = -34.0
 offset_right = 1032.0
 offset_bottom = 4.0
-text = "ham"
+icon = ExtResource("9_y356w")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="ham2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.525
-anchor_top = -2.225
-anchor_right = -7.525
-anchor_bottom = -2.225
-offset_left = 1057.0
+anchor_left = -4.775
+anchor_top = -2.675
+anchor_right = -4.775
+anchor_bottom = -1.95
+offset_left = 934.0
 offset_top = -34.0
-offset_right = 1155.0
+offset_right = 1032.0
 offset_bottom = 4.0
-text = "ham"
+icon = ExtResource("9_y356w")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="ham3" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.4
-anchor_top = -2.1
-anchor_right = -7.4
-anchor_bottom = -2.1
-offset_left = 1184.0
-offset_top = -37.0
-offset_right = 1282.0
-offset_bottom = 1.0
-text = "ham"
+anchor_left = -1.425
+anchor_top = -2.55
+anchor_right = -1.425
+anchor_bottom = -1.825
+offset_left = 934.0
+offset_top = -34.0
+offset_right = 1032.0
+offset_bottom = 4.0
+icon = ExtResource("9_y356w")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="ham4" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.2
-anchor_top = -2.125
-anchor_right = -7.2
-anchor_bottom = -2.125
-offset_left = 1299.0
+anchor_left = 1.775
+anchor_top = -2.475
+anchor_right = 1.775
+anchor_bottom = -1.75
+offset_left = 934.0
 offset_top = -34.0
-offset_right = 1397.0
+offset_right = 1032.0
 offset_bottom = 4.0
-text = "ham"
-metadata/_edit_use_anchors_ = true
-
-[node name="anchovies" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -7.675
-anchor_top = -3.75
-anchor_right = -7.675
-anchor_bottom = -3.75
-offset_left = 2337.0
-offset_top = -52.0
-offset_right = 2435.0
-offset_bottom = -14.0
-text = "anchovies"
-metadata/_edit_use_anchors_ = true
-
-[node name="anchovies2" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -7.125
-anchor_top = -3.675
-anchor_right = -7.125
-anchor_bottom = -3.675
-offset_left = 2453.0
-offset_top = -52.0
-offset_right = 2551.0
-offset_bottom = -14.0
-text = "anchovies"
+icon = ExtResource("9_y356w")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="garlic" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -8.05
-anchor_top = -3.625
-anchor_right = -8.05
-anchor_bottom = -3.625
+anchor_left = -7.85
+anchor_top = -4.175
+anchor_right = -8.35
+anchor_bottom = -3.25
 offset_left = 2095.0
 offset_top = 22.0
 offset_right = 2193.0
 offset_bottom = 60.0
-text = "garlic"
+icon = ExtResource("10_kchnq")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="garlic2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -8.0
-anchor_top = -3.625
-anchor_right = -8.0
-anchor_bottom = -3.625
-offset_left = 2219.0
+anchor_left = -5.125
+anchor_top = -4.15
+anchor_right = -5.125
+anchor_bottom = -3.225
+offset_left = 2095.0
 offset_top = 22.0
-offset_right = 2317.0
+offset_right = 2193.0
 offset_bottom = 60.0
-text = "garlic"
+icon = ExtResource("10_kchnq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="garlic3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.225
+anchor_top = -4.15
+anchor_right = -2.225
+anchor_bottom = -3.225
+offset_left = 2095.0
+offset_top = 22.0
+offset_right = 2193.0
+offset_bottom = 60.0
+icon = ExtResource("10_kchnq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="garlic4" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = -4.175
+anchor_right = 0.9
+anchor_bottom = -3.25
+offset_left = 2095.0
+offset_top = 22.0
+offset_right = 2193.0
+offset_bottom = 60.0
+icon = ExtResource("10_kchnq")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="tomato" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.75
-anchor_top = -3.65
-anchor_right = -7.75
-anchor_bottom = -3.65
+anchor_left = -71.05
+anchor_top = -5.975
+anchor_right = -71.75
+anchor_bottom = -5.125
 offset_left = 2339.0
 offset_top = 21.0
 offset_right = 2437.0
 offset_bottom = 59.0
-text = "tomato"
+icon = ExtResource("11_aq3yx")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="tomato2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.15
-anchor_top = -3.6
-anchor_right = -7.15
-anchor_bottom = -3.6
-offset_left = 2452.0
+anchor_left = -68.475
+anchor_top = -6.0
+anchor_right = -69.175
+anchor_bottom = -5.15
+offset_left = 2339.0
 offset_top = 21.0
-offset_right = 2550.0
+offset_right = 2437.0
 offset_bottom = 59.0
-text = "tomato"
+icon = ExtResource("11_aq3yx")
+flat = true
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="tomato3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -61.425
+anchor_top = -5.925
+anchor_right = -62.125
+anchor_bottom = -5.075
+offset_left = 2339.0
+offset_top = 21.0
+offset_right = 2437.0
+offset_bottom = 59.0
+icon = ExtResource("11_aq3yx")
+flat = true
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="tomato4" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -64.9
+anchor_top = -5.95
+anchor_right = -65.625
+anchor_bottom = -5.1
+offset_left = 2339.0
+offset_top = 21.0
+offset_right = 2437.0
+offset_bottom = 59.0
+icon = ExtResource("11_aq3yx")
+flat = true
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="onion" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -8.15
-anchor_top = -3.775
-anchor_right = -8.15
-anchor_bottom = -3.775
+anchor_left = -7.8
+anchor_top = -4.125
+anchor_right = -8.475
+anchor_bottom = -3.475
 offset_left = 2098.0
 offset_top = -51.0
 offset_right = 2196.0
 offset_bottom = -13.0
-text = "onion"
+icon = ExtResource("12_qhsj4")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="onion2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -8.075
-anchor_top = -3.725
-anchor_right = -8.075
-anchor_bottom = -3.725
-offset_left = 2221.0
+anchor_left = -5.125
+anchor_top = -4.1
+anchor_right = -5.125
+anchor_bottom = -3.45
+offset_left = 2098.0
 offset_top = -51.0
-offset_right = 2319.0
+offset_right = 2196.0
 offset_bottom = -13.0
-text = "onion"
+icon = ExtResource("12_qhsj4")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="onion3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.2
+anchor_top = -4.1
+anchor_right = -2.2
+anchor_bottom = -3.45
+offset_left = 2098.0
+offset_top = -51.0
+offset_right = 2196.0
+offset_bottom = -13.0
+icon = ExtResource("12_qhsj4")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="onion4" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.825
+anchor_top = -4.15
+anchor_right = 0.825
+anchor_bottom = -3.5
+offset_left = 2098.0
+offset_top = -51.0
+offset_right = 2196.0
+offset_bottom = -13.0
+icon = ExtResource("12_qhsj4")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="sausage" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -8.225
-anchor_top = -4.0
-anchor_right = -8.225
-anchor_bottom = -4.0
+anchor_left = -7.975
+anchor_top = -4.6
+anchor_right = -8.425
+anchor_bottom = -3.525
 offset_left = 2100.0
 offset_top = -114.0
 offset_right = 2198.0
 offset_bottom = -76.0
-text = "sausage"
+icon = ExtResource("13_0j4bi")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="sausage2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -8.175
-anchor_top = -4.0
-anchor_right = -8.175
-anchor_bottom = -4.0
-offset_left = 2222.0
+anchor_left = -5.2
+anchor_top = -4.6
+anchor_right = -5.2
+anchor_bottom = -3.525
+offset_left = 2100.0
 offset_top = -114.0
-offset_right = 2320.0
+offset_right = 2198.0
 offset_bottom = -76.0
-text = "sausage"
+icon = ExtResource("13_0j4bi")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="sausage3" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.675
-anchor_top = -4.0
-anchor_right = -7.675
-anchor_bottom = -4.0
-offset_left = 2337.0
+anchor_left = -2.075
+anchor_top = -4.625
+anchor_right = -2.075
+anchor_bottom = -3.55
+offset_left = 2100.0
 offset_top = -114.0
-offset_right = 2435.0
+offset_right = 2198.0
 offset_bottom = -76.0
-text = "sausage"
+icon = ExtResource("13_0j4bi")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="sausage4" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.075
-anchor_top = -3.975
-anchor_right = -7.075
-anchor_bottom = -3.975
-offset_left = 2453.0
+anchor_left = -2.075
+anchor_top = -4.625
+anchor_right = -2.075
+anchor_bottom = -3.55
+offset_left = 2100.0
 offset_top = -114.0
-offset_right = 2551.0
+offset_right = 2198.0
 offset_bottom = -76.0
-text = "sausage"
+icon = ExtResource("13_0j4bi")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="sausage5" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = -4.575
+anchor_right = 0.95
+anchor_bottom = -3.5
+offset_left = 2100.0
+offset_top = -114.0
+offset_right = 2198.0
+offset_bottom = -76.0
+icon = ExtResource("13_0j4bi")
+flat = true
+icon_alignment = 1
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -654,28 +901,36 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="Control/pineapple2" to="Control" method="_on_food_pressed" binds= [10, 3.0]]
 [connection signal="pressed" from="Control/pineapple3" to="Control" method="_on_food_pressed" binds= [10, 3.0]]
 [connection signal="pressed" from="Control/pineapple4" to="Control" method="_on_food_pressed" binds= [10, 3.0]]
-[connection signal="pressed" from="Control/sauce4" to="Control" method="_on_food_pressed" binds= [3, 5.0]]
-[connection signal="pressed" from="Control/olives" to="Control" method="_on_food_pressed" binds= [4, 3.0]]
 [connection signal="pressed" from="Control/olives2" to="Control" method="_on_food_pressed" binds= [4, 3.0]]
+[connection signal="pressed" from="Control/olives3" to="Control" method="_on_food_pressed" binds= [4, 3.0]]
+[connection signal="pressed" from="Control/olives4" to="Control" method="_on_food_pressed" binds= [4, 3.0]]
+[connection signal="pressed" from="Control/olives5" to="Control" method="_on_food_pressed" binds= [4, 3.0]]
 [connection signal="pressed" from="Control/peppers" to="Control" method="_on_food_pressed" binds= [5, 1.0]]
 [connection signal="pressed" from="Control/peppers2" to="Control" method="_on_food_pressed" binds= [5, 1.0]]
+[connection signal="pressed" from="Control/peppers3" to="Control" method="_on_food_pressed" binds= [5, 1.0]]
+[connection signal="pressed" from="Control/peppers4" to="Control" method="_on_food_pressed" binds= [5, 1.0]]
 [connection signal="pressed" from="Control/bacon" to="Control" method="_on_food_pressed" binds= [6, 6.0]]
-[connection signal="pressed" from="Control/bacon2" to="Control" method="_on_food_pressed" binds= [6, 6.0]]
-[connection signal="pressed" from="Control/bacon3" to="Control" method="_on_food_pressed" binds= [6, 6.0]]
-[connection signal="pressed" from="Control/bacon4" to="Control" method="_on_food_pressed" binds= [6, 6.0]]
+[connection signal="pressed" from="Control/bacon5" to="Control" method="_on_food_pressed" binds= [6, 6.0]]
+[connection signal="pressed" from="Control/bacon6" to="Control" method="_on_food_pressed" binds= [6, 6.0]]
+[connection signal="pressed" from="Control/bacon7" to="Control" method="_on_food_pressed" binds= [6, 6.0]]
 [connection signal="pressed" from="Control/ham" to="Control" method="_on_food_pressed" binds= [7, 5.0]]
 [connection signal="pressed" from="Control/ham2" to="Control" method="_on_food_pressed" binds= [7, 5.0]]
 [connection signal="pressed" from="Control/ham3" to="Control" method="_on_food_pressed" binds= [7, 5.0]]
 [connection signal="pressed" from="Control/ham4" to="Control" method="_on_food_pressed" binds= [7, 5.0]]
-[connection signal="pressed" from="Control/anchovies" to="Control" method="_on_food_pressed" binds= [8, 2.0]]
-[connection signal="pressed" from="Control/anchovies2" to="Control" method="_on_food_pressed" binds= [8, 2.0]]
 [connection signal="pressed" from="Control/garlic" to="Control" method="_on_food_pressed" binds= [9, 4.0]]
 [connection signal="pressed" from="Control/garlic2" to="Control" method="_on_food_pressed" binds= [9, 4.0]]
+[connection signal="pressed" from="Control/garlic3" to="Control" method="_on_food_pressed" binds= [9, 4.0]]
+[connection signal="pressed" from="Control/garlic4" to="Control" method="_on_food_pressed" binds= [9, 4.0]]
 [connection signal="pressed" from="Control/tomato" to="Control" method="_on_food_pressed" binds= [11, 4.0]]
 [connection signal="pressed" from="Control/tomato2" to="Control" method="_on_food_pressed" binds= [11, 4.0]]
+[connection signal="pressed" from="Control/tomato3" to="Control" method="_on_food_pressed" binds= [11, 4.0]]
+[connection signal="pressed" from="Control/tomato4" to="Control" method="_on_food_pressed" binds= [11, 4.0]]
 [connection signal="pressed" from="Control/onion" to="Control" method="_on_food_pressed" binds= [12, 1.0]]
 [connection signal="pressed" from="Control/onion2" to="Control" method="_on_food_pressed" binds= [12, 1.0]]
+[connection signal="pressed" from="Control/onion3" to="Control" method="_on_food_pressed" binds= [12, 1.0]]
+[connection signal="pressed" from="Control/onion4" to="Control" method="_on_food_pressed" binds= [12, 1.0]]
 [connection signal="pressed" from="Control/sausage" to="Control" method="_on_food_pressed" binds= [13, 4.0]]
 [connection signal="pressed" from="Control/sausage2" to="Control" method="_on_food_pressed" binds= [13, 4.0]]
 [connection signal="pressed" from="Control/sausage3" to="Control" method="_on_food_pressed" binds= [13, 4.0]]
 [connection signal="pressed" from="Control/sausage4" to="Control" method="_on_food_pressed" binds= [13, 4.0]]
+[connection signal="pressed" from="Control/sausage5" to="Control" method="_on_food_pressed" binds= [13, 4.0]]
