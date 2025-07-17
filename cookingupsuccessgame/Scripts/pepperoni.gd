@@ -76,8 +76,9 @@ func attach_to_pizza(pizza: Node) -> void:
 	# Add the pepperoni ingredient to the pizza
 	pizza.add_ingredient("pepperoni")
 	
-	# Decrease global pepperoni count
-	Global.ingredients[0] -= 1
+	# Decrease global pepperoni count (index 0 for pepperoni)
+	if Global.ingredients.size() > 0:
+		Global.ingredients[0] -= 1
 	
 	# Make the pepperoni a child of the pizza
 	reparent(pizza)

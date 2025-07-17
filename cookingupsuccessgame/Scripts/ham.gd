@@ -55,7 +55,9 @@ func attach_to_pizza(pizza: Node) -> void:
 	is_attached_to_pizza = true
 	attached_pizza = pizza
 	pizza.add_ingredient("ham")
-	Global.ingredients[7] -= 1
+	# Decrease global ham count (index 7 for ham)
+	if Global.ingredients.size() > 7:
+		Global.ingredients[7] -= 1
 	reparent(pizza)
 	var collision_shape: CollisionShape2D = $CollisionShape2D
 	if collision_shape:

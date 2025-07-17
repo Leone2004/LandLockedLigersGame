@@ -71,9 +71,10 @@ func _input(event: InputEvent) -> void:
 				current_click = timer
 				if current_click - last_click_time < click_threshold && mouse_on_me && !is_baking && !baked :
 					var x = 0
-					for i in Global.ingredients:
-						Global.ingredients[x] += used_ingredients[x]
-						used_ingredients[x] = 0
+					# Add bounds checking for arrays
+					for i in range(min(Global.ingredients.size(), used_ingredients.size())):
+						Global.ingredients[i] += used_ingredients[i]
+						used_ingredients[i] = 0
 						x += 1
 					var y = 0
 					for child in get_children():
@@ -168,7 +169,10 @@ func add_ingredient(ingredient_name: String) -> void:
 	"""Add an ingredient to the pizza and update its value"""
 	if ingredient_name in ingredient_values:
 		current_ingredients.append(ingredient_name)
-		used_ingredients[Global.food.find(ingredient_name)] += 1
+		# Add bounds checking for Global.food array
+		var food_index = Global.food.find(ingredient_name)
+		if food_index >= 0 and food_index < used_ingredients.size():
+			used_ingredients[food_index] += 1
 		_update_pizza_value()
 		
 		# Visual feedback - you can add effects here

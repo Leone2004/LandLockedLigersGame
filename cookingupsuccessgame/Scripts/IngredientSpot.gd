@@ -159,8 +159,9 @@ func _check_for_pizza() -> void:
 			# Create visual ingredient on the pizza
 			_create_visual_ingredient_on_pizza(area)
 			
-			# Consume one ingredient
-			Global.ingredients[ingredient_index] -= 1
+			# Consume one ingredient with bounds checking
+			if ingredient_index >= 0 and ingredient_index < Global.ingredients.size():
+				Global.ingredients[ingredient_index] -= 1
 			
 			# Update visual state
 			update_visual_state()

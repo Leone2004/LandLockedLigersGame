@@ -76,9 +76,9 @@ func attach_to_pizza(pizza: Node):
 	# Add the mushrooms ingredient to the pizza
 	pizza.add_ingredient("mushrooms")
 	
-	# Decrease global mushrooms count
-	Global.ingredients[2] -= 1
-	print("Global mushrooms count decreased to: ", Global.ingredients[2])
+	# Decrease global mushrooms count (index 2 for mushrooms)
+	if Global.ingredients.size() > 2:
+		Global.ingredients[2] -= 1
 	
 	# Make the mushrooms a child of the pizza
 	reparent(pizza)

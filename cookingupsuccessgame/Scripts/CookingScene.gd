@@ -35,6 +35,9 @@ var spot_spacing: Vector2 = Vector2(60, 60)  # Slightly smaller spacing for bett
 var spots_per_row: int = 4  # Number of spots per row
 
 func _ready() -> void:
+	# Add this scene to a group for easy access
+	add_to_group("cooking_scene")
+	
 	# Load the pizza scene
 	pizza_scene = preload("res://Scenes/pizza.tscn")
 	
@@ -42,13 +45,19 @@ func _ready() -> void:
 	recipes = Global.recipes
 	current_recipe = 1
 	recipe_book_visible = false
-	shopping_list.hide()
-	recipe_book_layer.visible = recipe_book_visible
-	recipe.text = get_recipe_string(recipes[current_recipe - 1])
+	
+	# Add null checks for UI elements
+	if shopping_list:
+		shopping_list.hide()
+	if recipe_book_layer:
+		recipe_book_layer.visible = recipe_book_visible
+	if recipe:
+		recipe.text = get_recipe_string(recipes[current_recipe - 1])
 	
 	# Ensure button starts enabled
-	spawn_pizza_button.disabled = false
-	spawn_pizza_button.modulate = Color(1, 1, 1)
+	if spawn_pizza_button:
+		spawn_pizza_button.disabled = false
+		spawn_pizza_button.modulate = Color(1, 1, 1)
 	
 	# Update spawn button text
 	update_spawn_button_text()
@@ -114,9 +123,28 @@ func _on_button_pressed() -> void:
 		OvenCookingButton.text = "Ovens"
 
 func _on_nextday_pressed() -> void:
-	Global.day += 1 # increments day by one, when the "done" button is pressed
+	# Check if all customers are satisfied before allowing transition
+	if all_customers_satisfied():
+		print("All customers satisfied! Transitioning to next day...")
+		transition_to_next_day()
+	else:
+		print("Cannot transition to next day - not all customers are satisfied yet!")
+		print("Current customer satisfaction: ", Global.satisfied_customers)
+
+func all_customers_satisfied() -> bool:
+	"""Check if all customers are satisfied"""
+	for i in range(Global.satisfied_customers.size()):
+		if not Global.satisfied_customers[i]:
+			return false
+	return true
+
+func transition_to_next_day() -> void:
+	"""Transition to the next day - called when all customers are satisfied or Done button is pressed"""
+	Global.day += 1 # increments day by one
 	get_tree().change_scene_to_file("res://Scenes/GroceryStore.tscn") # changes scene back to shopping scene
 	Global.customers = 3
+	# Reset customer satisfaction for next day
+	Global.satisfied_customers = [false, false, false]
 
 func _on_recipe_pressed() -> void:
 	set_physics_process(false)
@@ -167,6 +195,9 @@ func _on_conveyer_direction_switch_pressed() -> void:
 	conveyer_direction *= -1
 
 func update_spawn_button_text() -> void:
+	if not spawn_pizza_button:
+		return
+		
 	spawn_pizza_button.text = "Spawn Pizza (%d/%d)" % [spawned_pizzas.size(), max_pizzas]
 	
 	# Disable button if at maximum pizzas

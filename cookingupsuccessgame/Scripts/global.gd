@@ -48,12 +48,16 @@ func _ready():
 
 # Music management functions
 func start_main_music():
-	if MainMusic and not MainMusic.playing:
-		MainMusic.play()
+	# Check if MainMusic exists before trying to use it
+	if has_node("/root/MainMusic") or get_node_or_null("/root/MainMusic"):
+		var main_music = get_node_or_null("/root/MainMusic")
+		if main_music and not main_music.playing:
+			main_music.play()
 
 func set_music_volume(volume_db: float):
-	if MainMusic:
-		MainMusic.volume_db = volume_db
+	var main_music = get_node_or_null("/root/MainMusic")
+	if main_music:
+		main_music.volume_db = volume_db
 
 # recipes to be used accross the game
 var recipes = [

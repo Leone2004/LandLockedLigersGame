@@ -77,9 +77,9 @@ func attach_to_pizza(pizza: Node):
 	# Add the cheese ingredient to the pizza
 	pizza.add_ingredient("cheese")
 	
-	# Decrease global cheese count
-	Global.ingredients[1] -= 1
-	print("Global cheese count decreased to: ", Global.ingredients[1])
+	# Decrease global cheese count (index 1 for cheese)
+	if Global.ingredients.size() > 1:
+		Global.ingredients[1] -= 1
 	
 	# Make the cheese a child of the pizza
 	reparent(pizza)
