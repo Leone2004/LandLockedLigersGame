@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccjtqqsxfsxdj"]
+[gd_scene load_steps=13 format=3 uid="uid://ccjtqqsxfsxdj"]
 
 [ext_resource type="Script" uid="uid://bgutyowxbu4q8" path="res://Scripts/CookingScene.gd" id="1_v6t1i"]
+[ext_resource type="AudioStream" uid="uid://fif1bn6wkmm0" path="res://Music/sounds/8-bit-video-game-points-version-1-145826.mp3" id="2_8l6gq"]
 [ext_resource type="Texture2D" uid="uid://bq8jd3vjo40lr" path="res://Art/Unknown-1.png" id="3_iv1kd"]
+[ext_resource type="AudioStream" uid="uid://88y0lqbdsqo2" path="res://Music/sounds/Sonic_Soundfx_household_kitchen_pasta_packet_plastic_scrumple_crumple.mp3" id="3_jba1e"]
 [ext_resource type="PackedScene" uid="uid://cbv1kvsc8lip3" path="res://Scenes/pizza.tscn" id="3_kqqjs"]
+[ext_resource type="AudioStream" uid="uid://1k3dll3bkfva" path="res://Music/sounds/achievement-video-game-type-1-230515.mp3" id="4_jba1e"]
 [ext_resource type="PackedScene" uid="uid://wjye2oajgcmk" path="res://Scenes/oven_scene.tscn" id="4_jhubm"]
+[ext_resource type="Script" uid="uid://d0bcqnejgari1" path="res://Scripts/sound_follower2.gd" id="5_8l6gq"]
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="5_iv1kd"]
 [ext_resource type="PackedScene" uid="uid://bvn8x7y2k3m4n" path="res://Scenes/IngredientSpot.tscn" id="7_bhcx5"]
 [ext_resource type="PackedScene" uid="uid://brnrw56qbt731" path="res://Scenes/sell.tscn" id="7_smvhu"]
@@ -13,6 +17,15 @@ size = Vector2(240, 106)
 
 [node name="CookingScene" type="Node2D"]
 script = ExtResource("1_v6t1i")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8l6gq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayer2D"]
+stream = ExtResource("3_jba1e")
+
+[node name="happy_customer" type="AudioStreamPlayer2D" parent="AudioStreamPlayer2D"]
+stream = ExtResource("4_jba1e")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -156,6 +169,7 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(10, -331)
+script = ExtResource("5_8l6gq")
 
 [node name="OvenScene" parent="." instance=ExtResource("4_jhubm")]
 z_index = -1

@@ -16,6 +16,8 @@ var current_click = 0.0
 var last_click_time = 0.0
 var click_threshold = 0.2
 var mouse_on_me: bool = false
+@onready var sound: AudioStreamPlayer2D = $"../AudioStreamPlayer2D"
+@onready var trash: AudioStreamPlayer2D = $"../AudioStreamPlayer2D/AudioStreamPlayer2D"
 
 # Ingredient values (you can adjust these)
 var ingredient_values: Dictionary = {
@@ -70,6 +72,7 @@ func _input(event: InputEvent) -> void:
 			if event.pressed and not is_dragging:
 				current_click = timer
 				if current_click - last_click_time < click_threshold && mouse_on_me && !is_baking && !baked :
+					trash.play()
 					var x = 0
 					for i in Global.ingredients:
 						Global.ingredients[x] += used_ingredients[x]
@@ -167,6 +170,7 @@ func _process(delta: float) -> void:
 func add_ingredient(ingredient_name: String) -> void:
 	"""Add an ingredient to the pizza and update its value"""
 	if ingredient_name in ingredient_values:
+		sound.play()
 		current_ingredients.append(ingredient_name)
 		used_ingredients[Global.food.find(ingredient_name)] += 1
 		_update_pizza_value()

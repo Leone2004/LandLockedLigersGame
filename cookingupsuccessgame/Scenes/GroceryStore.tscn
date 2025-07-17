@@ -1,11 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://ytwvoc765rk3"]
+[gd_scene load_steps=8 format=3 uid="uid://ytwvoc765rk3"]
 
 [ext_resource type="Script" uid="uid://brx8kajls5irq" path="res://Scripts/ShoppingStoreButtons.gd" id="1_6pps0"]
+[ext_resource type="AudioStream" uid="uid://rdsdhascvlmi" path="res://Music/sounds/Swoosh(for dragging).wav" id="1_bneo4"]
+[ext_resource type="AudioStream" uid="uid://2me0lmpdissx" path="res://Music/sounds/fantasy-game-sword-cut-sound-effect-get-more-on-my-patreon-339824.mp3" id="2_23ypg"]
 [ext_resource type="Texture2D" uid="uid://edyokx505sba" path="res://Art/Final Cooking up Success Image folder 2/Background images/Grocery Background.jpg" id="3_45mn4"]
 [ext_resource type="Texture2D" uid="uid://5gnwamavmr6o" path="res://Art/Final Cooking up Success Image folder 2/Equipment/Shopping shelf.png" id="3_bneo4"]
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="3_d07kg"]
+[ext_resource type="Script" uid="uid://ctq0t3w706735" path="res://Scripts/sound_follower1.gd" id="3_vd5c6"]
 
 [node name="ShoppingScene" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_bneo4")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="AudioStreamPlayer2D"]
+stream = ExtResource("2_23ypg")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -583,6 +592,7 @@ text = "sausage"
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_vd5c6")
 
 [node name="ShoppingListScene" parent="." instance=ExtResource("3_d07kg")]
 
