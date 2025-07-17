@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://da1ulg7p5euu3"
+path="res://.godot/imported/Neutral.mp3-9adde5edcac65216aa2ebfa90a40dcb5.mp3str"
+
+[deps]
+
+source_file="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Sound Effects/Neutral.mp3"
+dest_files=["res://.godot/imported/Neutral.mp3-9adde5edcac65216aa2ebfa90a40dcb5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

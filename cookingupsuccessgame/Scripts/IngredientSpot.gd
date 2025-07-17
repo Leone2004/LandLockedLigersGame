@@ -56,42 +56,46 @@ func _set_texture_for_ingredient() -> void:
 	"""Set the texture based on the ingredient type"""
 	if not sprite:
 		return
-	
+
 	match ingredient_type:
 		"pepperoni":
-			sprite.texture = preload("res://Art/pepperoni.png")
-			sprite.scale = Vector2(1.5, 1.5)  # Scale up pepperoni
+			sprite.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_pepperoni.png")
+		"mushrooms":
+			sprite.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_mushrooms.png")
+		"olives":
+			sprite.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_olives.png")
+		"peppers":
+			sprite.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_jalapeno.png")
+		"bacon":
+			sprite.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_bacon.png")
+		"ham":
+			sprite.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_ham.png")
+		"garlic":
+			sprite.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_garlic.png")
+		"pineapple":
+			sprite.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_pineapple.png")
+		"tomato":
+			sprite.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/Single tomato.png")
+			sprite.scale = Vector2(0.5, 0.5) # Scale down tomato spot
+		"onion":
+			sprite.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_onion.png")
+		"sausage":
+			sprite.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_sausage.png")
+		# EXCEPTIONS: cheese, sauce, anchovies use old logic
 		"cheese":
 			sprite.texture = preload("res://Art/cheese.png")
-			sprite.scale = Vector2(1.5, 1.5)  # Scale up cheese
-		"mushrooms":
-			sprite.texture = preload("res://Art/mushroom.png")
-			sprite.scale = Vector2(1.5, 1.5)  # Scale up mushrooms
 		"sauce":
 			sprite.texture = preload("res://Art/sauce.png")
-			sprite.scale = Vector2(1.5, 1.5)  # Scale up sauce
-		"olives":
-			sprite.texture = preload("res://Art/olive.png")
-		"peppers":
-			sprite.texture = preload("res://Art/pepper.jpeg")
-		"bacon":
-			sprite.texture = preload("res://Art/Bacon.png")
-		"ham":
-			sprite.texture = preload("res://Art/ham.jpeg")
 		"anchovies":
 			sprite.texture = preload("res://Art/anchovies.jpeg")
-		"garlic":
-			sprite.texture = preload("res://Art/garlic.jpeg")
-		"pineapple":
-			sprite.texture = preload("res://Art/pinapple.jpeg")
-		"tomato":
-			sprite.texture = preload("res://Art/tomato.jpeg")
-		"onion":
-			sprite.texture = preload("res://Art/onion.jpeg")
-		"sausage":
-			sprite.texture = preload("res://Art/sausage.jpeg")
 		_:
 			print("Warning: Unknown ingredient type: ", ingredient_type)
+
+	# Set all ingredient spot icons to a consistent size
+	var spot_scale = Vector2(0.25, 0.25) # Default scale
+	if ingredient_type == "tomato":
+		spot_scale = Vector2(0.10, 0.10) # Smaller for tomato
+	sprite.scale = spot_scale
 
 func update_visual_state() -> void:
 	"""Update the visual state based on available ingredients"""
@@ -178,47 +182,53 @@ func _create_visual_ingredient_on_pizza(pizza_area: Area2D) -> void:
 	# Create a Sprite2D node for the visual ingredient
 	var visual_ingredient = Sprite2D.new()
 	visual_ingredient.name = ingredient_type + "_visual"
-	visual_ingredient.scale = Vector2(0.2, 0.2)  # Small scale for pizza topping
-	
-	# Set the texture based on ingredient type
+
+	# Set the texture based on ingredient type (use on_pizza PNGs for all except cheese, sauce, anchovies)
 	match ingredient_type:
 		"pepperoni":
-			visual_ingredient.texture = preload("res://Art/pepperoni.png")
-			visual_ingredient.scale = Vector2(1.0, 1.0)  # Scale up pepperoni on pizza
+			visual_ingredient.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/on_pizza_pepperoni.png")
+		"mushrooms":
+			visual_ingredient.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/on_pizza_mushroom.png")
+		"olives":
+			visual_ingredient.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/on_pizza_olives.png")
+		"peppers":
+			visual_ingredient.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/on_pizza_jalapeno.png")
+		"bacon":
+			visual_ingredient.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/on_pizza_bacon.png")
+		"ham":
+			visual_ingredient.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/on_pizza_ham.png")
+		"garlic":
+			visual_ingredient.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/on_pizza_garlic.png")
+		"pineapple":
+			visual_ingredient.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/on_pizza_pineapple.png")
+		"tomato":
+			visual_ingredient.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/Single tomato.png")
+		"onion":
+			visual_ingredient.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/on_pizza_onion.png")
+		"sausage":
+			visual_ingredient.texture = preload("res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/on_pizza_sausage.png")
+		# EXCEPTIONS: cheese, sauce, anchovies use old logic
 		"cheese":
 			visual_ingredient.texture = preload("res://Art/cheese.png")
-			visual_ingredient.scale = Vector2(1.0, 1.0)  # Scale up cheese on pizza
-		"mushrooms":
-			visual_ingredient.texture = preload("res://Art/mushroom.png")
-			visual_ingredient.scale = Vector2(1.0, 1.0)  # Scale up mushrooms on pizza
 		"sauce":
 			visual_ingredient.texture = preload("res://Art/sauce.png")
-			visual_ingredient.scale = Vector2(1.0, 1.0)  # Scale up sauce on pizza
-		"olives":
-			visual_ingredient.texture = preload("res://Art/olive.png")
-		"peppers":
-			visual_ingredient.texture = preload("res://Art/pepper.jpeg")
-		"bacon":
-			visual_ingredient.texture = preload("res://Art/Bacon.png")
-		"ham":
-			visual_ingredient.texture = preload("res://Art/ham.jpeg")
 		"anchovies":
 			visual_ingredient.texture = preload("res://Art/anchovies.jpeg")
-		"garlic":
-			visual_ingredient.texture = preload("res://Art/garlic.jpeg")
-		"pineapple":
-			visual_ingredient.texture = preload("res://Art/pinapple.jpeg")
-		"tomato":
-			visual_ingredient.texture = preload("res://Art/tomato.jpeg")
-		"onion":
-			visual_ingredient.texture = preload("res://Art/onion.jpeg")
-		"sausage":
-			visual_ingredient.texture = preload("res://Art/sausage.jpeg")
-	
+		_:
+			print("Warning: Unknown ingredient type: ", ingredient_type)
+
+	# Set all toppings to the same pixel size (e.g., 48x48), except tomato (e.g., 20x20)
+	var target_size = Vector2(48, 48)
+	if ingredient_type == "tomato":
+		target_size = Vector2(20, 20)
+	if visual_ingredient.texture:
+		var tex_size = visual_ingredient.texture.get_size()
+		visual_ingredient.scale = target_size / tex_size
+
 	# Position the ingredient where it was dropped on the pizza
 	var drop_position = global_position - pizza_area.global_position
 	visual_ingredient.position = drop_position
-	
+
 	# Add the visual ingredient to the pizza
 	pizza_area.add_child(visual_ingredient)
 

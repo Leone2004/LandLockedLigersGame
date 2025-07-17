@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpxcvxa0274yo"
+path="res://.godot/imported/Main Menu Theme.mp3-b5de75c4c427cf59d58a06a3ef156fee.mp3str"
+
+[deps]
+
+source_file="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Music/Main Menu Theme.mp3"
+dest_files=["res://.godot/imported/Main Menu Theme.mp3-b5de75c4c427cf59d58a06a3ef156fee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

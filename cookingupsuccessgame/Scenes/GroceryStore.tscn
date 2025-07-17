@@ -1,21 +1,21 @@
 [gd_scene load_steps=17 format=3 uid="uid://ytwvoc765rk3"]
 
 [ext_resource type="Script" uid="uid://brx8kajls5irq" path="res://Scripts/ShoppingStoreButtons.gd" id="1_6pps0"]
-[ext_resource type="Texture2D" uid="uid://ba03mtfjtmuel" path="res://Art/Final Cooking up Success Images and Audio 2/Characters/shoping_list_icon.png" id="2_bneo4"]
+[ext_resource type="Texture2D" uid="uid://ba03mtfjtmuel" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Characters/shoping_list_icon.png" id="2_bneo4"]
 [ext_resource type="Texture2D" uid="uid://edyokx505sba" path="res://Art/Final Cooking up Success Image folder 2/Background images/Grocery Background.jpg" id="3_45mn4"]
 [ext_resource type="Texture2D" uid="uid://5gnwamavmr6o" path="res://Art/Final Cooking up Success Image folder 2/Equipment/Shopping shelf.png" id="3_bneo4"]
 [ext_resource type="PackedScene" uid="uid://dvhspowe5pn6t" path="res://Scenes/shopping_list.tscn" id="3_d07kg"]
-[ext_resource type="Texture2D" uid="uid://wxrb1ti0gh2k" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success pepperoni.png" id="3_t88la"]
-[ext_resource type="Texture2D" uid="uid://chnxoy7cab6p4" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success mushrooms.png" id="4_kulai"]
-[ext_resource type="Texture2D" uid="uid://bgb4rocpkm1lx" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success pineapple.png" id="5_7tpoo"]
-[ext_resource type="Texture2D" uid="uid://ddd7qk8ywkuos" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success olives.png" id="6_c7oxb"]
-[ext_resource type="Texture2D" uid="uid://c3cg1maqvhvn3" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success jalapeno.png" id="7_qlxn6"]
-[ext_resource type="Texture2D" uid="uid://y0viyyes7pb8" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success bacon.png" id="8_3mgp1"]
-[ext_resource type="Texture2D" uid="uid://c75tsx1o86pe3" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success ham.png" id="9_y356w"]
-[ext_resource type="Texture2D" uid="uid://b0e8vfuaqqo0b" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success garlic.png" id="10_kchnq"]
-[ext_resource type="Texture2D" uid="uid://cjf83vmvdc232" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/Single tomato.png" id="11_aq3yx"]
-[ext_resource type="Texture2D" uid="uid://cl6rxnshxaw1e" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success onion.png" id="12_qhsj4"]
-[ext_resource type="Texture2D" uid="uid://b5tnkwiuomctv" path="res://Art/Final Cooking up Success Images and Audio 2/new ingredients/cooking up success sausage.png" id="13_0j4bi"]
+[ext_resource type="Texture2D" uid="uid://wxrb1ti0gh2k" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_pepperoni.png" id="3_t88la"]
+[ext_resource type="Texture2D" uid="uid://chnxoy7cab6p4" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_mushrooms.png" id="4_kulai"]
+[ext_resource type="Texture2D" uid="uid://bgb4rocpkm1lx" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_pineapple.png" id="5_7tpoo"]
+[ext_resource type="Texture2D" uid="uid://ddd7qk8ywkuos" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_olives.png" id="6_c7oxb"]
+[ext_resource type="Texture2D" uid="uid://c3cg1maqvhvn3" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_jalapeno.png" id="7_qlxn6"]
+[ext_resource type="Texture2D" uid="uid://y0viyyes7pb8" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_bacon.png" id="8_3mgp1"]
+[ext_resource type="Texture2D" uid="uid://c75tsx1o86pe3" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_ham.png" id="9_y356w"]
+[ext_resource type="Texture2D" uid="uid://b0e8vfuaqqo0b" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_garlic.png" id="10_kchnq"]
+[ext_resource type="Texture2D" uid="uid://cjf83vmvdc232" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/Single tomato.png" id="11_aq3yx"]
+[ext_resource type="Texture2D" uid="uid://cl6rxnshxaw1e" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_onion.png" id="12_qhsj4"]
+[ext_resource type="Texture2D" uid="uid://b5tnkwiuomctv" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/cooking_up_success_sausage.png" id="13_0j4bi"]
 
 [node name="ShoppingScene" type="Node2D"]
 
@@ -84,7 +84,7 @@ metadata/_edit_use_anchors_ = true
 [node name="pepperoni" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -6.925
+anchor_left = -7.625
 anchor_top = -2.375
 anchor_right = -7.625
 anchor_bottom = -1.775
@@ -103,7 +103,7 @@ metadata/_edit_use_anchors_ = true
 [node name="pepperoni2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -4.525
+anchor_left = -4.725
 anchor_top = -2.375
 anchor_right = -4.725
 anchor_bottom = -1.775
@@ -160,7 +160,7 @@ metadata/_edit_use_anchors_ = true
 [node name="mushrooms" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.35
+anchor_left = -8.125
 anchor_top = -3.0
 anchor_right = -8.125
 anchor_bottom = -2.575
@@ -224,7 +224,7 @@ metadata/_edit_use_anchors_ = true
 [node name="pineapple" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.05
+anchor_left = -7.5
 anchor_top = -2.05
 anchor_right = -7.5
 anchor_bottom = -1.25
@@ -288,7 +288,7 @@ metadata/_edit_use_anchors_ = true
 [node name="olives2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -10.925
+anchor_left = -11.075
 anchor_top = -1.925
 anchor_right = -11.075
 anchor_bottom = -1.05
@@ -356,7 +356,7 @@ metadata/_edit_use_anchors_ = true
 [node name="peppers" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -35.825
+anchor_left = -36.8
 anchor_top = -7.45
 anchor_right = -36.8
 anchor_bottom = -7.1
@@ -424,7 +424,7 @@ metadata/_edit_use_anchors_ = true
 [node name="bacon" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.5
+anchor_left = -8.175
 anchor_top = -3.175
 anchor_right = -8.175
 anchor_bottom = -2.325
@@ -440,7 +440,7 @@ metadata/_edit_use_anchors_ = true
 [node name="bacon5" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -4.5
+anchor_left = -4.825
 anchor_top = -3.275
 anchor_right = -4.825
 anchor_bottom = -2.125
@@ -488,7 +488,7 @@ metadata/_edit_use_anchors_ = true
 [node name="ham" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.575
+anchor_left = -8.2
 anchor_top = -2.65
 anchor_right = -8.2
 anchor_bottom = -1.925
@@ -556,7 +556,7 @@ metadata/_edit_use_anchors_ = true
 [node name="garlic" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.85
+anchor_left = -8.35
 anchor_top = -4.175
 anchor_right = -8.35
 anchor_bottom = -3.25
@@ -624,7 +624,7 @@ metadata/_edit_use_anchors_ = true
 [node name="tomato" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -71.05
+anchor_left = -71.75
 anchor_top = -5.975
 anchor_right = -71.75
 anchor_bottom = -5.125
@@ -640,7 +640,7 @@ metadata/_edit_use_anchors_ = true
 [node name="tomato2" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -68.475
+anchor_left = -69.175
 anchor_top = -6.0
 anchor_right = -69.175
 anchor_bottom = -5.15
@@ -656,7 +656,7 @@ metadata/_edit_use_anchors_ = true
 [node name="tomato3" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -61.425
+anchor_left = -62.125
 anchor_top = -5.925
 anchor_right = -62.125
 anchor_bottom = -5.075
@@ -672,7 +672,7 @@ metadata/_edit_use_anchors_ = true
 [node name="tomato4" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -64.9
+anchor_left = -65.625
 anchor_top = -5.95
 anchor_right = -65.625
 anchor_bottom = -5.1
@@ -688,7 +688,7 @@ metadata/_edit_use_anchors_ = true
 [node name="onion" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.8
+anchor_left = -8.475
 anchor_top = -4.125
 anchor_right = -8.475
 anchor_bottom = -3.475
@@ -756,7 +756,7 @@ metadata/_edit_use_anchors_ = true
 [node name="sausage" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -7.975
+anchor_left = -8.425
 anchor_top = -4.6
 anchor_right = -8.425
 anchor_bottom = -3.525

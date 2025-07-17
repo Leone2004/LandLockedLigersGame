@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cbv1kvsc8lip3"]
 
 [ext_resource type="Script" uid="uid://4l8vuah41ksy" path="res://Scripts/pizza.gd" id="1_je5pd"]
-[ext_resource type="Texture2D" uid="uid://bctrl4ndt0mff" path="res://Art/Final Cooking up Success Images and Audio 2/Kitchen Ingredients/Plain pizza.png" id="2_7s6re"]
+[ext_resource type="Texture2D" uid="uid://bctrl4ndt0mff" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Kitchen Ingredients/Plain pizza.png" id="2_7s6re"]
 [ext_resource type="Script" uid="uid://c1b3m8280c0er" path="res://Scripts/ClockTimer.gd" id="3_clock"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_geqgq"]

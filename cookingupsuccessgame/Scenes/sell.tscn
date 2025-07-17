@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://brnrw56qbt731"]
 
 [ext_resource type="Script" uid="uid://dgrt25h7og77y" path="res://Scripts/sell.gd" id="1_fij3u"]
-[ext_resource type="Texture2D" uid="uid://kf3s7r8qnahu" path="res://Art/Final Cooking up Success Images and Audio 2/Characters/ok_face.png" id="2_fij3u"]
+[ext_resource type="Texture2D" uid="uid://kf3s7r8qnahu" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Characters/ok_face.png" id="2_fij3u"]
 [ext_resource type="Texture2D" uid="uid://dwmn5fnxa743s" path="res://Art/character_body.png" id="3_7k78s"]
 [ext_resource type="Script" uid="uid://c1b3m8280c0er" path="res://Scripts/ClockTimer.gd" id="3_bh4vk"]
-[ext_resource type="Texture2D" uid="uid://kfyig6kplyrq" path="res://Art/Final Cooking up Success Images and Audio 2/Characters/happy_face.png" id="4_40oap"]
+[ext_resource type="Texture2D" uid="uid://kfyig6kplyrq" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Characters/happy_face.png" id="4_40oap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glui1"]
 size = Vector2(128, 128)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://iplcyjonuiie"]
 
-[ext_resource type="Texture2D" uid="uid://c06j0o5ujibhk" path="res://Art/onion.jpeg" id="1_tex"]
 [ext_resource type="Script" uid="uid://da1mbyp5hkq3x" path="res://Scripts/onion.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://cnivr18ihmoii" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Kitchen Ingredients/cooking up success onion.png" id="2_uic3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shape"]
 size = Vector2(22, 21)
@@ -15,6 +15,6 @@ shape = SubResource("RectangleShape2D_shape")
 
 [node name="Onion" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(4.17233e-07, 0.375)
-scale = Vector2(0.0887097, 0.10468)
-texture = ExtResource("1_tex")
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(0.255466, 0.234284)
+texture = ExtResource("2_uic3q")

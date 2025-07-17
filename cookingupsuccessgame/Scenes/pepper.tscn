@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dabpqt35bmq0f"]
 
-[ext_resource type="Texture2D" uid="uid://r0ic4arjwenn" path="res://Art/pepper.jpeg" id="1_tex"]
+[ext_resource type="Texture2D" uid="uid://cmpq5yhlx7hon" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/new_ingredients/on_pizza_jalapeno.png" id="2_pydkg"]
 [ext_resource type="Script" uid="uid://duaayopytxtxc" path="res://Scripts/pepper.gd" id="2_script"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shape"]
@@ -14,6 +14,6 @@ shape = SubResource("RectangleShape2D_shape")
 
 [node name="Pepper" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 2.38419e-07)
-scale = Vector2(0.0977778, 0.0977778)
-texture = ExtResource("1_tex")
+position = Vector2(2.38419e-07, 0)
+scale = Vector2(0.28, 0.274444)
+texture = ExtResource("2_pydkg")

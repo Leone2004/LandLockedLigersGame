@@ -8,13 +8,12 @@ extends Control
 @onready var money : Label = $CanvasLayer/Money
 @onready var shopping_list = $"../ShoppingListScene".get_node("ShoppingList")
 @onready var BaconButton : Button = $"bacon"
-@onready var OliveButton : Button = $"olives"
+@onready var OliveButton : Button = $"olives2"
 @onready var GarlicButton : Button = $"garlic"
 @onready var HamButton : Button = $"ham"
 @onready var PepperButton : Button = $"peppers"
 @onready var PineappleButton : Button = $"pineapple"
 @onready var SausageButton : Button = $"sausage"
-@onready var AnchoviesButton : Button = $"anchovies"
 
 var aisle_index: int = 0  # keeps track of which aisle we're on
 
@@ -30,7 +29,6 @@ func _ready() -> void:
 	PepperButton.pressed.connect(func(): _on_food_pressed(5, 1.0))
 	PineappleButton.pressed.connect(func(): _on_food_pressed(10, 1.0))
 	SausageButton.pressed.connect(func(): _on_food_pressed(12, 1.0))
-	AnchoviesButton.pressed.connect(func(): _on_food_pressed(8, 1.0))
 
 func _physics_process(delta: float) -> void:
 	update_label()

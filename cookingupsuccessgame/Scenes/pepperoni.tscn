@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dh8osn4ee61jl"]
 
-[ext_resource type="Texture2D" uid="uid://om2qfnq8tr7p" path="res://Art/pepperoni.png" id="1_o5gsa"]
+[ext_resource type="Texture2D" uid="uid://d2pquajbyfmsx" path="res://Art/Final_Cooking_up_Success_Images_and_Audio_2/Kitchen Ingredients/cooking up success pepperoni.png" id="2_hteq3"]
 [ext_resource type="Script" uid="uid://cl0y3ngq3nrjb" path="res://Scripts/pepperoni.gd" id="2_script"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0npr"]
@@ -15,4 +15,6 @@ shape = SubResource("RectangleShape2D_a0npr")
 
 [node name="Pepperoni" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_o5gsa")
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(0.327778, 0.322222)
+texture = ExtResource("2_hteq3")
